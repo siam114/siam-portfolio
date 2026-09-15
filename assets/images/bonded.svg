@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Bonded Boutique placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#181216"/>
+      <stop offset="1" stop-color="#0a0a0a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.4" r="0.65">
+      <stop offset="0" stop-color="#f97316" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fb923c"/>
+      <stop offset="1" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <rect width="800" height="600" fill="url(#glow)"/>
+  <g transform="translate(210 140)">
+    <rect width="180" height="240" rx="14" fill="#1a1a1e" stroke="#33343b" stroke-width="2" transform="rotate(-8 110 120)"/>
+    <rect width="180" height="240" rx="14" fill="#1d1d22" stroke="#33343b" stroke-width="2" transform="rotate(6 110 120)"/>
+    <rect width="180" height="240" rx="14" fill="url(#acc)" opacity="0.9" transform="rotate(-2 110 120)"/>
+    <path d="M60 240 h120" stroke="#f8fafc" stroke-opacity="0.4" stroke-width="7" stroke-linecap="round" transform="rotate(-2 110 120)"/>
+    <circle cx="110" cy="90" r="34" fill="#16161a" stroke="#f8fafc" stroke-opacity="0.25" stroke-width="5" transform="rotate(-2 110 120)"/>
+  </g>
+  <text x="400" y="470" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="30" font-weight="600" fill="#f8fafc" opacity="0.92">Bonded Boutique</text>
+  <text x="400" y="500" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" letter-spacing="5" fill="#fb923c" opacity="0.8">F A S H I O N</text>
+</svg>
