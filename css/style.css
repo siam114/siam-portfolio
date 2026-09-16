@@ -51,7 +51,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
     /* Layout */
-    --container: 1200px;
+    --container: clamp(1200px, 86vw, 1560px);
     --gutter: 24px;
     --nav-h: 76px;
 
@@ -111,10 +111,21 @@
     --code-bg-2: #eef0f3;
     --code-line: #d9dee4;
     --thumb-grad: linear-gradient(135deg, #e6e8eb, #f0f2f4);
-    --badge-bg: rgba(15, 23, 42, 0.72);  /* dark chip stays legible on light */
+--badge-bg: rgba(15, 23, 42, 0.72);  /* dark chip stays legible on light */
     --scroll-thumb: #c6ccd4;
     --danger-text: #dc2626;
     --photo-bg: radial-gradient(120% 90% at 30% 5%, rgba(249, 115, 22, 0.10), transparent 55%), #fbfbfc;
+}
+
+/* --------------------------------------------------------------------------
+   1b. RESPONSIVE CONTAINER — LARGE DESKTOPS (≥ 2240px)
+   Widens the fluid container further so content doesn't get lost on
+   ultra-wide monitors. Kept in sync with the base clamp() above.
+   -------------------------------------------------------------------------- */
+@media (min-width: 2240px) {
+    :root {
+        --container: 1760px;
+    }
 }
 
 /* --------------------------------------------------------------------------
