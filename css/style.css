@@ -9,26 +9,31 @@
    -------------------------------------------------------------------------- */
 :root {
     /* Surfaces */
-    --bg: #0a0a0a;            /* page background */
-    --surface: #141414;       /* cards / panels */
-    --surface-2: #1f1f1f;     /* raised surfaces, tracks, nave buttons */
-    --surface-glass: rgba(20, 20, 20, 0.9);
+    --bg: #080F14;            /* page background */
+    --surface: #0D181F;       /* cards / panels */
+    --surface-2: #112027;     /* raised surfaces, tracks, nav buttons */
+    --surface-glass: rgba(8, 15, 20, 0.9);
 
     /* Text */
-    --text: #f8fafc;          /* primary text (near-white) */
-    --text-muted: #97a3b4;    /* secondary text */
-    --text-faint: #5c6675;    /* captions / placeholder */
+    --text: #FFFFFF;          /* primary text (white) */
+    --text-muted: #94A3B8;    /* secondary text (slate-400) */
+    --text-faint: #64748B;    /* captions / placeholder */
 
     /* Lines */
-    --border: #292929;
-    --border-soft: #202020;
+    --border: rgba(148, 163, 184, 0.15);
+    --border-soft: rgba(148, 163, 184, 0.10);
 
-    /* Brand accent (orange, mockup palette) */
-    --accent: #f97316;
-    --accent-hover: #ea580c;
-    --accent-light: #fb923c;
-    --accent-glow: rgba(249, 115, 22, 0.5);
-    --accent-soft: rgba(249, 115, 22, 0.1);
+    /* Brand accent (teal) */
+    --accent: #00E5B7;
+    --accent-hover: #2EEBC6;  /* slightly brighter teal */
+    --accent-light: #A7F3D0;  /* light accent teal */
+    --accent-glow: rgba(0, 229, 183, 0.35);
+    --accent-soft: rgba(0, 229, 183, 0.10);
+    --accent-mid: rgba(0, 229, 183, 0.18);
+    --accent-border: rgba(0, 229, 183, 0.35);
+    --accent-border-strong: rgba(0, 229, 183, 0.60);
+    --on-accent: #080F14;     /* text on teal fills (dark text on bright teal) */
+    --ghost-text: #FFFFFF;    /* secondary / outline button text */
 
     /* Status */
     --success: #22c55e;
@@ -44,7 +49,7 @@
     /* Shadows */
     --shadow-card: 0 10px 30px -12px rgba(0, 0, 0, 0.6);
     --shadow-lift: 0 24px 48px -16px rgba(0, 0, 0, 0.75);
-    --glow-orange: 0 0 40px -10px var(--accent-glow);
+    --glow: 0 0 40px -10px var(--accent-glow);
 
     /* Type */
     --font: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -59,22 +64,21 @@
     --ease: cubic-bezier(0.4, 0, 0.2, 1);
     --dur: 0.22s;
 
-    /* Themed auxiliaries (dark defaults — these are the hardcoded values
-       previously written in place; light theme overrides them below) */
-    --alt-bg: #0d0d0d;                 /* alternate section band */
-    --footer-bg: #0c0c0c;              /* footer surface */
+    /* Themed auxiliaries (dark defaults — light theme overrides them below) */
+    --alt-bg: #0B141A;                 /* alternate section band */
+    --footer-bg: #080F14;              /* footer surface */
     --grid-line: rgba(255, 255, 255, 0.035);  /* hero grid strokes */
-    --hero-wash: rgba(249, 115, 22, 0.13);    /* hero radial wash */
+    --hero-wash: rgba(0, 229, 183, 0.12);     /* hero radial wash */
     --hover-bg: rgba(255, 255, 255, 0.04);    /* subtle hover fill */
     --tag-bg: rgba(255, 255, 255, 0.05);      /* tech tag fill */
-    --code-bg: #101010;                /* browser mock + form inputs */
-    --code-bg-2: #191919;              /* browser bar + tiles */
-    --code-line: #2a2a2a;              /* skeleton lines + placeholder dots */
-    --thumb-grad: linear-gradient(135deg, #2a2118, #191919); /* product thumb */
-    --badge-bg: rgba(10, 10, 10, 0.72);        /* project category chip */
-    --scroll-thumb: #2a2a2a;           /* scrollbar thumb */
+    --code-bg: #0D181F;                /* browser mock + form inputs */
+    --code-bg-2: #13222A;              /* browser bar + tiles */
+    --code-line: #22303B;              /* skeleton lines + placeholder dots */
+    --thumb-grad: linear-gradient(135deg, #0E1B23, #0D181F); /* product thumb */
+    --badge-bg: rgba(8, 15, 20, 0.72);         /* project category chip */
+    --scroll-thumb: #22303B;           /* scrollbar thumb */
     --danger-text: #f87171;            /* form error text (light red on dark) */
-    --photo-bg: radial-gradient(120% 90% at 30% 5%, rgba(249, 115, 22, 0.16), transparent 55%), #101010; /* hero photo backdrop */
+    --photo-bg: radial-gradient(120% 90% at 30% 5%, rgba(0, 229, 183, 0.16), transparent 55%), #0D181F; /* hero photo backdrop */
 }
 
 /* --------------------------------------------------------------------------
@@ -82,39 +86,47 @@
        Applied by setting data-theme="light" on <html>.
    -------------------------------------------------------------------------- */
 :root[data-theme="light"] {
-    --bg: #f7f8fa;                    /* warm off-white page */
+    --bg: #F8FAFC;                    /* cool off-white page */
     --surface: #ffffff;               /* white cards */
-    --surface-2: #eef1f4;             /* tracks / raised surfaces */
+    --surface-2: #EEF2F7;             /* tracks / raised surfaces */
     --surface-glass: rgba(255, 255, 255, 0.88);
 
-    --text: #0f172a;                  /* slate-900 text */
-    --text-muted: #4b5563;            /* slate-600 secondary */
-    --text-faint: #9aa3af;            /* captions / placeholders */
+    --text: #0F172A;                  /* slate-900 text */
+    --text-muted: #64748B;            /* slate-500 secondary */
+    --text-faint: #94A3B8;            /* captions / placeholders */
 
-    --border: #e5e7eb;
-    --border-soft: #eceef1;
+    --border: #E2E8F0;
+    --border-soft: #F1F5F9;
 
-    --accent-light: #ea580c;          /* accent text — darker for contrast on white */
-    --accent-soft: rgba(249, 115, 22, 0.12);
+    --accent: #00A88A;
+    --accent-hover: #008F78;
+    --accent-light: #008F78;          /* accent text — darker for contrast on white */
+    --accent-glow: rgba(0, 168, 138, 0.22);
+    --accent-soft: rgba(0, 168, 138, 0.09);
+    --accent-mid: rgba(0, 168, 138, 0.13);
+    --accent-border: rgba(0, 168, 138, 0.25);
+    --accent-border-strong: rgba(0, 168, 138, 0.45);
+    --on-accent: #FFFFFF;             /* text on teal fills (white on teal) */
+    --ghost-text: #008F78;            /* secondary / outline button text (teal) */
 
     /* softer shadows for the light surface */
     --shadow-card: 0 10px 30px -14px rgba(15, 23, 42, 0.14);
     --shadow-lift: 0 24px 48px -24px rgba(15, 23, 42, 0.22);
 
-    --alt-bg: #f2f3f5;
+    --alt-bg: #ffffff;
     --footer-bg: #ffffff;
     --grid-line: rgba(15, 23, 42, 0.055);
-    --hero-wash: rgba(249, 115, 22, 0.07);
+    --hero-wash: rgba(0, 168, 138, 0.07);
     --hover-bg: rgba(0, 0, 0, 0.04);
     --tag-bg: rgba(15, 23, 42, 0.055);
-    --code-bg: #fbfbfc;
-    --code-bg-2: #eef0f3;
-    --code-line: #d9dee4;
-    --thumb-grad: linear-gradient(135deg, #e6e8eb, #f0f2f4);
---badge-bg: rgba(15, 23, 42, 0.72);  /* dark chip stays legible on light */
-    --scroll-thumb: #c6ccd4;
+    --code-bg: #ffffff;
+    --code-bg-2: #F1F5F9;
+    --code-line: #E2E8F0;
+    --thumb-grad: linear-gradient(135deg, #DEE5EE, #F1F5F9);
+    --badge-bg: rgba(15, 23, 42, 0.72);  /* dark chip stays legible on light */
+    --scroll-thumb: #CBD5E1;
     --danger-text: #dc2626;
-    --photo-bg: radial-gradient(120% 90% at 30% 5%, rgba(249, 115, 22, 0.10), transparent 55%), #fbfbfc;
+    --photo-bg: radial-gradient(120% 90% at 30% 5%, rgba(0, 168, 138, 0.10), transparent 55%), #ffffff;
 }
 
 /* --------------------------------------------------------------------------
@@ -212,8 +224,8 @@ textarea {
 
 /* Selection + scrollbar (mockup detail) */
 ::selection {
-    background: rgba(249, 115, 22, 0.3);
-    color: #fff;
+    background: var(--accent-border);
+    color: var(--on-accent);
 }
 
 ::-webkit-scrollbar {
@@ -323,22 +335,22 @@ textarea {
 
 .btn-primary {
     background: var(--accent);
-    color: #fff;
+    color: var(--on-accent);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 .btn-primary:hover {
     background: var(--accent-hover);
-    box-shadow: var(--glow-orange);
+    box-shadow: var(--glow);
 }
 
 .btn-ghost {
     background: transparent;
-    color: var(--text-muted);
+    color: var(--ghost-text);
     border: 1px solid var(--border);
 }
 .btn-ghost:hover {
     color: var(--text);
-    border-color: rgba(249, 115, 22, 0.45);
+    border-color: var(--accent-border);
     background: var(--hover-bg);
 }
 
@@ -370,7 +382,7 @@ textarea {
     align-items: center;
     gap: 9px;
     padding: 8px 14px;
-    border: 1px solid rgba(249, 115, 22, 0.25);
+    border: 1px solid var(--accent-border);
     background: var(--accent-soft);
     color: var(--accent-light);
     font-size: 0.8rem;
@@ -405,7 +417,7 @@ textarea {
     font-weight: 600;
     padding: 3px 8px;
     border-radius: 6px;
-    background: rgba(249, 115, 22, 0.12);
+    background: var(--accent-soft);
     color: var(--accent-light);
 }
 
@@ -422,7 +434,7 @@ textarea {
     display: grid;
     place-items: center;
     flex-shrink: 0;
-    color: #fff;
+    color: var(--on-accent);
     border-radius: var(--radius-sm);
     background: linear-gradient(135deg, var(--accent-light), var(--accent-hover));
     box-shadow: 0 4px 14px -6px var(--accent-glow);
@@ -546,7 +558,7 @@ html.js .reveal.is-visible {
     transition: left var(--dur) var(--ease), right var(--dur) var(--ease), opacity var(--dur) var(--ease);
 }
 .nav-link:hover {
-    color: var(--text);
+    color: var(--accent);
     background: var(--hover-bg);
 }
 .nav-link:hover::after {
@@ -597,8 +609,8 @@ html.js .reveal.is-visible {
 }
 .theme-toggle:hover {
     color: var(--accent);
-    border-color: rgba(249, 115, 22, 0.45);
-    box-shadow: var(--glow-orange);
+    border-color: var(--accent-border);
+    box-shadow: var(--glow);
 }
 .theme-toggle .icon-sun {
     display: none;
@@ -665,14 +677,14 @@ html.js .reveal.is-visible {
     height: 420px;
     top: -80px;
     left: -120px;
-    background: rgba(249, 115, 22, 0.2);
+    background: var(--accent-mid);
 }
 .orb-2 {
     width: 360px;
     height: 360px;
     top: 30%;
     right: -140px;
-    background: rgba(249, 115, 22, 0.12);
+    background: var(--accent-soft);
 }
 
 .hero-inner {
@@ -791,7 +803,7 @@ html.js .reveal.is-visible {
     overflow: hidden;
     line-height: 0;
     background: var(--photo-bg);
-    box-shadow: var(--shadow-lift), var(--glow-orange);
+    box-shadow: var(--shadow-lift), var(--glow);
 }
 .hero-photo img {
     width: 100%;
@@ -804,7 +816,7 @@ html.js .reveal.is-visible {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 55%, rgba(249, 115, 22, 0.18));
+    background: linear-gradient(180deg, transparent 55%, var(--accent-mid));
     pointer-events: none;
 }
 
@@ -823,7 +835,7 @@ html.js .reveal.is-visible {
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    border: 1px dashed rgba(249, 115, 22, 0.35);
+    border: 1px dashed var(--accent-border);
     animation: orbit-rot 9s linear infinite;
 }
 .orbit-dot {
@@ -858,7 +870,7 @@ html.js .reveal.is-visible {
     right: 0;
     top: -3px;
     height: 3px;
-    background: linear-gradient(180deg, transparent, rgba(249, 115, 22, 0.4), transparent);
+    background: linear-gradient(180deg, transparent, var(--accent-border), transparent);
     opacity: 0;
     animation: scan-y 4.5s ease-in-out infinite;
 }
@@ -867,7 +879,7 @@ html.js .reveal.is-visible {
     bottom: 0;
     left: -3px;
     width: 3px;
-    background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, var(--accent-mid), transparent);
     opacity: 0;
     animation: scan-x 6.2s ease-in-out infinite 0.6s;
 }
@@ -939,7 +951,7 @@ html.custom-cursor .cursor-ring {
 .cursor-ring {
     width: 38px;
     height: 38px;
-    border: 1.5px solid rgba(249, 115, 22, 0.55);
+    border: 1.5px solid var(--accent-border-strong);
     box-shadow: 0 0 18px -4px var(--accent-glow);
     transition: width 0.18s var(--ease), height 0.18s var(--ease),
                 border-color 0.18s var(--ease), opacity 0.18s var(--ease);
@@ -976,7 +988,7 @@ html.custom-cursor .cursor-ring {
     border-radius: var(--radius-lg);
     background: var(--code-bg);
     overflow: hidden;
-    box-shadow: var(--shadow-lift), var(--glow-orange);
+    box-shadow: var(--shadow-lift), var(--glow);
 }
 .browser-bar {
     display: flex;
@@ -1056,7 +1068,7 @@ html.custom-cursor .cursor-ring {
     font-weight: 600;
     padding: 11px;
     border-radius: 9px;
-    color: #fff;
+    color: var(--on-accent);
     background: linear-gradient(135deg, var(--accent), var(--accent-hover));
 }
 
@@ -1162,7 +1174,7 @@ html.custom-cursor .cursor-ring {
     transition: border-color var(--dur) var(--ease), color var(--dur) var(--ease);
 }
 .skill-pills li:hover {
-    border-color: rgba(249, 115, 22, 0.4);
+    border-color: var(--accent-border);
     color: var(--accent-light);
 }
 
@@ -1244,8 +1256,8 @@ html.custom-cursor .cursor-ring {
 
 .service-card:hover {
     transform: translateY(-6px);
-    border-color: rgba(249, 115, 22, 0.4);
-    box-shadow: var(--shadow-lift), var(--glow-orange);
+    border-color: var(--accent-border);
+    box-shadow: var(--shadow-lift), var(--glow);
 }
 
 .service-icon {
@@ -1260,7 +1272,7 @@ html.custom-cursor .cursor-ring {
 }
 .service-card:hover .service-icon {
     background: var(--accent);
-    color: #fff;
+    color: var(--on-accent);
     transform: scale(1.05);
 }
 
@@ -1298,12 +1310,12 @@ html.custom-cursor .cursor-ring {
     grid-column: 1 / -1;
     padding: 30px 32px;
     border-radius: var(--radius-lg);
-    background: linear-gradient(135deg, rgba(249, 115, 22, 0.12), rgba(249, 115, 22, 0.03));
-    border: 1px solid rgba(249, 115, 22, 0.28);
+    background: linear-gradient(135deg, var(--accent-mid), transparent);
+    border: 1px solid var(--accent-border);
     transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
 }
 .cta-banner:hover {
-    border-color: rgba(249, 115, 22, 0.55);
+    border-color: var(--accent-border-strong);
     box-shadow: 0 0 60px -24px var(--accent-glow);
     transform: translateY(-3px);
 }
@@ -1345,7 +1357,7 @@ html.custom-cursor .cursor-ring {
 }
 .tab-btn.active {
     background: linear-gradient(135deg, var(--accent), var(--accent-hover));
-    color: #fff;
+    color: var(--on-accent);
     box-shadow: 0 4px 14px -6px var(--accent-glow);
 }
 
@@ -1368,8 +1380,8 @@ html.custom-cursor .cursor-ring {
 }
 .project-card:hover {
     transform: translateY(-6px);
-    border-color: rgba(249, 115, 22, 0.4);
-    box-shadow: var(--shadow-lift), var(--glow-orange);
+    border-color: var(--accent-border);
+    box-shadow: var(--shadow-lift), var(--glow);
 }
 
 .project-media {
@@ -1505,7 +1517,7 @@ html.custom-cursor .cursor-ring {
     bottom: 34px;
     left: 32px;
     width: 2px;
-    background: linear-gradient(to bottom, var(--accent), rgba(249, 115, 22, 0.1));
+    background: linear-gradient(to bottom, var(--accent), var(--accent-soft));
 }
 
 .process-step {
@@ -1537,9 +1549,9 @@ html.custom-cursor .cursor-ring {
     transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), background-color var(--dur) var(--ease);
 }
 .process-step:hover .process-icon {
-    border-color: rgba(249, 115, 22, 0.5);
+    border-color: var(--accent-border-strong);
     background: var(--accent-soft);
-    box-shadow: 0 0 0 6px var(--bg), var(--glow-orange);
+    box-shadow: 0 0 0 6px var(--bg), var(--glow);
 }
 .process-num {
     position: absolute;
@@ -1552,7 +1564,7 @@ html.custom-cursor .cursor-ring {
     font-size: 0.62rem;
     font-weight: 700;
     font-family: var(--font-mono);
-    color: #fff;
+    color: var(--on-accent);
     background: linear-gradient(135deg, var(--accent), var(--accent-hover));
     border-radius: 50%;
     border: 2px solid var(--bg);
@@ -1593,7 +1605,7 @@ html.custom-cursor .cursor-ring {
 }
 .testimonial-card:hover {
     transform: translateY(-6px);
-    border-color: rgba(249, 115, 22, 0.35);
+    border-color: var(--accent-border);
     box-shadow: var(--shadow-lift);
 }
 
@@ -1625,7 +1637,7 @@ html.custom-cursor .cursor-ring {
     flex-shrink: 0;
     font-size: 0.8rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--on-accent);
     border-radius: 50%;
     background: linear-gradient(135deg, var(--accent-light), var(--accent-hover));
 }
@@ -1726,9 +1738,9 @@ a.contact-row-value:hover {
 }
 .social-btn:hover {
     color: var(--accent-light);
-    border-color: rgba(249, 115, 22, 0.4);
+    border-color: var(--accent-border);
     transform: translateY(-2px);
-    box-shadow: var(--glow-orange);
+    box-shadow: var(--glow);
 }
 
 /* --- Form --- */
@@ -1791,7 +1803,7 @@ a.contact-row-value:hover {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.18);
+    box-shadow: 0 0 0 3px var(--accent-mid);
 }
 
 /* validation states */
@@ -1898,7 +1910,7 @@ a.contact-row-value:hover {
 }
 .footer-socials a:hover {
     color: var(--accent-light);
-    border-color: rgba(249, 115, 22, 0.4);
+    border-color: var(--accent-border);
     transform: translateY(-2px);
 }
 
@@ -1943,9 +1955,9 @@ a.contact-row-value:hover {
     pointer-events: auto;
 }
 .back-to-top:hover {
-    color: #fff;
+    color: var(--on-accent);
     background: var(--accent);
-    box-shadow: var(--glow-orange);
+    box-shadow: var(--glow);
 }
 
 /* --------------------------------------------------------------------------
@@ -2216,7 +2228,7 @@ a.contact-row-value:hover {
         content: "";
         position: absolute;
         border-radius: 50%;
-        background: radial-gradient(circle, rgba(249, 115, 22, 0.1), transparent 70%);
+        background: radial-gradient(circle, var(--accent-soft), transparent 70%);
         pointer-events: none;
         z-index: -1;
     }
@@ -2257,9 +2269,9 @@ a.contact-row-value:hover {
         border-radius: 50%;
         font-size: 1.15rem;
         font-weight: 700;
-        color: #fff;
+        color: var(--on-accent);
         background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
-        box-shadow: var(--glow-orange);
+        box-shadow: var(--glow);
     }
     .drawer-user {
         display: flex;
@@ -2294,7 +2306,7 @@ a.contact-row-value:hover {
     }
     .drawer-close:hover {
         color: var(--accent);
-        border-color: rgba(249, 115, 22, 0.45);
+        border-color: var(--accent-border);
         background: var(--accent-soft);
     }
 
