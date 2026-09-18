@@ -466,6 +466,11 @@ html.js .reveal.is-visible {
     transform: translateY(0);
 }
 
+html.js .reveal.is-visible:hover {
+    transform: translateY(-3px);
+    transition-delay: 0s;
+}
+
 /* --------------------------------------------------------------------------
    6. NAVBAR
    -------------------------------------------------------------------------- */
@@ -988,9 +993,30 @@ html.custom-cursor .cursor-ring {
 }
 @media (pointer: coarse) {
     .cursor-dot,
-    .cursor-ring {
+    .cursor-ring,
+    .cursor-trail {
         display: none;
     }
+}
+
+/* 6d. CURSOR TRAIL (subtle motion trail — separate layer behind the cursor)
+   Pure visual layer, never intercepts input; gated exactly like the cursor. */
+.cursor-trail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 9998;
+    will-change: transform, opacity;
+    visibility: hidden;
+    opacity: 0;
+}
+html.custom-cursor .cursor-trail {
+    visibility: visible;
 }
 
 @media (max-width: 640px) {
@@ -1360,6 +1386,128 @@ html.custom-cursor .cursor-ring {
     margin-top: 4px;
     color: var(--text-muted);
     font-size: 0.92rem;
+}
+
+/* --------------------------------------------------------------------------
+   9b. SKILLS — Technologies & Tools
+   Cards render from the `skills` array in script.js into `.skills-grid`.
+   Progress tracks reuse the About skill-bar-fill animation pattern.
+   -------------------------------------------------------------------------- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: rgba(13, 24, 31, 0.78);
+    box-shadow: var(--shadow-card);
+    transition: transform var(--dur) var(--ease),
+                border-color var(--dur) var(--ease),
+                box-shadow var(--dur) var(--ease),
+                background-color 0.35s var(--ease);
+}
+
+/* featured skills (React, Shopify): subtle teal accent */
+.skill-card--featured {
+    border-color: var(--accent-border);
+    box-shadow: inset 0 0 0 1px var(--accent-soft), var(--shadow-card);
+}
+
+.skill-card-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.skill-icon {
+    flex: 0 0 auto;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.skill-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.skill-name {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.skill-pct {
+    flex: 0 0 auto;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.skill-card .skill-bar-track {
+    margin-top: auto;
+    height: 6px;
+    background: rgba(148, 163, 184, 0.15);
+}
+.skill-card .skill-bar-fill {
+    background: var(--accent);
+}
+
+.skill-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-border);
+    box-shadow: var(--shadow-lift), 0 0 24px -12px var(--accent-glow);
+}
+.skill-card:hover .skill-icon {
+    background: var(--accent);
+    color: var(--on-accent);
+    transform: scale(1.05);
+}
+
+/* light theme: white cards, softer borders, teal pct for contrast */
+:root[data-theme="light"] .skill-card {
+    background: #ffffff;
+    box-shadow: var(--shadow-card);
+}
+:root[data-theme="light"] .skill-card--featured {
+    border-color: var(--accent-border);
+    box-shadow: inset 0 0 0 1px var(--accent-soft), var(--shadow-card);
+}
+:root[data-theme="light"] .skill-card .skill-bar-track {
+    background: #E2E8F0;
+}
+:root[data-theme="light"] .skill-pct {
+    color: var(--accent-light);
+}
+
+@media (max-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 767px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* --------------------------------------------------------------------------
