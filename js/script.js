@@ -157,11 +157,11 @@
     document.querySelectorAll(".reveal").forEach(function (el) { revealObserver.observe(el); });
 
     /* ------------------------------------------------------------------
-       Hero rotating typewriter (Shopify / Full Stack / AI Developer)
+       Hero rotating typewriter (Shopify / Liquid / Full-Stack JS)
        ------------------------------------------------------------------ */
     var typeRole = document.getElementById("type-role");
     var typeAnnounce = document.getElementById("type-announce");
-    var roles = ["Shopify Developer", "Full Stack Developer", "AI Developer"];
+    var roles = ["Shopify Developer", "Liquid & Theme Developer", "Full-Stack JS Developer"];
 
     if (typeRole) {
         if (prefersReducedMotion) {
@@ -344,7 +344,7 @@
             payload[name] = form.querySelector("[name='" + name + "']").value.trim();
         });
 
-        fetch("https://formsubmit.co/ajax/hello@siam.dev", {
+        fetch("https://formsubmit.co/ajax/smsiam987@gmail.com", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload)
