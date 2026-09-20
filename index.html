@@ -1,865 +1,2494 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary SEO -->
-    <title>Siam.Dev — Shopify Developer &amp; Full-Stack JavaScript Engineer</title>
-    <meta name="description" content="Siam is a Shopify &amp; full-stack JavaScript developer and Computer Science graduate building fast, responsive, conversion-focused e-commerce experiences — Liquid themes, React.js, Node.js, Express.js and MongoDB.">
-    <meta name="author" content="Siam">
-    <meta name="theme-color" content="#0a0a0a">
-    <link rel="canonical" href="https://siam.dev/">
+    <title>
+      Siam.Dev — Shopify Developer &amp; Full-Stack JavaScript Engineer
+    </title>
+    <meta
+      name="description"
+      content="Siam is a Shopify &amp; full-stack JavaScript developer and Computer Science graduate building fast, responsive, conversion-focused e-commerce experiences — Liquid themes, React.js, Node.js, Express.js and MongoDB."
+    />
+    <meta name="author" content="Siam" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="canonical" href="https://siam.dev/" />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Siam.Dev — Shopify Developer &amp; Full-Stack JavaScript Engineer">
-    <meta property="og:description" content="Fast, responsive, conversion-focused e-commerce experiences. Shopify &amp; Liquid themes, React.js, Node.js, Express.js and MongoDB.">
-    <meta property="og:url" content="https://siam.dev/">
-    <meta property="og:image" content="https://siam.dev/assets/images/Siam.png">
-    <meta property="og:image:width" content="1122">
-    <meta property="og:image:height" content="1402">
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Siam.Dev — Shopify Developer &amp; Full-Stack JavaScript Engineer"
+    />
+    <meta
+      property="og:description"
+      content="Fast, responsive, conversion-focused e-commerce experiences. Shopify &amp; Liquid themes, React.js, Node.js, Express.js and MongoDB."
+    />
+    <meta property="og:url" content="https://siam.dev/" />
+    <meta
+      property="og:image"
+      content="https://siam.dev/assets/images/Siam.png"
+    />
+    <meta property="og:image:width" content="1122" />
+    <meta property="og:image:height" content="1402" />
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Siam.Dev — Shopify Developer &amp; Full-Stack JavaScript Engineer">
-    <meta name="twitter:description" content="Fast, responsive, conversion-focused e-commerce experiences. Shopify &amp; Liquid themes, React.js, Node.js, Express.js and MongoDB.">
-    <meta name="twitter:image" content="https://siam.dev/assets/images/Siam.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Siam.Dev — Shopify Developer &amp; Full-Stack JavaScript Engineer"
+    />
+    <meta
+      name="twitter:description"
+      content="Fast, responsive, conversion-focused e-commerce experiences. Shopify &amp; Liquid themes, React.js, Node.js, Express.js and MongoDB."
+    />
+    <meta
+      name="twitter:image"
+      content="https://siam.dev/assets/images/Siam.png"
+    />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Theme bootstrap: apply saved/system theme before paint (prevents flash) -->
     <script>
-    (function () {
+      (function () {
         try {
-            var theme = localStorage.getItem("sd-theme");
-            if (theme !== "dark" && theme !== "light") {
-                theme = "dark";
-            }
-            document.documentElement.setAttribute("data-theme", theme);
+          var theme = localStorage.getItem("sd-theme");
+          if (theme !== "dark" && theme !== "light") {
+            theme = "dark";
+          }
+          document.documentElement.setAttribute("data-theme", theme);
         } catch (err) {
-            document.documentElement.setAttribute("data-theme", "dark");
+          document.documentElement.setAttribute("data-theme", "dark");
         }
-    })();
+      })();
     </script>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
 
     <!-- Structured data -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "SM Sumsuzzaman Siam",
-      "alternateName": "Siam",
-      "url": "https://siam.dev",
-      "jobTitle": "Shopify Developer & Full-Stack JavaScript Engineer",
-      "email": "mailto:smsiam987@gmail.com",
-      "knowsAbout": ["Shopify", "Liquid", "React.js", "Next.js", "Node.js", "Express.js", "MongoDB", "TypeScript", "E-commerce"]
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "SM Sumsuzzaman Siam",
+        "alternateName": "Siam",
+        "url": "https://siam.dev",
+        "jobTitle": "Shopify Developer & Full-Stack JavaScript Engineer",
+        "email": "mailto:smsiam987@gmail.com",
+        "knowsAbout": [
+          "Shopify",
+          "Liquid",
+          "React.js",
+          "Next.js",
+          "Node.js",
+          "Express.js",
+          "MongoDB",
+          "TypeScript",
+          "E-commerce"
+        ]
+      }
     </script>
-</head>
-<body>
-
+  </head>
+  <body>
     <!-- ======================= NAVBAR ======================= -->
     <header class="site-header" id="site-header">
-        <nav class="navbar container" aria-label="Primary">
-            <a href="#home" class="brand" aria-label="Siam.Dev — home">
-                <span class="brand-mark" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17 12 22l10-5"/><path d="M2 12 12 17l10-5"/></svg>
-                </span>
-                <span class="brand-name">Siam<em>.</em><small>dev</small></span>
-            </a>
+      <nav class="navbar container" aria-label="Primary">
+        <a href="#home" class="brand" aria-label="Siam.Dev — home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              width="18"
+              height="18"
+            >
+              <path d="M12 2 2 7l10 5 10-5-10-5Z" />
+              <path d="M2 17 12 22l10-5" />
+              <path d="M2 12 12 17l10-5" />
+            </svg>
+          </span>
+          <span class="brand-name">Siam<em>.</em><small>dev</small></span>
+        </a>
 
-            <ul class="nav-links" id="nav-links">
-                <li class="nav-drawer-head">
-                    <span class="drawer-avatar" aria-hidden="true">S</span>
-                    <span class="drawer-user">
-                        <strong>Siam</strong>
-                        <small>Shopify Developer</small>
-                    </span>
-                    <button class="drawer-close" id="drawer-close" type="button" aria-label="Close menu">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="20" height="20"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-                    </button>
-                </li>
-                <li><a class="nav-link active" href="#home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9 22V12h6v10"/></svg>Home</a></li>
-                <li><a class="nav-link" href="#about"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>About</a></li>
-                <li><a class="nav-link" href="#services"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.5 22H18a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v9.5"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M8 12l-4 4v3h3l4-4 2 2 5-5-2-2-3 3-2-2Z"/></svg>Services</a></li>
-                <li><a class="nav-link" href="#portfolio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1.5"/><rect width="7" height="7" x="14" y="3" rx="1.5"/><rect width="7" height="7" x="14" y="14" rx="1.5"/><rect width="7" height="7" x="3" y="14" rx="1.5"/></svg>Projects</a></li>
-                <li><a class="nav-link" href="#skills"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M6.34 17.66l-2.83 2.83"/><path d="M19.07 4.93l-2.83 2.83"/></svg>Skills</a></li>
-                <li><a class="nav-link" href="#process"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>Process</a></li>
-                <li><a class="nav-link" href="#testimonials"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 1 9 9c-1.6 0-3.1-.4-4.4-1.1L3 21l1.1-4.6A8.9 8.9 0 0 1 3 12Z"/><path d="M9 9h6M9 13h4"/></svg>Testimonials</a></li>
-                <li><a class="nav-link" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Contact</a></li>
-            </ul>
+        <ul class="nav-links" id="nav-links">
+          <li class="nav-drawer-head">
+            <span class="drawer-avatar" aria-hidden="true">S</span>
+            <span class="drawer-user">
+              <strong>Siam</strong>
+              <small>Shopify Developer</small>
+            </span>
+            <button
+              class="drawer-close"
+              id="drawer-close"
+              type="button"
+              aria-label="Close menu"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                width="20"
+                height="20"
+              >
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+              </svg>
+            </button>
+          </li>
+          <li>
+            <a class="nav-link active" href="#home"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
+                <path d="M9 22V12h6v10" /></svg
+              >Home</a
+            >
+          </li>
+          <li>
+            <a class="nav-link" href="#about"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" /></svg
+              >About</a
+            >
+          </li>
+          <li>
+            <a class="nav-link" href="#services"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12.5 22H18a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v9.5"
+                />
+                <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                <path d="M8 12l-4 4v3h3l4-4 2 2 5-5-2-2-3 3-2-2Z" /></svg
+              >Services</a
+            >
+          </li>
+          <li>
+            <a class="nav-link" href="#portfolio"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect width="7" height="7" x="3" y="3" rx="1.5" />
+                <rect width="7" height="7" x="14" y="3" rx="1.5" />
+                <rect width="7" height="7" x="14" y="14" rx="1.5" />
+                <rect width="7" height="7" x="3" y="14" rx="1.5" /></svg
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a class="nav-link" href="#skills"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M12 2v4" />
+                <path d="M12 18v4" />
+                <path d="M4.93 4.93l2.83 2.83" />
+                <path d="M16.24 16.24l2.83 2.83" />
+                <path d="M2 12h4" />
+                <path d="M18 12h4" />
+                <path d="M6.34 17.66l-2.83 2.83" />
+                <path d="M19.07 4.93l-2.83 2.83" /></svg
+              >Skills</a
+            >
+          </li>
+          <li>
+            <a class="nav-link" href="#process"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"
+                />
+                <path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65" />
+                <path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65" /></svg
+              >Process</a
+            >
+          </li>
+          <li>
+            <a class="nav-link" href="#testimonials"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M3 12a9 9 0 1 1 9 9c-1.6 0-3.1-.4-4.4-1.1L3 21l1.1-4.6A8.9 8.9 0 0 1 3 12Z"
+                />
+                <path d="M9 9h6M9 13h4" /></svg
+              >Testimonials</a
+            >
+          </li>
+          <li>
+            <a class="nav-link" href="#contact"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg
+              >Contact</a
+            >
+          </li>
+        </ul>
 
-            <div class="nav-right">
-                <a href="#contact" class="btn btn-primary btn-sm nav-cta">Let's Talk</a>
+        <div class="nav-right">
+          <a href="#contact" class="btn btn-primary btn-sm nav-cta"
+            >Let's Talk</a
+          >
 
-                <div class="nav-actions">
-                    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
-                        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="19" height="19"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-                        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="19" height="19"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-                    </button>
+          <div class="nav-actions">
+            <button
+              class="theme-toggle"
+              id="theme-toggle"
+              type="button"
+              aria-label="Switch to light theme"
+              aria-pressed="false"
+            >
+              <svg
+                class="icon-moon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                width="19"
+                height="19"
+              >
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+              </svg>
+              <svg
+                class="icon-sun"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                width="19"
+                height="19"
+              >
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2" />
+                <path d="M12 20v2" />
+                <path d="m4.93 4.93 1.41 1.41" />
+                <path d="m17.66 17.66 1.41 1.41" />
+                <path d="M2 12h2" />
+                <path d="M20 12h2" />
+                <path d="m6.34 17.66-1.41 1.41" />
+                <path d="m19.07 4.93-1.41 1.41" />
+              </svg>
+            </button>
 
-                    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
-                        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="22" height="22"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-                        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="22" height="22"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-                    </button>
-                </div>
-            </div>
-        </nav>
+            <button
+              class="nav-toggle"
+              id="nav-toggle"
+              aria-label="Toggle menu"
+              aria-expanded="false"
+              aria-controls="nav-links"
+            >
+              <svg
+                class="icon-menu"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                width="22"
+                height="22"
+              >
+                <line x1="4" x2="20" y1="6" y2="6" />
+                <line x1="4" x2="20" y1="12" y2="12" />
+                <line x1="4" x2="20" y1="18" y2="18" />
+              </svg>
+              <svg
+                class="icon-close"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                width="22"
+                height="22"
+              >
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <div class="menu-overlay" id="menu-overlay" aria-hidden="true"></div>
 
     <main id="main">
+      <!-- ======================= HERO ======================= -->
+      <section class="hero section" id="home" aria-label="Home">
+        <div class="hero-bg" aria-hidden="true">
+          <div class="hero-radial"></div>
+          <div class="hero-grid"></div>
+          <div class="orb orb-1"></div>
+          <div class="orb orb-2"></div>
+        </div>
 
-        <!-- ======================= HERO ======================= -->
-        <section class="hero section" id="home" aria-label="Home">
-            <div class="hero-bg" aria-hidden="true">
-                <div class="hero-radial"></div>
-                <div class="hero-grid"></div>
-                <div class="orb orb-1"></div>
-                <div class="orb orb-2"></div>
+        <div class="container hero-inner">
+          <div class="hero-content reveal">
+            <span class="pill availability">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              Available for new projects
+            </span>
+
+            <p class="eyebrow">Shopify Developer / Web Developer</p>
+
+            <h1 class="hero-title">
+              Hi I am <span class="text-gradient">Siam</span>
+            </h1>
+
+            <p class="type-line">
+              <span
+                class="type-role text-gradient"
+                id="type-role"
+                aria-hidden="true"
+                >Shopify Developer</span
+              ><span class="type-caret" aria-hidden="true"></span>
+            </p>
+            <span class="sr-only" id="type-announce" aria-live="polite"></span>
+
+            <p class="hero-sub">
+              I'm a Computer Science graduate and web developer building and
+              maintaining client-facing e-commerce applications — specializing
+              in custom Shopify themes, Liquid, and modern web technologies like
+              React, Node.js, and MongoDB.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#portfolio" class="btn btn-primary btn-lg">
+                View My Projects
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  width="18"
+                  height="18"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+              <a
+                href="assets/SM-Sumsuzzaman-Siam-Resume.pdf"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-ghost btn-lg"
+              >
+                Download CV
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  width="18"
+                  height="18"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <path d="m7 10 5 5 5-5" />
+                  <path d="M12 15V3" />
+                </svg>
+              </a>
             </div>
 
-            <div class="container hero-inner">
-                <div class="hero-content reveal">
-                    <span class="pill availability">
-                        <span class="pulse-dot" aria-hidden="true"></span>
-                        Available for new projects
-                    </span>
+            <dl class="hero-stats">
+              <div class="stat">
+                <dt class="stat-value" data-count="1" data-suffix="+">0</dt>
+                <dd class="stat-label">Year Experience</dd>
+              </div>
 
-                    <p class="eyebrow">Shopify Developer / Web Developer</p>
+              <div class="stat">
+                <dt class="stat-value" data-count="50" data-suffix="+">0</dt>
+                <dd class="stat-label">Shopify Projects</dd>
+              </div>
 
-                    <h1 class="hero-title">
-                        Hi I am <span class="text-gradient">Siam</span>
-                    </h1>
+              <div class="stat">
+                <dt class="stat-value" data-count="5" data-suffix="+">0</dt>
+                <dd class="stat-label">Live Stores</dd>
+              </div>
 
-                    <p class="type-line">
-                        <span class="type-role text-gradient" id="type-role" aria-hidden="true">Shopify Developer</span><span class="type-caret" aria-hidden="true"></span>
-                    </p>
-                    <span class="sr-only" id="type-announce" aria-live="polite"></span>
+              <div class="stat">
+                <dt
+                  class="stat-value stat-value--accent"
+                  data-count="100"
+                  data-suffix="%"
+                >
+                  0
+                </dt>
+                <dd class="stat-label">Client Satisfaction</dd>
+              </div>
+            </dl>
+          </div>
 
-                    <p class="hero-sub">
-                        I'm a Computer Science graduate and web developer building and maintaining client-facing e-commerce applications — specializing in custom Shopify themes, Liquid, and modern web technologies like React, Node.js, and MongoDB.
-                    </p>
+          <!-- Banner visual -->
+          <div class="hero-visual reveal" style="--d: 0.18s">
+            <div class="hero-photo">
+              <div class="hero-orbit" aria-hidden="true">
+                <span class="orbit-ring orbit-ring--o"
+                  ><i class="orbit-p orbit-p--big"></i
+                  ><i class="orbit-p orbit-p--left"></i
+                  ><i class="orbit-p orbit-p--right"></i
+                ></span>
+                <span class="orbit-ring orbit-ring--o2"
+                  ><i class="orbit-p"></i><i class="orbit-p orbit-p--opp"></i
+                ></span>
+                <span class="orbit-ring orbit-ring--m"></span>
+                <span class="orbit-ring orbit-ring--i"></span>
+              </div>
 
-                    <div class="hero-actions">
-                        <a href="#portfolio" class="btn btn-primary btn-lg">
-                            View My Projects
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                        </a>
-                        <a href="assets/SM-Sumsuzzaman-Siam-Resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
-                            Download CV
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
-                        </a>
-                    </div>
-
-                    <dl class="hero-stats">
-               <div class="stat">
-    <dt class="stat-value" data-count="1" data-suffix="+">0</dt>
-    <dd class="stat-label">Year Experience</dd>
-</div>
-
-<div class="stat">
-    <dt class="stat-value" data-count="50" data-suffix="+">0</dt>
-    <dd class="stat-label">Shopify Projects</dd>
-</div>
-
-<div class="stat">
-    <dt class="stat-value" data-count="5" data-suffix="+">0</dt>
-    <dd class="stat-label">Live Stores</dd>
-</div>
-
-<div class="stat">
-    <dt class="stat-value stat-value--accent" data-count="100" data-suffix="%">0</dt>
-    <dd class="stat-label">Client Satisfaction</dd>
-</div>
-                    </dl>
-                </div>
-
-                <!-- Banner visual -->
-                <div class="hero-visual reveal" style="--d:.18s">
-                    <div class="hero-photo">
-                        <div class="hero-orbit" aria-hidden="true">
-                            <span class="orbit-ring orbit-ring--o"><i class="orbit-p orbit-p--big"></i><i class="orbit-p orbit-p--left"></i><i class="orbit-p orbit-p--right"></i></span>
-                            <span class="orbit-ring orbit-ring--o2"><i class="orbit-p"></i><i class="orbit-p orbit-p--opp"></i></span>
-                            <span class="orbit-ring orbit-ring--m"></span>
-                            <span class="orbit-ring orbit-ring--i"></span>
-                        </div>
-
-                        <img src="assets/images/smsiam.png" alt="Siam — Shopify &amp; full-stack JavaScript developer" width="1122" height="1402" fetchpriority="high">
-                        <span class="hero-signal" aria-hidden="true"></span>
-                    </div>
-
-                    <div class="float-card float-card--shopify">
-                        <span class="float-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-                        </span>
-                        <div class="float-body">
-                            <strong class="float-title">Shopify Developer</strong>
-                            <span class="float-sub">Theme &middot; Apps &middot; Liquid</span>
-                        </div>
-                    </div>
-
-                    <div class="float-card float-card--frontend">
-                        <span class="float-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>
-                        </span>
-                        <div class="float-body">
-                            <strong class="float-title">Frontend Developer</strong>
-                            <span class="float-sub">React &middot; Next.js &middot; Tailwind</span>
-                        </div>
-                    </div>
-
-                    <div class="float-card float-card--mern">
-                        <strong class="float-title">MERN Stack</strong>
-                        <div class="mern-icons" aria-hidden="true">
-                            <svg class="ic-mongo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M12 3.2 7.4 8.6c-.9 1-1.9 2.7-2 4.7-.1 3.7 2 6.3 4.5 7.6"/><path d="M12 3.2l4.6 5.4c.9 1 1.9 2.7 2 4.7.1 3.7-2 6.3-4.5 7.6"/><path d="M12 21.9V3.2"/></svg>
-                            <svg class="ic-express" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M5.5 13.3a6.3 6.3 0 0 0 6.6 4.2c2.8-.3 4.6-2.2 4.6-5H7.5"/></svg>
-                            <svg class="ic-react" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="9.5" ry="4"/><ellipse cx="12" cy="12" rx="9.5" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9.5" ry="4" transform="rotate(120 12 12)"/></svg>
-                            <svg class="ic-node" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" width="20" height="20"><path d="M12 2.5 20.5 7v10L12 21.5 3.5 17V7L12 2.5Z"/><text x="12" y="16" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="currentColor" stroke="none">n</text></svg>
-                        </div>
-                    </div>
-
-                    <p class="hero-note" aria-hidden="true">
-                        Turning ideas
-                        into digital
-                        experiences
-                        <svg class="hero-note-underline" viewBox="0 0 150 14" preserveAspectRatio="none"><path d="M3 9.5C28 3 78 15 147 5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
-                    </p>
-                </div>
+              <img
+                src="assets/images/smsiam.png"
+                alt="Siam — Shopify &amp; full-stack JavaScript developer"
+                width="1122"
+                height="1402"
+                fetchpriority="high"
+              />
+              <span class="hero-signal" aria-hidden="true"></span>
             </div>
-        </section>
 
-        <!-- ======================= ABOUT ======================= -->
-        <section class="section section-alt" id="about" aria-label="About">
-            <div class="container about-grid" data-stagger>
-                <div class="about-copy reveal">
-                    <p class="eyebrow">About</p>
-                    <h2 class="section-title">Turning Ideas Into High-Quality Digital Experiences</h2>
-
-                    <p class="lead">
-                        I'm a Shopify Developer with a strong frontend development background and hands-on experience building modern, responsive, and user-focused web experiences. I specialize in Shopify development, Liquid, theme customization, and custom sections, while also working with modern JavaScript technologies like React, Node.js, Express.js, and MongoDB.
-                    </p>
-                    <p>
-                        My experience includes building and customizing Shopify stores, creating custom Liquid sections, and integrating third-party apps with a focus on performance and responsive design.
-
-                        I also work with React.js, JavaScript, Node.js, MongoDB, REST APIs, and Git to build clean and user-focused digital experiences.
-                    </p>
-
-                    <ul class="skill-pills" aria-label="Core skills">
-                        <li>Shopify</li>
-                        <li>Liquid</li>
-                        <li>JavaScript</li>
-                        <li>TypeScript</li>
-                        <li>React.js</li>
-                        <li>Node.js</li>
-                        <li>MongoDB</li>
-                        <li>Responsive Design</li>
-                    </ul>
-                </div>
-
-                <div class="skills-panel reveal">
-                    <h3 class="skills-heading">Core Competencies</h3>
-                    <ul class="skill-bars">
-                        <li class="skill-bar">
-                            <div class="skill-bar-head"><span class="skill-bar-name">Responsive UI Development</span><span class="skill-bar-pct">95%</span></div>
-                            <div class="skill-bar-track"><span class="skill-bar-fill" data-progress="95"></span></div>
-                        </li>
-                        <li class="skill-bar">
-                            <div class="skill-bar-head"><span class="skill-bar-name">Shopify</span><span class="skill-bar-pct">95%</span></div>
-                            <div class="skill-bar-track"><span class="skill-bar-fill" data-progress="95"></span></div>
-                        </li>
-                        <li class="skill-bar">
-                            <div class="skill-bar-head"><span class="skill-bar-name">Liquid &amp; Theme Customization</span><span class="skill-bar-pct">90%</span></div>
-                            <div class="skill-bar-track"><span class="skill-bar-fill" data-progress="90"></span></div>
-                        </li>
-                        <li class="skill-bar">
-                            <div class="skill-bar-head"><span class="skill-bar-name">Front-End (HTML / CSS / JS)</span><span class="skill-bar-pct">92%</span></div>
-                            <div class="skill-bar-track"><span class="skill-bar-fill" data-progress="92"></span></div>
-                        </li>
-                        <li class="skill-bar">
-                            <div class="skill-bar-head"><span class="skill-bar-name">React.js / Next.js</span><span class="skill-bar-pct">88%</span></div>
-                            <div class="skill-bar-track"><span class="skill-bar-fill" data-progress="88"></span></div>
-                        </li>
-                        <li class="skill-bar">
-                            <div class="skill-bar-head"><span class="skill-bar-name">Node.js / Express.js / MongoDB</span><span class="skill-bar-pct">85%</span></div>
-                            <div class="skill-bar-track"><span class="skill-bar-fill" data-progress="85"></span></div>
-                        </li>
-                         <li class="skill-bar">
-                            <div class="skill-bar-head"><span class="skill-bar-name">SEO / CRO</span><span class="skill-bar-pct">85%</span></div>
-                            <div class="skill-bar-track"><span class="skill-bar-fill" data-progress="85"></span></div>
-                        </li>
-                    </ul>
-                </div>
+            <div class="float-card float-card--shopify">
+              <span class="float-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  width="16"
+                  height="16"
+                >
+                  <path
+                    d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"
+                  />
+                  <path d="M3 6h18" />
+                  <path d="M16 10a4 4 0 0 1-8 0" />
+                </svg>
+              </span>
+              <div class="float-body">
+                <strong class="float-title">Shopify Developer</strong>
+                <span class="float-sub"
+                  >Theme &middot; Apps &middot; Liquid</span
+                >
+              </div>
             </div>
-        </section>
 
-        <!-- ======================= SERVICES ======================= -->
-        <section class="section" id="services" aria-label="Services">
-            <div class="container">
-                <div class="section-head reveal">
-                    <p class="eyebrow">Services</p>
-                    <h2 class="section-title">Digital Solutions Built Around Your Business</h2>
-                    <p class="section-sub">From Shopify stores to modern web applications, I build responsive, functional and user-focused digital experiences.</p>
-                </div>
-
-                <div class="services-grid" data-stagger>
-                    <article class="service-card reveal">
-                        <span class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-                        </span>
-                        <h3 class="service-title">Shopify Development</h3>
-                        <p class="service-desc">Custom Shopify stores, Shopify 2.0 development, theme customization, Liquid sections, blocks and custom functionality.</p>
-                    </article>
-
-                    <article class="service-card reveal">
-                        <span class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><rect width="7" height="7" x="14" y="3" rx="1"/><path d="M10 21V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H3"/></svg>
-                        </span>
-                        <h3 class="service-title">Shopify Store Customization</h3>
-                        <p class="service-desc">Customizing existing Shopify themes, building responsive sections, modifying layouts and implementing design requirements.</p>
-                    </article>
-
-                    <article class="service-card reveal">
-                        <span class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 0 1-.837.276c-.47-.07-.802-.48-.968-.925a2.501 2.501 0 1 0-3.214 3.214c.446.166.855.497.925.968a.979.979 0 0 1-.276.837l-1.61 1.61a2.404 2.404 0 0 1-1.705.707 2.402 2.402 0 0 1-1.704-.706l-1.568-1.568a1.026 1.026 0 0 0-.877-.29c-.493.074-.84.504-1.02.968a2.5 2.5 0 1 1-3.237-3.237c.464-.18.894-.527.967-1.02a1.026 1.026 0 0 0-.289-.877l-1.568-1.568A2.402 2.402 0 0 1 1.998 12c0-.617.236-1.234.706-1.704L4.23 8.77c.24-.24.581-.353.917-.303.515.077.877.528 1.073 1.01a2.5 2.5 0 1 0 3.259-3.259c-.482-.196-.933-.558-1.01-1.073-.05-.336.062-.676.303-.917l1.525-1.525A2.402 2.402 0 0 1 12 1.998z"/></svg>
-                        </span>
-                        <h3 class="service-title">Custom Shopify Solutions</h3>
-                        <p class="service-desc">Third-party app integrations, subscription features, product bundles and tailored store solutions.</p>
-                    </article>
-
-                    <article class="service-card reveal">
-                        <span class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>
-                        </span>
-                        <h3 class="service-title">Frontend Development</h3>
-                        <p class="service-desc">Modern, responsive websites with clean, maintainable HTML, CSS, JavaScript, React.js and Next.js.</p>
-                    </article>
-
-                    <article class="service-card reveal">
-                        <span class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
-                        </span>
-                        <h3 class="service-title">MERN Stack Development</h3>
-                        <p class="service-desc">Full-stack apps using React.js, Node.js, Express.js and MongoDB — REST APIs and database-driven features.</p>
-                    </article>
-
-                    <article class="service-card reveal">
-                        <span class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-                        </span>
-                        <h3 class="service-title">Figma to Website</h3>
-                        <p class="service-desc">Converting Figma/UI designs into responsive, pixel-focused, clean and functional websites.</p>
-                    </article>
-
-                    <article class="service-card service-card--wide reveal">
-                        <span class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
-                        </span>
-                        <div class="service-wide-body">
-                            <h3 class="service-title">Website Performance &amp; Responsive Design</h3>
-                            <p class="service-desc">Improving responsiveness, UI consistency, usability and frontend performance across every device.</p>
-                        </div>
-                    </article>
-
-                    <a href="#contact" class="cta-banner reveal">
-                        <div>
-                            <h3 class="cta-banner-title">Have a project in mind?</h3>
-                            <p class="cta-banner-text">Let's turn your idea into a fast, modern and functional digital experience.</p>
-                        </div>
-                        <span class="btn btn-primary btn-sm">
-                            Let's Talk
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                        </span>
-                    </a>
-                </div>
+            <div class="float-card float-card--frontend">
+              <span class="float-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  width="16"
+                  height="16"
+                >
+                  <path d="m16 18 6-6-6-6" />
+                  <path d="m8 6-6 6 6 6" />
+                </svg>
+              </span>
+              <div class="float-body">
+                <strong class="float-title">Frontend Developer</strong>
+                <span class="float-sub"
+                  >React &middot; Next.js &middot; Tailwind</span
+                >
+              </div>
             </div>
-        </section>
 
-        <!-- ======================= PORTFOLIO ======================= -->
-        <section class="section section-alt" id="portfolio" aria-label="Portfolio">
-            <div class="container">
-                <div class="section-head reveal">
-                    <p class="eyebrow">Portfolio</p>
-                    <h2 class="section-title">Selected Projects</h2>
-                    <p class="section-sub">A snapshot of recent work across eCommerce, custom web and product builds.</p>
-                </div>
-
-                <!-- Segmented tabs -->
-                <div class="tabs reveal" role="tablist" aria-label="Project categories">
-                    <button class="tab-btn active" id="tab-shopify" role="tab" aria-selected="true" aria-controls="panel-shopify" data-tab="shopify">Shopify</button>
-                    <button class="tab-btn" id="tab-custom" role="tab" aria-selected="false" aria-controls="panel-custom" data-tab="custom">Custom</button>
-                </div>
-
-                <!-- Shopify tab -->
-                <div class="projects-grid is-active" id="panel-shopify" role="tabpanel" aria-labelledby="tab-shopify" data-panel="shopify" data-stagger>
-                    <article class="project-card project-card--featured reveal">
-                        <div class="project-media">
-                            <img src="assets/images/getambira.png" alt="Getambira — premium handcrafted flameless candles Shopify store" width="1200" height="900" loading="lazy" decoding="async">
-                            <span class="project-cat">Shopify</span>
-                            <span class="project-cat project-cat--live">Live</span>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">Getambira</h3>
-                            <p class="project-desc">Premium flameless-candle eCommerce storefront with a refined, editorial luxury aesthetic. Custom Shopify theme, collection pages, feature-led product education (real-wax, flicker, timer) and a conversion-optimized checkout flow.</p>
-                            <ul class="tags" aria-label="Technologies">
-                                <li>Shopify</li><li>Liquid</li><li>JavaScript</li><li>CSS</li><li>Responsive</li>
-                            </ul>
-                            <div class="project-actions">
-                                <a href="https://getambira.com/" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-                                <a href="https://getambira.com/" target="_blank" rel="noopener" class="btn btn-link btn-sm">Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-card reveal">
-                        <div class="project-media">
-                            <img src="assets/images/auraluxe.svg" alt="Auraluxe Hair — premium hair and beauty eCommerce storefront" width="800" height="600" loading="lazy" decoding="async">
-                            <span class="project-cat">Shopify</span>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">Auraluxe Hair</h3>
-                            <p class="project-desc">Premium hair and beauty eCommerce experience with a luxury storefront, custom Liquid sections and an optimized checkout flow.</p>
-                            <ul class="tags" aria-label="Technologies">
-                                <li>Shopify</li><li>Liquid</li><li>JavaScript</li><li>CSS</li>
-                            </ul>
-                            <div class="project-actions">
-                                <a href="#contact" class="btn btn-ghost btn-sm">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-                                <a href="#contact" class="btn btn-link btn-sm">Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-card reveal">
-                        <div class="project-media">
-                            <img src="assets/images/focusfree.svg" alt="FocusFree — modern dropshipping Shopify store" width="800" height="600" loading="lazy" decoding="async">
-                            <span class="project-cat">Shopify</span>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">FocusFree</h3>
-                            <p class="project-desc">Modern dropshipping Shopify store with a premium product-focused experience, fast loading times and a conversion-optimized layout.</p>
-                            <ul class="tags" aria-label="Technologies">
-                                <li>Shopify</li><li>DSers</li><li>Liquid</li><li>CSS</li>
-                            </ul>
-                            <div class="project-actions">
-                                <a href="#contact" class="btn btn-ghost btn-sm">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-                                <a href="#contact" class="btn btn-link btn-sm">Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-card reveal">
-                        <div class="project-media">
-                            <img src="assets/images/bonded.svg" alt="Bonded Boutique — multi-brand fashion eCommerce storefront" width="800" height="600" loading="lazy" decoding="async">
-                            <span class="project-cat">Shopify</span>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">Bonded Boutique</h3>
-                            <p class="project-desc">Premium multi-brand fashion storefront with custom collection pages, advanced filtering and a refined editorial aesthetic.</p>
-                            <ul class="tags" aria-label="Technologies">
-                                <li>Shopify</li><li>Liquid</li><li>JavaScript</li><li>Responsive</li>
-                            </ul>
-                            <div class="project-actions">
-                                <a href="#contact" class="btn btn-ghost btn-sm">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-                                <a href="#contact" class="btn btn-link btn-sm">Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Custom tab -->
-                <div class="projects-grid" id="panel-custom" role="tabpanel" aria-labelledby="tab-custom" data-panel="custom" data-stagger hidden>
-                    <article class="project-card reveal">
-                        <div class="project-media">
-                            <img src="assets/images/saas-dashboard.svg" alt="SaaS Dashboard — analytics dashboard interface" width="800" height="600" loading="lazy" decoding="async">
-                            <span class="project-cat">Custom Web</span>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">SaaS Dashboard</h3>
-                            <p class="project-desc">Custom analytics dashboard interface with real-time data visualizations, metric cards and a clean component-based architecture.</p>
-                            <ul class="tags" aria-label="Technologies">
-                                <li>React</li><li>TypeScript</li><li>Tailwind</li><li>REST APIs</li>
-                            </ul>
-                            <div class="project-actions">
-                                <a href="#contact" class="btn btn-ghost btn-sm">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-                                <a href="#contact" class="btn btn-link btn-sm">Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-card reveal">
-                        <div class="project-media">
-                            <img src="assets/images/ai-content.svg" alt="AI Content Studio — AI-powered content management interface" width="800" height="600" loading="lazy" decoding="async">
-                            <span class="project-cat">Custom Web</span>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">AI Content Studio</h3>
-                            <p class="project-desc">Modern AI-powered content management interface with generation panels, content cards and a streamlined editorial workflow.</p>
-                            <ul class="tags" aria-label="Technologies">
-                                <li>React</li><li>TypeScript</li><li>Tailwind</li><li>AI</li>
-                            </ul>
-                            <div class="project-actions">
-                                <a href="#contact" class="btn btn-ghost btn-sm">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-                                <a href="#contact" class="btn btn-link btn-sm">Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-card reveal">
-                        <div class="project-media">
-                            <img src="assets/images/ecommerce.svg" alt="E-Commerce Platform — custom eCommerce interface" width="800" height="600" loading="lazy" decoding="async">
-                            <span class="project-cat">Custom Web</span>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">E-Commerce Platform</h3>
-                            <p class="project-desc">Custom eCommerce interface with a responsive product grid, cart system and a premium shopping experience built from scratch.</p>
-                            <ul class="tags" aria-label="Technologies">
-                                <li>React</li><li>JavaScript</li><li>CSS</li><li>Responsive</li>
-                            </ul>
-                            <div class="project-actions">
-                                <a href="#contact" class="btn btn-ghost btn-sm">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-                                <a href="#contact" class="btn btn-link btn-sm">Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+            <div class="float-card float-card--mern">
+              <strong class="float-title">MERN Stack</strong>
+              <div class="mern-icons" aria-hidden="true">
+                <svg
+                  class="ic-mongo"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  width="20"
+                  height="20"
+                >
+                  <path
+                    d="M12 3.2 7.4 8.6c-.9 1-1.9 2.7-2 4.7-.1 3.7 2 6.3 4.5 7.6"
+                  />
+                  <path
+                    d="M12 3.2l4.6 5.4c.9 1 1.9 2.7 2 4.7.1 3.7-2 6.3-4.5 7.6"
+                  />
+                  <path d="M12 21.9V3.2" />
+                </svg>
+                <svg
+                  class="ic-express"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  width="20"
+                  height="20"
+                >
+                  <path
+                    d="M5.5 13.3a6.3 6.3 0 0 0 6.6 4.2c2.8-.3 4.6-2.2 4.6-5H7.5"
+                  />
+                </svg>
+                <svg
+                  class="ic-react"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  width="20"
+                  height="20"
+                >
+                  <circle cx="12" cy="12" r="2" />
+                  <ellipse cx="12" cy="12" rx="9.5" ry="4" />
+                  <ellipse
+                    cx="12"
+                    cy="12"
+                    rx="9.5"
+                    ry="4"
+                    transform="rotate(60 12 12)"
+                  />
+                  <ellipse
+                    cx="12"
+                    cy="12"
+                    rx="9.5"
+                    ry="4"
+                    transform="rotate(120 12 12)"
+                  />
+                </svg>
+                <svg
+                  class="ic-node"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linejoin="round"
+                  width="20"
+                  height="20"
+                >
+                  <path d="M12 2.5 20.5 7v10L12 21.5 3.5 17V7L12 2.5Z" />
+                  <text
+                    x="12"
+                    y="16"
+                    text-anchor="middle"
+                    font-family="Arial, Helvetica, sans-serif"
+                    font-size="12"
+                    font-weight="bold"
+                    fill="currentColor"
+                    stroke="none"
+                  >
+                    n
+                  </text>
+                </svg>
+              </div>
             </div>
-        </section>
 
-        <!-- ======================= SKILLS ======================= -->
-        <section class="section section-alt" id="skills" aria-labelledby="skills-title">
-            <div class="container">
-                <div class="section-head reveal">
-                    <p class="eyebrow">Skills</p>
-                    <h2 id="skills-title" class="section-title">Technologies &amp; Tools</h2>
-                    <p class="section-sub">The stack I reach for to build fast, secure, and scalable products end-to-end.</p>
+            <p class="hero-note" aria-hidden="true">
+              Turning ideas into digital experiences
+              <svg
+                class="hero-note-underline"
+                viewBox="0 0 150 14"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M3 9.5C28 3 78 15 147 5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= ABOUT ======================= -->
+      <section class="section section-alt" id="about" aria-label="About">
+        <div class="container about-grid" data-stagger>
+          <div class="about-copy reveal">
+            <p class="eyebrow">About</p>
+            <h2 class="section-title">
+              Turning Ideas Into High-Quality Digital Experiences
+            </h2>
+
+            <p class="lead">
+              I'm a Shopify Developer with a strong frontend development
+              background and hands-on experience building modern, responsive,
+              and user-focused web experiences. I specialize in Shopify
+              development, Liquid, theme customization, and custom sections,
+              while also working with modern JavaScript technologies like React,
+              Node.js, Express.js, and MongoDB.
+            </p>
+            <p>
+              My experience includes building and customizing Shopify stores,
+              creating custom Liquid sections, and integrating third-party apps
+              with a focus on performance and responsive design. I also work
+              with React.js, JavaScript, Node.js, MongoDB, REST APIs, and Git to
+              build clean and user-focused digital experiences.
+            </p>
+
+            <ul class="skill-pills" aria-label="Core skills">
+              <li>Shopify</li>
+              <li>Liquid</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>React.js</li>
+              <li>Node.js</li>
+              <li>MongoDB</li>
+              <li>Responsive Design</li>
+            </ul>
+          </div>
+
+          <div class="skills-panel reveal">
+            <h3 class="skills-heading">Core Competencies</h3>
+            <ul class="skill-bars">
+              <li class="skill-bar">
+                <div class="skill-bar-head">
+                  <span class="skill-bar-name">Responsive UI Development</span
+                  ><span class="skill-bar-pct">95%</span>
                 </div>
+                <div class="skill-bar-track">
+                  <span class="skill-bar-fill" data-progress="95"></span>
+                </div>
+              </li>
+              <li class="skill-bar">
+                <div class="skill-bar-head">
+                  <span class="skill-bar-name">Shopify</span
+                  ><span class="skill-bar-pct">95%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <span class="skill-bar-fill" data-progress="95"></span>
+                </div>
+              </li>
+              <li class="skill-bar">
+                <div class="skill-bar-head">
+                  <span class="skill-bar-name"
+                    >Liquid &amp; Theme Customization</span
+                  ><span class="skill-bar-pct">90%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <span class="skill-bar-fill" data-progress="90"></span>
+                </div>
+              </li>
+              <li class="skill-bar">
+                <div class="skill-bar-head">
+                  <span class="skill-bar-name">Front-End (HTML / CSS / JS)</span
+                  ><span class="skill-bar-pct">92%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <span class="skill-bar-fill" data-progress="92"></span>
+                </div>
+              </li>
+              <li class="skill-bar">
+                <div class="skill-bar-head">
+                  <span class="skill-bar-name">React.js / Next.js</span
+                  ><span class="skill-bar-pct">88%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <span class="skill-bar-fill" data-progress="88"></span>
+                </div>
+              </li>
+              <li class="skill-bar">
+                <div class="skill-bar-head">
+                  <span class="skill-bar-name"
+                    >Node.js / Express.js / MongoDB</span
+                  ><span class="skill-bar-pct">85%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <span class="skill-bar-fill" data-progress="85"></span>
+                </div>
+              </li>
+              <li class="skill-bar">
+                <div class="skill-bar-head">
+                  <span class="skill-bar-name">SEO / CRO</span
+                  ><span class="skill-bar-pct">85%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <span class="skill-bar-fill" data-progress="85"></span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-                <div class="skills-grid" data-stagger></div>
+      <!-- ======================= SERVICES ======================= -->
+      <section class="section" id="services" aria-label="Services">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Services</p>
+            <h2 class="section-title">
+              Digital Solutions Built Around Your Business
+            </h2>
+            <p class="section-sub">
+              From Shopify stores to modern web applications, I build
+              responsive, functional and user-focused digital experiences.
+            </p>
+          </div>
+
+          <div class="services-grid" data-stagger>
+            <article class="service-card reveal">
+              <span class="service-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  width="24"
+                  height="24"
+                >
+                  <path
+                    d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"
+                  />
+                  <path d="M3 6h18" />
+                  <path d="M16 10a4 4 0 0 1-8 0" />
+                </svg>
+              </span>
+              <h3 class="service-title">Shopify Development</h3>
+              <p class="service-desc">
+                Custom Shopify stores, Shopify 2.0 development, theme
+                customization, Liquid sections, blocks and custom functionality.
+              </p>
+            </article>
+
+            <article class="service-card reveal">
+              <span class="service-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  width="24"
+                  height="24"
+                >
+                  <rect width="7" height="7" x="14" y="3" rx="1" />
+                  <path
+                    d="M10 21V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H3"
+                  />
+                </svg>
+              </span>
+              <h3 class="service-title">Shopify Store Customization</h3>
+              <p class="service-desc">
+                Customizing existing Shopify themes, building responsive
+                sections, modifying layouts and implementing design
+                requirements.
+              </p>
+            </article>
+
+            <article class="service-card reveal">
+              <span class="service-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  width="24"
+                  height="24"
+                >
+                  <path
+                    d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 0 1-.837.276c-.47-.07-.802-.48-.968-.925a2.501 2.501 0 1 0-3.214 3.214c.446.166.855.497.925.968a.979.979 0 0 1-.276.837l-1.61 1.61a2.404 2.404 0 0 1-1.705.707 2.402 2.402 0 0 1-1.704-.706l-1.568-1.568a1.026 1.026 0 0 0-.877-.29c-.493.074-.84.504-1.02.968a2.5 2.5 0 1 1-3.237-3.237c.464-.18.894-.527.967-1.02a1.026 1.026 0 0 0-.289-.877l-1.568-1.568A2.402 2.402 0 0 1 1.998 12c0-.617.236-1.234.706-1.704L4.23 8.77c.24-.24.581-.353.917-.303.515.077.877.528 1.073 1.01a2.5 2.5 0 1 0 3.259-3.259c-.482-.196-.933-.558-1.01-1.073-.05-.336.062-.676.303-.917l1.525-1.525A2.402 2.402 0 0 1 12 1.998z"
+                  />
+                </svg>
+              </span>
+              <h3 class="service-title">Custom Shopify Solutions</h3>
+              <p class="service-desc">
+                Third-party app integrations, subscription features, product
+                bundles and tailored store solutions.
+              </p>
+            </article>
+
+            <article class="service-card reveal">
+              <span class="service-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  width="24"
+                  height="24"
+                >
+                  <path d="m16 18 6-6-6-6" />
+                  <path d="m8 6-6 6 6 6" />
+                </svg>
+              </span>
+              <h3 class="service-title">Frontend Development</h3>
+              <p class="service-desc">
+                Modern, responsive websites with clean, maintainable HTML, CSS,
+                JavaScript, React.js and Next.js.
+              </p>
+            </article>
+
+            <article class="service-card reveal">
+              <span class="service-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  width="24"
+                  height="24"
+                >
+                  <path
+                    d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"
+                  />
+                  <path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65" />
+                  <path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65" />
+                </svg>
+              </span>
+              <h3 class="service-title">MERN Stack Development</h3>
+              <p class="service-desc">
+                Full-stack apps using React.js, Node.js, Express.js and MongoDB
+                — REST APIs and database-driven features.
+              </p>
+            </article>
+
+            <article class="service-card reveal">
+              <span class="service-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  width="24"
+                  height="24"
+                >
+                  <rect width="18" height="18" x="3" y="3" rx="2" />
+                  <path d="M3 9h18" />
+                  <path d="M9 21V9" />
+                </svg>
+              </span>
+              <h3 class="service-title">Figma to Website</h3>
+              <p class="service-desc">
+                Converting Figma/UI designs into responsive, pixel-focused,
+                clean and functional websites.
+              </p>
+            </article>
+
+            <article class="service-card service-card--wide reveal">
+              <span class="service-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  width="24"
+                  height="24"
+                >
+                  <path d="m12 14 4-4" />
+                  <path d="M3.34 19a10 10 0 1 1 17.32 0" />
+                </svg>
+              </span>
+              <div class="service-wide-body">
+                <h3 class="service-title">
+                  Website Performance &amp; Responsive Design
+                </h3>
+                <p class="service-desc">
+                  Improving responsiveness, UI consistency, usability and
+                  frontend performance across every device.
+                </p>
+              </div>
+            </article>
+
+            <a href="#contact" class="cta-banner reveal">
+              <div>
+                <h3 class="cta-banner-title">Have a project in mind?</h3>
+                <p class="cta-banner-text">
+                  Let's turn your idea into a fast, modern and functional
+                  digital experience.
+                </p>
+              </div>
+              <span class="btn btn-primary btn-sm">
+                Let's Talk
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  width="16"
+                  height="16"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= PORTFOLIO ======================= -->
+      <section
+        class="section section-alt"
+        id="portfolio"
+        aria-label="Portfolio"
+      >
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Portfolio</p>
+            <h2 class="section-title">Selected Projects</h2>
+            <p class="section-sub">
+              A snapshot of recent work across eCommerce, custom web and product
+              builds.
+            </p>
+          </div>
+
+          <!-- Segmented tabs -->
+          <div
+            class="tabs reveal"
+            role="tablist"
+            aria-label="Project categories"
+          >
+            <button
+              class="tab-btn active"
+              id="tab-shopify"
+              role="tab"
+              aria-selected="true"
+              aria-controls="panel-shopify"
+              data-tab="shopify"
+            >
+              Shopify
+            </button>
+            <button
+              class="tab-btn"
+              id="tab-custom"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-custom"
+              data-tab="custom"
+            >
+              Custom
+            </button>
+          </div>
+
+          <!-- Shopify tab -->
+          <div
+            class="projects-grid is-active"
+            id="panel-shopify"
+            role="tabpanel"
+            aria-labelledby="tab-shopify"
+            data-panel="shopify"
+            data-stagger
+          >
+            <article class="project-card project-card--featured reveal">
+              <div class="project-media">
+                <img
+                  src="assets/images/getambira.png"
+                  alt="Getambira — premium handcrafted flameless candles Shopify store"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="project-cat">Shopify</span>
+                <span class="project-cat project-cat--live">Live</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Getambira</h3>
+                <p class="project-desc">
+                  Premium flameless-candle eCommerce storefront with a refined,
+                  editorial luxury aesthetic. Custom Shopify theme, collection
+                  pages, feature-led product education (real-wax, flicker,
+                  timer) and a conversion-optimized checkout flow.
+                </p>
+                <ul class="tags" aria-label="Technologies">
+                  <li>Shopify</li>
+                  <li>Liquid</li>
+                  <li>JavaScript</li>
+                  <li>CSS</li>
+                  <li>Responsive</li>
+                </ul>
+                <div class="project-actions">
+                  <a
+                    href="https://getambira.com/"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-ghost btn-sm"
+                    >View Project
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      width="15"
+                      height="15"
+                    >
+                      <path d="M7 7h10v10" />
+                      <path d="M7 17 17 7" /></svg
+                  ></a>
+                  <a
+                    href="https://getambira.com/"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-link btn-sm"
+                    >Case Study
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      width="15"
+                      height="15"
+                    >
+                      <path
+                        d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"
+                      />
+                      <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                      <path d="M10 9H8" />
+                      <path d="M16 13H8" />
+                      <path d="M16 17H8" /></svg
+                  ></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-media">
+                <img
+                  src="assets/images/auraluxe.svg"
+                  alt="Auraluxe Hair — premium hair and beauty eCommerce storefront"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="project-cat">Shopify</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Auraluxe Hair</h3>
+                <p class="project-desc">
+                  Premium hair and beauty eCommerce experience with a luxury
+                  storefront, custom Liquid sections and an optimized checkout
+                  flow.
+                </p>
+                <ul class="tags" aria-label="Technologies">
+                  <li>Shopify</li>
+                  <li>Liquid</li>
+                  <li>JavaScript</li>
+                  <li>CSS</li>
+                </ul>
+                <div class="project-actions">
+                  <a href="#contact" class="btn btn-ghost btn-sm"
+                    >View Project
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      width="15"
+                      height="15"
+                    >
+                      <path d="M7 7h10v10" />
+                      <path d="M7 17 17 7" /></svg
+                  ></a>
+                  <a href="#contact" class="btn btn-link btn-sm"
+                    >Case Study
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      width="15"
+                      height="15"
+                    >
+                      <path
+                        d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"
+                      />
+                      <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                      <path d="M10 9H8" />
+                      <path d="M16 13H8" />
+                      <path d="M16 17H8" /></svg
+                  ></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-media">
+                <img
+                  src="assets/images/focusfree.svg"
+                  alt="FocusFree — modern dropshipping Shopify store"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="project-cat">Shopify</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">FocusFree</h3>
+                <p class="project-desc">
+                  Modern dropshipping Shopify store with a premium
+                  product-focused experience, fast loading times and a
+                  conversion-optimized layout.
+                </p>
+                <ul class="tags" aria-label="Technologies">
+                  <li>Shopify</li>
+                  <li>DSers</li>
+                  <li>Liquid</li>
+                  <li>CSS</li>
+                </ul>
+                <div class="project-actions">
+                  <a href="#contact" class="btn btn-ghost btn-sm"
+                    >View Project
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      width="15"
+                      height="15"
+                    >
+                      <path d="M7 7h10v10" />
+                      <path d="M7 17 17 7" /></svg
+                  ></a>
+                  <a href="#contact" class="btn btn-link btn-sm"
+                    >Case Study
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      width="15"
+                      height="15"
+                    >
+                      <path
+                        d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"
+                      />
+                      <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                      <path d="M10 9H8" />
+                      <path d="M16 13H8" />
+                      <path d="M16 17H8" /></svg
+                  ></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-media">
+                <img
+                  src="assets/images/bonded.svg"
+                  alt="Bonded Boutique — multi-brand fashion eCommerce storefront"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="project-cat">Shopify</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Bonded Boutique</h3>
+                <p class="project-desc">
+                  Premium multi-brand fashion storefront with custom collection
+                  pages, advanced filtering and a refined editorial aesthetic.
+                </p>
+                <ul class="tags" aria-label="Technologies">
+                  <li>Shopify</li>
+                  <li>Liquid</li>
+                  <li>JavaScript</li>
+                  <li>Responsive</li>
+                </ul>
+                <div class="project-actions">
+                  <a href="#contact" class="btn btn-ghost btn-sm"
+                    >View Project
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      width="15"
+                      height="15"
+                    >
+                      <path d="M7 7h10v10" />
+                      <path d="M7 17 17 7" /></svg
+                  ></a>
+                  <a href="#contact" class="btn btn-link btn-sm"
+                    >Case Study
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      width="15"
+                      height="15"
+                    >
+                      <path
+                        d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"
+                      />
+                      <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                      <path d="M10 9H8" />
+                      <path d="M16 13H8" />
+                      <path d="M16 17H8" /></svg
+                  ></a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Custom tab -->
+          <div
+            class="projects-grid"
+            id="panel-custom"
+            role="tabpanel"
+            aria-labelledby="tab-custom"
+            data-panel="custom"
+            data-stagger
+            hidden
+          >
+            <article class="project-card reveal">
+              <div class="project-media">
+                <img
+                  src="assets/images/saas-dashboard.svg"
+                  alt="SaaS Dashboard — analytics dashboard interface"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="project-cat">Custom Web</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">SaaS Dashboard</h3>
+                <p class="project-desc">
+                  Custom analytics dashboard interface with real-time data
+                  visualizations, metric cards and a clean component-based
+                  architecture.
+                </p>
+                <ul class="tags" aria-label="Technologies">
+                  <li>React</li>
+                  <li>TypeScript</li>
+                  <li>Tailwind</li>
+                  <li>REST APIs</li>
+                </ul>
+                <div class="project-actions">
+                  <a href="#contact" class="btn btn-ghost btn-sm"
+                    >View Project
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      width="15"
+                      height="15"
+                    >
+                      <path d="M7 7h10v10" />
+                      <path d="M7 17 17 7" /></svg
+                  ></a>
+                  <a href="#contact" class="btn btn-link btn-sm"
+                    >Case Study
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      width="15"
+                      height="15"
+                    >
+                      <path
+                        d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"
+                      />
+                      <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                      <path d="M10 9H8" />
+                      <path d="M16 13H8" />
+                      <path d="M16 17H8" /></svg
+                  ></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-media">
+                <img
+                  src="assets/images/ai-content.svg"
+                  alt="AI Content Studio — AI-powered content management interface"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="project-cat">Custom Web</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">AI Content Studio</h3>
+                <p class="project-desc">
+                  Modern AI-powered content management interface with generation
+                  panels, content cards and a streamlined editorial workflow.
+                </p>
+                <ul class="tags" aria-label="Technologies">
+                  <li>React</li>
+                  <li>TypeScript</li>
+                  <li>Tailwind</li>
+                  <li>AI</li>
+                </ul>
+                <div class="project-actions">
+                  <a href="#contact" class="btn btn-ghost btn-sm"
+                    >View Project
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      width="15"
+                      height="15"
+                    >
+                      <path d="M7 7h10v10" />
+                      <path d="M7 17 17 7" /></svg
+                  ></a>
+                  <a href="#contact" class="btn btn-link btn-sm"
+                    >Case Study
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      width="15"
+                      height="15"
+                    >
+                      <path
+                        d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"
+                      />
+                      <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                      <path d="M10 9H8" />
+                      <path d="M16 13H8" />
+                      <path d="M16 17H8" /></svg
+                  ></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-media">
+                <img
+                  src="assets/images/ecommerce.svg"
+                  alt="E-Commerce Platform — custom eCommerce interface"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="project-cat">Custom Web</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">E-Commerce Platform</h3>
+                <p class="project-desc">
+                  Custom eCommerce interface with a responsive product grid,
+                  cart system and a premium shopping experience built from
+                  scratch.
+                </p>
+                <ul class="tags" aria-label="Technologies">
+                  <li>React</li>
+                  <li>JavaScript</li>
+                  <li>CSS</li>
+                  <li>Responsive</li>
+                </ul>
+                <div class="project-actions">
+                  <a href="#contact" class="btn btn-ghost btn-sm"
+                    >View Project
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      width="15"
+                      height="15"
+                    >
+                      <path d="M7 7h10v10" />
+                      <path d="M7 17 17 7" /></svg
+                  ></a>
+                  <a href="#contact" class="btn btn-link btn-sm"
+                    >Case Study
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      width="15"
+                      height="15"
+                    >
+                      <path
+                        d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"
+                      />
+                      <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                      <path d="M10 9H8" />
+                      <path d="M16 13H8" />
+                      <path d="M16 17H8" /></svg
+                  ></a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= SKILLS ======================= -->
+      <section
+        class="section section-alt"
+        id="skills"
+        aria-labelledby="skills-title"
+      >
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Skills</p>
+            <h2 id="skills-title" class="section-title">
+              Technologies &amp; Tools
+            </h2>
+            <p class="section-sub">
+              The stack I reach for to build fast, secure, and scalable products
+              end-to-end.
+            </p>
+          </div>
+
+          <div class="skills-grid" data-stagger></div>
+        </div>
+      </section>
+
+      <!-- ======================= PROCESS ======================= -->
+      <section class="section" id="process" aria-label="Process">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">PROCESS</p>
+            <h2 class="section-title">How I Bring Your Project to Life</h2>
+            <p class="section-sub">
+              A simple, transparent process from understanding your requirements
+              to delivering a polished digital experience.
+            </p>
+          </div>
+
+          <ol class="process-timeline" data-stagger>
+            <li class="process-step reveal">
+              <div class="process-marker">
+                <span class="process-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    width="20"
+                    height="20"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <circle cx="12" cy="12" r="6" />
+                    <circle cx="12" cy="12" r="2" />
+                  </svg>
+                </span>
+                <span class="process-num">01</span>
+              </div>
+              <div class="process-body">
+                <h3 class="process-title">Requirement &amp; Discovery</h3>
+                <p class="process-desc">
+                  I understand your goals, requirements, target audience, and
+                  project scope before getting started.
+                </p>
+              </div>
+            </li>
+
+            <li class="process-step reveal">
+              <div class="process-marker">
+                <span class="process-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    width="20"
+                    height="20"
+                  >
+                    <path
+                      d="M21.3 15.3a4.24 4.24 0 0 1-6 6L3 9a4.24 4.24 0 0 1 6-6Z"
+                    />
+                    <path d="m7.5 13.5 3 3" />
+                    <path d="m11 10 2 2" />
+                    <path d="m14.5 6.5 2 2" />
+                  </svg>
+                </span>
+                <span class="process-num">02</span>
+              </div>
+              <div class="process-body">
+                <h3 class="process-title">Planning &amp; Design</h3>
+                <p class="process-desc">
+                  I plan the structure, functionality, and user experience based
+                  on your requirements or existing design.
+                </p>
+              </div>
+            </li>
+
+            <li class="process-step reveal">
+              <div class="process-marker">
+                <span class="process-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    width="20"
+                    height="20"
+                  >
+                    <path d="m18 16 4-4-4-4" />
+                    <path d="m6 8-4 4 4 4" />
+                    <path d="m14.5 4-5 16" />
+                  </svg>
+                </span>
+                <span class="process-num">03</span>
+              </div>
+              <div class="process-body">
+                <h3 class="process-title">Development</h3>
+                <p class="process-desc">
+                  I build the website or Shopify store with clean, responsive,
+                  and maintainable code.
+                </p>
+              </div>
+            </li>
+
+            <li class="process-step reveal">
+              <div class="process-marker">
+                <span class="process-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    width="20"
+                    height="20"
+                  >
+                    <path
+                      d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 0 1-.837.276c-.47-.07-.802-.48-.968-.925a2.501 2.501 0 1 0-3.214 3.214c.446.166.855.497.925.968a.979.979 0 0 1-.276.837l-1.61 1.61a2.404 2.404 0 0 1-1.705.707 2.402 2.402 0 0 1-1.704-.706l-1.568-1.568a1.026 1.026 0 0 0-.877-.29c-.493.074-.84.504-1.02.968a2.5 2.5 0 1 1-3.237-3.237c.464-.18.894-.527.967-1.02a1.026 1.026 0 0 0-.289-.877l-1.568-1.568A2.402 2.402 0 0 1 1.998 12c0-.617.236-1.234.706-1.704L4.23 8.77c.24-.24.581-.353.917-.303.515.077.877.528 1.073 1.01a2.5 2.5 0 1 0 3.259-3.259c-.482-.196-.933-.558-1.01-1.073-.05-.336.062-.676.303-.917l1.525-1.525A2.402 2.402 0 0 1 12 1.998z"
+                    />
+                  </svg>
+                </span>
+                <span class="process-num">04</span>
+              </div>
+              <div class="process-body">
+                <h3 class="process-title">Customization &amp; Integration</h3>
+                <p class="process-desc">
+                  I implement custom features, Liquid sections, third-party app
+                  integrations, APIs, and other required functionalities.
+                </p>
+              </div>
+            </li>
+
+            <li class="process-step reveal">
+              <div class="process-marker">
+                <span class="process-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    width="20"
+                    height="20"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="m9 12 2 2 4-4" />
+                  </svg>
+                </span>
+                <span class="process-num">05</span>
+              </div>
+              <div class="process-body">
+                <h3 class="process-title">Testing &amp; Delivery</h3>
+                <p class="process-desc">
+                  I test responsiveness, functionality, and user experience,
+                  then deliver the completed project ready for launch.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ======================= TESTIMONIALS ======================= -->
+      <section
+        class="section section-alt"
+        id="testimonials"
+        aria-label="Testimonials"
+      >
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Testimonials</p>
+            <h2 class="section-title">
+              Trusted by Clients Who Care About Results
+            </h2>
+            <p class="section-sub">
+              What founders and marketing leads say about working together.
+            </p>
+          </div>
+
+          <div class="testimonial-grid" data-stagger>
+            <blockquote class="testimonial-card reveal">
+              <div class="stars" aria-label="Rated 5 out of 5">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+              </div>
+              <p class="testimonial-text">
+                Siam rebuilt our storefront from scratch. Load times dropped
+                dramatically and our conversion rate climbed 38% in the first
+                month. Clear communication from discovery to launch.
+              </p>
+              <footer class="testimonial-author">
+                <span class="avatar" aria-hidden="true">SA</span>
+                <div>
+                  <cite class="testimonial-name">Sara Ahmed</cite>
+                  <span class="testimonial-role">Founder, Auraluxe Hair</span>
+                </div>
+              </footer>
+            </blockquote>
+
+            <blockquote class="testimonial-card reveal">
+              <div class="stars" aria-label="Rated 5 out of 5">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+              </div>
+              <p class="testimonial-text">
+                The custom collection pages and filtering he built feel premium.
+                He treats your project like his own business — detail-obsessed
+                and always on time.
+              </p>
+              <footer class="testimonial-author">
+                <span class="avatar" aria-hidden="true">DO</span>
+                <div>
+                  <cite class="testimonial-name">Daniel Okafor</cite>
+                  <span class="testimonial-role">CEO, Bonded Boutique</span>
+                </div>
+              </footer>
+            </blockquote>
+
+            <blockquote class="testimonial-card reveal">
+              <div class="stars" aria-label="Rated 5 out of 5">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+              </div>
+              <p class="testimonial-text">
+                Beyond the build itself, Siam's CRO and SEO input took our
+                dropshipping store to the next level. A rare mix of design,
+                development and growth thinking.
+              </p>
+              <footer class="testimonial-author">
+                <span class="avatar" aria-hidden="true">ER</span>
+                <div>
+                  <cite class="testimonial-name">Emma Rodriguez</cite>
+                  <span class="testimonial-role"
+                    >Marketing Lead, FocusFree</span
+                  >
+                </div>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= CONTACT ======================= -->
+      <section class="section" id="contact" aria-label="Contact">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Contact</p>
+            <h2 class="section-title">
+              Let's Build Something Worth Talking About
+            </h2>
+            <p class="section-sub">
+              Have a project in mind? I'd love to hear about it. Send me a
+              message and let's discuss how I can help.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <!-- Left: info -->
+            <div class="contact-info reveal">
+              <h3 class="contact-info-title">Get in touch</h3>
+              <p class="contact-info-text">
+                Whether you need a custom Shopify store, a responsive website,
+                or a web application, I'm here to turn your ideas into a clean
+                and functional digital experience.
+              </p>
+
+              <ul class="contact-rows">
+                <li class="contact-row">
+                  <span class="contact-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      width="18"
+                      height="18"
+                    >
+                      <rect width="20" height="16" x="2" y="4" rx="2" />
+                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                    </svg>
+                  </span>
+                  <div>
+                    <span class="contact-row-label">Email</span>
+                    <a
+                      class="contact-row-value"
+                      href="mailto:smsiam987@gmail.com"
+                      >smsiam987@gmail.com</a
+                    >
+                  </div>
+                </li>
+                <li class="contact-row">
+                  <span class="contact-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      width="18"
+                      height="18"
+                    >
+                      <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+                      <path d="M12 18h.01" />
+                    </svg>
+                  </span>
+                  <div>
+                    <span class="contact-row-label">Phone</span>
+                    <a class="contact-row-value" href="tel:+8801567989506"
+                      >+8801567989506</a
+                    >
+                  </div>
+                </li>
+                <li class="contact-row">
+                  <span class="contact-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      width="18"
+                      height="18"
+                    >
+                      <path
+                        d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                      />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                  </span>
+                  <div>
+                    <span class="contact-row-label">Location</span>
+                    <span class="contact-row-value"
+                      >Dhaka, Bangladesh · Remote</span
+                    >
+                  </div>
+                </li>
+                <li class="contact-row">
+                  <span class="contact-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      width="18"
+                      height="18"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                  </span>
+                  <div>
+                    <span class="contact-row-label">Availability</span>
+                    <span class="contact-row-value">Available for new projects</span>
+                  </div>
+                </li>
+              </ul>
+
+              <div class="contact-socials">
+                <a
+                  class="social-btn"
+                  href="https://www.linkedin.com/in/sm-siam598"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    width="18"
+                    height="18"
+                  >
+                    <path
+                      d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                    />
+                    <rect width="4" height="12" x="2" y="9" />
+                    <circle cx="4" cy="4" r="2" />
+                  </svg>
+                </a>
+                <a
+                  class="social-btn"
+                  href="https://github.com/siam114"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="GitHub"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    width="18"
+                    height="18"
+                  >
+                    <path
+                      d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+                    />
+                    <path d="M9 18c-4.51 2-5-2-7-2" />
+                  </svg>
+                </a>
+                <a
+                  class="social-btn"
+                  href="https://wa.me/8801567989506"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="WhatsApp"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                    width="18"
+                    height="18"
+                  >
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  class="social-btn"
+                  href="https://www.facebook.com/sumsuzzaman.siam"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Facebook"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                    width="18"
+                    height="18"
+                  >
+                    <path
+                      d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
-        </section>
 
-        <!-- ======================= PROCESS ======================= -->
-        <section class="section" id="process" aria-label="Process">
-            <div class="container">
-                <div class="section-head reveal">
-                    <p class="eyebrow">PROCESS</p>
-                    <h2 class="section-title">How I Bring Your Project to Life</h2>
-                    <p class="section-sub">A simple, transparent process from understanding your requirements to delivering a polished digital experience.</p>
+            <!-- Right: form -->
+            <form class="contact-form reveal" id="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Your name"
+                    autocomplete="name"
+                  />
+                  <small class="form-error" hidden></small>
                 </div>
-
-                <ol class="process-timeline" data-stagger>
-                    <li class="process-step reveal">
-                        <div class="process-marker">
-                            <span class="process-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-                            </span>
-                            <span class="process-num">01</span>
-                        </div>
-                        <div class="process-body">
-                            <h3 class="process-title">Requirement &amp; Discovery</h3>
-                            <p class="process-desc">I understand your goals, requirements, target audience, and project scope before getting started.</p>
-                        </div>
-                    </li>
-
-                    <li class="process-step reveal">
-                        <div class="process-marker">
-                            <span class="process-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M21.3 15.3a4.24 4.24 0 0 1-6 6L3 9a4.24 4.24 0 0 1 6-6Z"/><path d="m7.5 13.5 3 3"/><path d="m11 10 2 2"/><path d="m14.5 6.5 2 2"/></svg>
-                            </span>
-                            <span class="process-num">02</span>
-                        </div>
-                        <div class="process-body">
-                            <h3 class="process-title">Planning &amp; Design</h3>
-                            <p class="process-desc">I plan the structure, functionality, and user experience based on your requirements or existing design.</p>
-                        </div>
-                    </li>
-
-                    <li class="process-step reveal">
-                        <div class="process-marker">
-                            <span class="process-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
-                            </span>
-                            <span class="process-num">03</span>
-                        </div>
-                        <div class="process-body">
-                            <h3 class="process-title">Development</h3>
-                            <p class="process-desc">I build the website or Shopify store with clean, responsive, and maintainable code.</p>
-                        </div>
-                    </li>
-
-                    <li class="process-step reveal">
-                        <div class="process-marker">
-                            <span class="process-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 0 1-.837.276c-.47-.07-.802-.48-.968-.925a2.501 2.501 0 1 0-3.214 3.214c.446.166.855.497.925.968a.979.979 0 0 1-.276.837l-1.61 1.61a2.404 2.404 0 0 1-1.705.707 2.402 2.402 0 0 1-1.704-.706l-1.568-1.568a1.026 1.026 0 0 0-.877-.29c-.493.074-.84.504-1.02.968a2.5 2.5 0 1 1-3.237-3.237c.464-.18.894-.527.967-1.02a1.026 1.026 0 0 0-.289-.877l-1.568-1.568A2.402 2.402 0 0 1 1.998 12c0-.617.236-1.234.706-1.704L4.23 8.77c.24-.24.581-.353.917-.303.515.077.877.528 1.073 1.01a2.5 2.5 0 1 0 3.259-3.259c-.482-.196-.933-.558-1.01-1.073-.05-.336.062-.676.303-.917l1.525-1.525A2.402 2.402 0 0 1 12 1.998z"/></svg>
-                            </span>
-                            <span class="process-num">04</span>
-                        </div>
-                        <div class="process-body">
-                            <h3 class="process-title">Customization &amp; Integration</h3>
-                            <p class="process-desc">I implement custom features, Liquid sections, third-party app integrations, APIs, and other required functionalities.</p>
-                        </div>
-                    </li>
-
-                    <li class="process-step reveal">
-                        <div class="process-marker">
-                            <span class="process-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                            </span>
-                            <span class="process-num">05</span>
-                        </div>
-                        <div class="process-body">
-                            <h3 class="process-title">Testing &amp; Delivery</h3>
-                            <p class="process-desc">I test responsiveness, functionality, and user experience, then deliver the completed project ready for launch.</p>
-                        </div>
-                    </li>
-                </ol>
-            </div>
-        </section>
-
-        <!-- ======================= TESTIMONIALS ======================= -->
-        <section class="section section-alt" id="testimonials" aria-label="Testimonials">
-            <div class="container">
-                <div class="section-head reveal">
-                    <p class="eyebrow">Testimonials</p>
-                    <h2 class="section-title">Trusted by Clients Who Care About Results</h2>
-                    <p class="section-sub">What founders and marketing leads say about working together.</p>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                  />
+                  <small class="form-error" hidden></small>
                 </div>
+              </div>
 
-                <div class="testimonial-grid" data-stagger>
-                    <blockquote class="testimonial-card reveal">
-                        <div class="stars" aria-label="Rated 5 out of 5">
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        </div>
-                        <p class="testimonial-text">Siam rebuilt our storefront from scratch. Load times dropped dramatically and our conversion rate climbed 38% in the first month. Clear communication from discovery to launch.</p>
-                        <footer class="testimonial-author">
-                            <span class="avatar" aria-hidden="true">SA</span>
-                            <div>
-                                <cite class="testimonial-name">Sara Ahmed</cite>
-                                <span class="testimonial-role">Founder, Auraluxe Hair</span>
-                            </div>
-                        </footer>
-                    </blockquote>
-
-                    <blockquote class="testimonial-card reveal">
-                        <div class="stars" aria-label="Rated 5 out of 5">
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        </div>
-                        <p class="testimonial-text">The custom collection pages and filtering he built feel premium. He treats your project like his own business — detail-obsessed and always on time.</p>
-                        <footer class="testimonial-author">
-                            <span class="avatar" aria-hidden="true">DO</span>
-                            <div>
-                                <cite class="testimonial-name">Daniel Okafor</cite>
-                                <span class="testimonial-role">CEO, Bonded Boutique</span>
-                            </div>
-                        </footer>
-                    </blockquote>
-
-                    <blockquote class="testimonial-card reveal">
-                        <div class="stars" aria-label="Rated 5 out of 5">
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        </div>
-                        <p class="testimonial-text">Beyond the build itself, Siam's CRO and SEO input took our dropshipping store to the next level. A rare mix of design, development and growth thinking.</p>
-                        <footer class="testimonial-author">
-                            <span class="avatar" aria-hidden="true">ER</span>
-                            <div>
-                                <cite class="testimonial-name">Emma Rodriguez</cite>
-                                <span class="testimonial-role">Marketing Lead, FocusFree</span>
-                            </div>
-                        </footer>
-                    </blockquote>
+              <div class="form-group">
+                <label for="project-type" id="project-type-label">Project Type</label>
+                <div class="project-type" id="project-type-field">
+                  <select
+                    id="project-type"
+                    name="projectType"
+                    class="project-type__native"
+                    tabindex="-1"
+                    aria-hidden="true"
+                  >
+                    <option value="">Select a type</option>
+                    <option value="shopify">Shopify Development</option>
+                    <option value="shopify-customization">
+                      Shopify Store Customization
+                    </option>
+                    <option value="shopify-integration">
+                      Custom Shopify Solutions
+                    </option>
+                    <option value="frontend">Frontend Development</option>
+                    <option value="mern">MERN Stack Development</option>
+                    <option value="figma">Figma to Website</option>
+                    <option value="responsive">Responsive Website & UI</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <button
+                    type="button"
+                    class="project-type__trigger"
+                    id="project-type-trigger"
+                    role="combobox"
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-autocomplete="none"
+                    aria-controls="project-type-list"
+                    aria-labelledby="project-type-label"
+                  >
+                    <span class="project-type__value" id="project-type-value"
+                      >Select a type</span
+                    >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
+                  </button>
+                  <ul
+                    role="listbox"
+                    id="project-type-list"
+                    class="project-type__list"
+                    aria-labelledby="project-type-label"
+                    hidden
+                  ></ul>
                 </div>
-            </div>
-        </section>
+                <small class="form-error" hidden></small>
+              </div>
 
-        <!-- ======================= CONTACT ======================= -->
-        <section class="section" id="contact" aria-label="Contact">
-            <div class="container">
-                <div class="section-head reveal">
-                    <p class="eyebrow">Contact</p>
-                    <h2 class="section-title">Let's Build Something Worth Talking About</h2>
-                    <p class="section-sub">Have a project in mind? I'd love to hear about it. Send me a message and let's discuss how I can help.</p>
-                </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Tell me about your project..."
+                ></textarea>
+                <small class="form-error" hidden></small>
+              </div>
 
-                <div class="contact-grid">
-                    <!-- Left: info -->
-                    <div class="contact-info reveal">
-                        <h3 class="contact-info-title">Get in touch</h3>
-                        <p class="contact-info-text">Whether you need a Shopify store, a custom web application or a full-stack project built with React, Node.js and MongoDB, I'm here to help bring your vision to life.</p>
+              <input
+                type="hidden"
+                name="_subject"
+                value="New portfolio inquiry from Siam.Dev"
+              />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <button
+                type="submit"
+                class="btn btn-primary btn-lg btn-block"
+                id="submit-btn"
+              >
+                <span class="btn-label">Send Message</span>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  width="17"
+                  height="17"
+                >
+                  <path d="m22 2-7 20-4-9-9-4Z" />
+                  <path d="M22 2 11 13" />
+                </svg>
+              </button>
 
-                        <ul class="contact-rows">
-                            <li class="contact-row">
-                                <span class="contact-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                                </span>
-                                <div>
-                                    <span class="contact-row-label">Email</span>
-                                    <a class="contact-row-value" href="mailto:smsiam987@gmail.com">smsiam987@gmail.com</a>
-                                </div>
-                            </li>
-                            <li class="contact-row">
-                                <span class="contact-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
-                                </span>
-                                <div>
-                                    <span class="contact-row-label">Phone</span>
-                                    <a class="contact-row-value" href="tel:+8801567989506">+8801567989506</a>
-                                </div>
-                            </li>
-                            <li class="contact-row">
-                                <span class="contact-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-                                </span>
-                                <div>
-                                    <span class="contact-row-label">Location</span>
-                                    <span class="contact-row-value">Dhaka, Bangladesh · Remote</span>
-                                </div>
-                            </li>
-                            <li class="contact-row">
-                                <span class="contact-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                                </span>
-                                <div>
-                                    <span class="contact-row-label">Availability</span>
-                                    <span class="contact-row-value">Open for new projects</span>
-                                </div>
-                            </li>
-                        </ul>
-
-                        <div class="contact-socials">
-                            <a class="social-btn" href="https://www.linkedin.com/in/sm-siam598" target="_blank" rel="noopener" aria-label="LinkedIn">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                            </a>
-                            <a class="social-btn" href="https://github.com/siam114" target="_blank" rel="noopener" aria-label="GitHub">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                            </a>
-                            <a class="social-btn" href="https://wa.me/8801567989506" target="_blank" rel="noopener" aria-label="WhatsApp">
-                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                            </a>
-                            <a class="social-btn" href="https://www.facebook.com/sumsuzzaman.siam" target="_blank" rel="noopener" aria-label="Facebook">
-                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="18" height="18"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Right: form -->
-                    <form class="contact-form reveal" id="contact-form" novalidate>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name">
-                                <small class="form-error" hidden></small>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
-                                <small class="form-error" hidden></small>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="project-type">Project Type</label>
-                            <select id="project-type" name="projectType">
-                                <option value="">Select a type</option>
-                                <option value="website">Website Development</option>
-                                <option value="shopify">Shopify Store</option>
-                                <option value="wordpress">WordPress Site</option>
-                                <option value="seo">SEO &amp; Digital Marketing</option>
-                                <option value="ads">Google / Meta Ads</option>
-                                <option value="ai">AI Automation</option>
-                                <option value="app">Mobile App</option>
-                                <option value="other">Other</option>
-                            </select>
-                            <small class="form-error" hidden></small>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."></textarea>
-                            <small class="form-error" hidden></small>
-                        </div>
-
-                        <input type="hidden" name="_subject" value="New portfolio inquiry from Siam.Dev">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
-                        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit-btn">
-                            <span class="btn-label">Send Message</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-                        </button>
-
-                        <p class="form-success" id="form-success" role="status" hidden>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                            Message Sent!
-                        </p>
-                        <p class="form-error-msg" id="form-error" role="alert" hidden>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="10"/><line x1="15" x2="9" y1="9" y2="15"/><line x1="9" x2="15" y1="9" y2="15"/></svg>
-                            Something went wrong. Try again or email me at smsiam987@gmail.com.
-                        </p>
-                    </form>
-                </div>
-            </div>
-        </section>
+              <p class="form-success" id="form-success" role="status" hidden>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  width="18"
+                  height="18"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+                Message Sent!
+              </p>
+              <p class="form-error-msg" id="form-error" role="alert" hidden>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  width="18"
+                  height="18"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="15" x2="9" y1="9" y2="15" />
+                  <line x1="9" x2="15" y1="9" y2="15" />
+                </svg>
+                Something went wrong. Try again or email me at
+                smsiam987@gmail.com.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- ======================= FOOTER ======================= -->
     <footer class="site-footer" aria-label="Footer">
-        <div class="container footer-inner">
-            <div class="footer-brand">
-                <a href="#home" class="brand" aria-label="Siam.Dev — back to top">
-                    <span class="brand-mark" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17 12 22l10-5"/><path d="M2 12 12 17l10-5"/></svg>
-                    </span>
-                    <span class="brand-name">Siam<em>.</em><small>dev</small></span>
-                </a>
-                <p class="footer-tagline">Shopify Developer · Full-Stack JavaScript Engineer</p>
-            </div>
-
-            <nav class="footer-nav" aria-label="Footer navigation">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#process">Process</a>
-                <a href="#contact">Contact</a>
-            </nav>
-
-            <ul class="footer-socials">
-                <li><a href="https://www.linkedin.com/in/sm-siam598" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a></li>
-                <li><a href="https://github.com/siam114" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a></li>
-                <li><a href="https://wa.me/8801567989506" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></a></li>
-                <li><a href="https://www.facebook.com/sumsuzzaman.siam" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="17" height="17"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a></li>
-            </ul>
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="#home" class="brand" aria-label="Siam.Dev — back to top">
+            <span class="brand-mark" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                width="18"
+                height="18"
+              >
+                <path d="M12 2 2 7l10 5 10-5-10-5Z" />
+                <path d="M2 17 12 22l10-5" />
+                <path d="M2 12 12 17l10-5" />
+              </svg>
+            </span>
+            <span class="brand-name">Siam<em>.</em><small>dev</small></span>
+          </a>
+          <p class="footer-tagline">
+            Shopify Developer · Full-Stack JavaScript Engineer
+          </p>
         </div>
-        <div class="footer-bottom">
-            <p class="copyright">© 2026 All rights reserved.</p>
-        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <ul class="footer-socials">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/sm-siam598"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                width="17"
+                height="17"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                />
+                <rect width="4" height="12" x="2" y="9" />
+                <circle cx="4" cy="4" r="2" /></svg
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/siam114"
+              target="_blank"
+              rel="noopener"
+              aria-label="GitHub"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                width="17"
+                height="17"
+              >
+                <path
+                  d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+                />
+                <path d="M9 18c-4.51 2-5-2-7-2" /></svg
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://wa.me/8801567989506"
+              target="_blank"
+              rel="noopener"
+              aria-label="WhatsApp"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+                width="17"
+                height="17"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"
+                /></svg
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://www.facebook.com/sumsuzzaman.siam"
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+                width="17"
+                height="17"
+              >
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                /></svg
+            ></a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">© 2026 All rights reserved.</p>
+      </div>
     </footer>
 
     <!-- Back to top -->
     <button class="back-to-top" id="back-to-top" aria-label="Back to top">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="m18 15-6-6-6 6"/></svg>
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        width="18"
+        height="18"
+      >
+        <path d="m18 15-6-6-6 6" />
+      </svg>
     </button>
 
     <!-- Interactive background particle layer (JS-driven canvas, stays behind all content, never intercepts input) -->
@@ -871,5 +2500,5 @@
     <div class="cursor-trail" aria-hidden="true"></div>
 
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>

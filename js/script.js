@@ -422,7 +422,11 @@
 
         if (!valid) {
             var firstError = form.querySelector(".has-error input, .has-error select, .has-error textarea");
-            if (firstError) firstError.focus();
+            if (firstError) {
+                var ptFocus = firstError.id === "project-type" ?
+                    document.getElementById("project-type-trigger") : null;
+                (ptFocus || firstError).focus();
+            }
             return;
         }
 
@@ -453,6 +457,226 @@
             if (errorMsg) errorMsg.hidden = false;
         });
     });
+
+    /* ------------------------------------------------------------------
+       Custom Project Type dropdown (combobox)
+       The hidden native <select id="project-type"> stays the form's real
+       control for validation and submission; the visible combobox mirrors
+       every selection into it, so the existing logic is unchanged.
+       ------------------------------------------------------------------ */
+    var projectType = document.getElementById("project-type");
+    var ptTrigger = document.getElementById("project-type-trigger");
+    var ptList = document.getElementById("project-type-list");
+    var ptValueEl = document.getElementById("project-type-value");
+    var ptField = document.getElementById("project-type-field");
+    var ptLabel = document.getElementById("project-type-label");
+
+    if (projectType && ptTrigger && ptList && ptValueEl) {
+        var ptCloseTimer = 0;
+        var ptActiveIndex = -1;
+        var ptOpenState = false;
+        var ptAnimToken = 0;
+
+        function ptOptions() {
+            return Array.prototype.slice.call(ptList.children);
+        }
+
+        function ptIsOpen() {
+            return ptOpenState;
+        }
+
+        function ptSyncInvalid() {
+            if (projectType.getAttribute("aria-invalid") === "true") {
+                ptTrigger.setAttribute("aria-invalid", "true");
+            } else {
+                ptTrigger.removeAttribute("aria-invalid");
+            }
+        }
+
+        function ptSyncLabel() {
+            var opt = projectType.options[projectType.selectedIndex] || projectType.options[0];
+            ptValueEl.textContent = opt.textContent.trim();
+            ptValueEl.classList.toggle("is-empty", !opt.value);
+            ptOptions().forEach(function (item) {
+                var selected = item.dataset.value === projectType.value;
+                item.classList.toggle("is-selected", selected);
+                item.setAttribute("aria-selected", String(selected));
+            });
+            ptSyncInvalid();
+        }
+
+        function ptSetActive(index) {
+            var opts = ptOptions();
+            if (!opts.length) return;
+            index = (index + opts.length) % opts.length;
+            opts.forEach(function (item, i) {
+                item.classList.toggle("is-active", i === index);
+            });
+            ptActiveIndex = index;
+            ptTrigger.setAttribute("aria-activedescendant", opts[index].id);
+            if (opts[index].scrollIntoView) opts[index].scrollIntoView({ block: "nearest" });
+        }
+
+        function ptClearActive() {
+            ptOptions().forEach(function (item) {
+                item.classList.remove("is-active");
+            });
+            ptActiveIndex = -1;
+        }
+
+        function ptOpen() {
+            if (ptIsOpen()) return;
+            var opts = ptOptions();
+            ptOpenState = true;
+            ptList.hidden = false;
+            ptTrigger.setAttribute("aria-expanded", "true");
+            ptTrigger.classList.add("is-open");
+            var selected = 0;
+            opts.forEach(function (item, i) {
+                if (item.dataset.value === projectType.value) selected = i;
+            });
+            var token = ++ptAnimToken;
+            requestAnimationFrame(function () {
+                requestAnimationFrame(function () {
+                    if (token !== ptAnimToken) return;
+                    ptList.classList.add("is-open");
+                });
+            });
+            ptSetActive(selected);
+        }
+
+        function ptClose() {
+            if (!ptIsOpen()) return;
+            ptOpenState = false;
+            ptAnimToken += 1;
+            clearTimeout(ptCloseTimer);
+            ptList.classList.remove("is-open");
+            ptTrigger.setAttribute("aria-expanded", "false");
+            ptTrigger.classList.remove("is-open");
+            ptTrigger.removeAttribute("aria-activedescendant");
+            var delay = prefersReducedMotion ? 0 : 210;
+            ptCloseTimer = setTimeout(function () {
+                ptList.hidden = true;
+                ptClearActive();
+            }, delay);
+        }
+
+        function ptSelect(item) {
+            if (!item) return;
+            projectType.value = item.dataset.value;
+            projectType.dispatchEvent(new Event("change", { bubbles: true }));
+            ptValueEl.textContent = item.textContent.trim();
+            ptValueEl.classList.remove("is-empty");
+            ptOptions().forEach(function (el) {
+                var selected = el === item;
+                el.classList.toggle("is-selected", selected);
+                el.setAttribute("aria-selected", String(selected));
+            });
+            ptSyncInvalid();
+            ptClose();
+            ptTrigger.focus();
+        }
+
+        // Build options once from the native select (single source of truth).
+        Array.prototype.forEach.call(projectType.options, function (opt, i) {
+            if (!opt.value) return;
+            var item = document.createElement("li");
+            item.id = "project-type-opt-" + i;
+            item.className = "project-type__option";
+            item.setAttribute("role", "option");
+            item.setAttribute("aria-selected", "false");
+            item.textContent = opt.textContent;
+            item.dataset.value = opt.value;
+            ptList.appendChild(item);
+        });
+
+        ptTrigger.addEventListener("click", function () {
+            if (ptIsOpen()) ptClose();
+            else ptOpen();
+        });
+
+        ptTrigger.addEventListener("keydown", function (event) {
+            var opts = ptOptions();
+            switch (event.key) {
+                case "ArrowDown":
+                    event.preventDefault();
+                    if (!ptIsOpen()) { ptOpen(); return; }
+                    ptSetActive(ptActiveIndex + 1);
+                    break;
+                case "ArrowUp":
+                    event.preventDefault();
+                    if (!ptIsOpen()) {
+                        ptOpen();
+                        ptSetActive(opts.length - 1);
+                        return;
+                    }
+                    ptSetActive(ptActiveIndex - 1);
+                    break;
+                case "Enter":
+                case " ":
+                    event.preventDefault();
+                    if (!ptIsOpen()) { ptOpen(); return; }
+                    ptSelect(opts[ptActiveIndex]);
+                    break;
+                case "Escape":
+                    if (ptIsOpen()) {
+                        event.preventDefault();
+                        ptClose();
+                    }
+                    break;
+                case "Home":
+                    if (ptIsOpen()) { event.preventDefault(); ptSetActive(0); }
+                    break;
+                case "End":
+                    if (ptIsOpen()) { event.preventDefault(); ptSetActive(opts.length - 1); }
+                    break;
+                case "Tab":
+                    if (ptIsOpen()) ptClose();
+                    break;
+            }
+        });
+
+        // Keep focus on the combobox while picking (blur shouldn't fight selection).
+        ptList.addEventListener("pointerdown", function (event) {
+            event.preventDefault();
+        });
+        ptList.addEventListener("click", function (event) {
+            var item = event.target.closest ? event.target.closest(".project-type__option") : null;
+            if (item) ptSelect(item);
+        });
+
+        // Click / tap outside the field closes the dropdown.
+        document.addEventListener("pointerdown", function (event) {
+            if (!ptIsOpen()) return;
+            if (ptField && ptField.contains(event.target)) return;
+            ptClose();
+        });
+
+        // Clicking the label opens the dropdown like a regular field label.
+        if (ptLabel) {
+            ptLabel.addEventListener("click", function (event) {
+                event.preventDefault();
+                ptTrigger.focus();
+                ptOpen();
+            });
+        }
+
+        // Blur validates with the same rules as the other fields.
+        ptTrigger.addEventListener("blur", function () {
+            if (ptField && ptField.contains(document.activeElement)) return;
+            validateField(projectType);
+            ptSyncInvalid();
+        });
+
+        // Keep the visible combobox in sync when the form is reset.
+        // (Chrome fires the reset event before applying control defaults,
+        //  so defer the read until after the native reset completes.)
+        form.addEventListener("reset", function () {
+            setTimeout(ptSyncLabel, 0);
+        });
+
+        ptSyncLabel();
+    }
 
     /* ------------------------------------------------------------------
        Back to top
