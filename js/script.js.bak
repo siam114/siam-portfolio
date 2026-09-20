@@ -253,7 +253,7 @@
        ------------------------------------------------------------------ */
     var typeRole = document.getElementById("type-role");
     var typeAnnounce = document.getElementById("type-announce");
-    var roles = ["Shopify Developer", "Liquid & Theme Developer", "Full-Stack JS Developer"];
+    var roles = ["Shopify Developer", "Liquid & Theme Developer", "Frontend Developer", "MERN Stack Developer", "Web Developer"];
 
     if (typeRole) {
         if (prefersReducedMotion) {

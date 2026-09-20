@@ -1719,7 +1719,7 @@ html.custom-cursor .cursor-trail {
     margin-inline: auto;
 }
 
-/* vertical connector line */
+/* vertical connector line — always present and continuous, softly tinted */
 .process-timeline::before {
     content: "";
     position: absolute;
@@ -1727,7 +1727,30 @@ html.custom-cursor .cursor-trail {
     bottom: 34px;
     left: 32px;
     width: 2px;
-    background: linear-gradient(to bottom, var(--accent), var(--accent-soft));
+    background: linear-gradient(to bottom, var(--accent-border-strong), var(--accent-soft));
+}
+
+/* per-step luminous segment — fades smoothly over the connector near this
+   step (and the next) on hover; opacity-only, so it never jumps or snaps */
+.process-step::before {
+    content: "";
+    position: absolute;
+    top: 34px;
+    bottom: -34px;
+    left: 32px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--accent-hover));
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+                background-color 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.process-step:last-child::before {
+    display: none;
+}
+.process-step:hover::before,
+.process-step:hover + .process-step::before {
+    opacity: 0.85;
 }
 
 .process-step {
@@ -1756,12 +1779,17 @@ html.custom-cursor .cursor-trail {
     border: 1px solid var(--border);
     color: var(--accent);
     box-shadow: 0 0 0 6px var(--bg), var(--shadow-card);
-    transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), background-color var(--dur) var(--ease);
+    transition: border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                background-color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .process-step:hover .process-icon {
     border-color: var(--accent-border-strong);
     background: var(--accent-soft);
-    box-shadow: 0 0 0 6px var(--bg), var(--glow);
+    box-shadow: 0 0 0 6px var(--bg), 0 0 22px -6px var(--accent-glow);
+    transform: scale(1.045);
 }
 .process-num {
     position: absolute;
@@ -1785,11 +1813,56 @@ html.custom-cursor .cursor-trail {
     font-weight: 600;
     letter-spacing: -0.01em;
     margin-bottom: 6px;
+    transition: color 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.process-step:hover .process-title {
+    color: var(--accent-light);
 }
 .process-desc {
     color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.65;
+    transition: color 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.process-step:hover .process-desc {
+    color: var(--text);
+}
+
+/* staggered reveal — premium ease-out, one-shot (observer unobserves) */
+html.js .process-step.reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--d, 0s);
+}
+html.js .process-step.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* cancel the global .reveal -3px hover lift for steps so the luminous
+   line segment stays perfectly aligned with the static connector */
+html.js .process-step.reveal.is-visible:hover {
+    transform: translateY(0);
+    transition-delay: 0s;
+}
+
+/* per-step stagger: revealStagger() sets --d from a page-wide flat index, so
+   late sections all land on 540ms — override with true 60ms-cascade delays */
+html.js .process-step.reveal {
+    --d: 0ms !important;
+}
+html.js .process-step.reveal:nth-child(2) {
+    --d: 60ms !important;
+}
+html.js .process-step.reveal:nth-child(3) {
+    --d: 120ms !important;
+}
+html.js .process-step.reveal:nth-child(4) {
+    --d: 180ms !important;
+}
+html.js .process-step.reveal:nth-child(5) {
+    --d: 240ms !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -2633,5 +2706,13 @@ a.contact-row-value:hover {
     html.js .reveal {
         opacity: 1;
         transform: none;
+    }
+    /* process reveal override has higher specificity than the rule above,
+       so re-force visibility + drop its stagger delay under reduced motion */
+    html.js .process-step.reveal,
+    html.js .process-step.reveal.is-visible {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
     }
 }
