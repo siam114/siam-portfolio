@@ -2374,7 +2374,7 @@
             <span class="brand-name">Siam<em>.</em><small>dev</small></span>
           </a>
           <p class="footer-tagline">
-            Shopify Developer · Full-Stack JavaScript Engineer
+            Shopify Developer · MERN-Stack Developer · Frontend Developer
           </p>
         </div>
 
@@ -2472,7 +2472,13 @@
         </ul>
       </div>
       <div class="footer-bottom">
-        <p class="copyright">© 2026 All rights reserved.</p>
+        <p class="copyright">© <span id="copyright-year">2026</span> Siam.Dev. All rights reserved.</p>
+        <script>
+          (function () {
+            var el = document.getElementById("copyright-year");
+            if (el) el.textContent = new Date().getFullYear();
+          })();
+        </script>
       </div>
     </footer>
 
