@@ -1,0 +1,14 @@
+# Local environment files (never commit secrets)
+.env
+.env.*
+!.env.example
+.env.local
+
+# Dependencies
+node_modules/
+
+# OS
+.DS_Store
+
+# Local serverless tooling state (Vercel CLI)
+.vercel

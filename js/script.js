@@ -16,6 +16,25 @@
        ------------------------------------------------------------------ */
     var SHOW_TESTIMONIALS = false;
 
+    /* Contact form API endpoint (Vercel Function -> Resend).
+       Local dev: run `vercel dev` at the repo root, the site + API are
+       served on http://localhost:3000. In production the site stays on
+       GitHub Pages and the API lives on the Vercel project URL.
+       To override without editing this file:
+         window.CONTACT_API_URL = ".../api/contact";
+       All credentials live server-side in the Vercel function; never here. */
+    var CONTACT_API_URL = (function () {
+        if (window.CONTACT_API_URL) return window.CONTACT_API_URL;
+        var host = window.location.hostname;
+        if (host === "localhost" || host === "127.0.0.1") {
+            return "http://localhost:3000/api/contact";
+        }
+        return "https://siam-portfolio.vercel.app/api/contact";
+    })();
+    var SUCCESS_MESSAGE = "Message sent successfully! I'll get back to you soon.";
+    var RATE_LIMIT_MESSAGE = "Too many messages. Please wait a moment and try again.";
+    var PROVIDER_ERROR_MESSAGE = "Something went wrong while sending your message. Please try again.";
+
     if (!SHOW_TESTIMONIALS) {
         var testimonialsSection = document.getElementById("testimonials");
         var testimonialsLink = document.querySelector('a.nav-link[href="#testimonials"]');
@@ -410,8 +429,12 @@
         });
     });
 
+    var formSubmitting = false;
+
     form.addEventListener("submit", function (event) {
         event.preventDefault();
+
+        if (formSubmitting) return;
 
         var fields = ["name", "email", "projectType", "message"];
         var valid = true;
@@ -434,27 +457,69 @@
         submitBtn.style.opacity = "0.6";
         if (errorMsg) errorMsg.hidden = true;
         if (successMsg) successMsg.hidden = true;
+        formSubmitting = true;
+        var btnLabel = submitBtn.querySelector(".btn-label");
+        var btnLabelText = btnLabel.textContent;
+        btnLabel.textContent = "Sending...";
 
         var payload = {};
         fields.forEach(function (name) {
             payload[name] = form.querySelector("[name='" + name + "']").value.trim();
         });
+        var ptSelect = form.querySelector("#project-type");
+        payload.subject = ptSelect.value
+            ? ptSelect.options[ptSelect.selectedIndex].text.trim()
+            : "General Inquiry";
 
-        fetch("https://formsubmit.co/ajax/smsiam987@gmail.com", {
+        fetch(CONTACT_API_URL, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload)
         }).then(function (res) {
-            if (!res.ok) throw new Error("Submission failed");
+            if (!res.ok) {
+                var failureMessage;
+                if (res.status === 400) failureMessage = "Please check your information and try again.";
+                else if (res.status === 429) failureMessage = RATE_LIMIT_MESSAGE;
+                else failureMessage = PROVIDER_ERROR_MESSAGE;
+                console.error("Contact form API error:", res.status, res.statusText);
+                try {
+                    res.clone().text().then(function (body) {
+                        console.error("Contact form API response:", body);
+                    }).catch(function () {});
+                } catch (e) { /* response already consumed */ }
+                formSubmitting = false;
+                btnLabel.textContent = btnLabelText;
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = "";
+                if (errorMsg) {
+                    errorMsg.textContent = failureMessage;
+                    errorMsg.hidden = false;
+                }
+                return;
+            }
+            formSubmitting = false;
+            btnLabel.textContent = btnLabelText;
             submitBtn.disabled = false;
             submitBtn.style.opacity = "";
+            console.log("Contact form sent successfully:", res.status, CONTACT_API_URL);
             form.reset();
-            successMsg.hidden = false;
-            setTimeout(function () { successMsg.hidden = true; }, 5000);
-        }).catch(function () {
+            if (successMsg) {
+                successMsg.textContent = SUCCESS_MESSAGE;
+                successMsg.hidden = false;
+            }
+            setTimeout(function () {
+                if (successMsg) successMsg.hidden = true;
+            }, 5000);
+        }).catch(function (error) {
+            console.error("Contact form request failed:", error);
+            formSubmitting = false;
+            btnLabel.textContent = btnLabelText;
             submitBtn.disabled = false;
             submitBtn.style.opacity = "";
-            if (errorMsg) errorMsg.hidden = false;
+            if (errorMsg) {
+                errorMsg.textContent = PROVIDER_ERROR_MESSAGE;
+                errorMsg.hidden = false;
+            }
         });
     });
 

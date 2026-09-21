@@ -2282,12 +2282,14 @@
               </div>
 
               <input
-                type="hidden"
-                name="_subject"
-                value="New portfolio inquiry from Siam.Dev"
+                type="text"
+                name="website"
+                class="hp-field"
+                value=""
+                autocomplete="off"
+                tabindex="-1"
+                aria-hidden="true"
               />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
               <button
                 type="submit"
                 class="btn btn-primary btn-lg btn-block"
@@ -2323,7 +2325,7 @@
                   <circle cx="12" cy="12" r="10" />
                   <path d="m9 12 2 2 4-4" />
                 </svg>
-                Message Sent!
+                Message sent successfully! I'll get back to you soon.
               </p>
               <p class="form-error-msg" id="form-error" role="alert" hidden>
                 <svg
@@ -2340,8 +2342,7 @@
                   <line x1="15" x2="9" y1="9" y2="15" />
                   <line x1="9" x2="15" y1="9" y2="15" />
                 </svg>
-                Something went wrong. Try again or email me at
-                smsiam987@gmail.com.
+                Something went wrong while sending your message. Please try again.
               </p>
             </form>
           </div>

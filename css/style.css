@@ -2273,6 +2273,19 @@ html:not(.js) .project-type__list {
     color: var(--danger-text);
 }
 
+/* Honeypot: invisible to humans, auto-hidden off-screen, never rendered/laid out. */
+.hp-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
 .form-success {
     display: flex;
     align-items: center;
