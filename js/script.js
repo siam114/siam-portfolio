@@ -327,7 +327,13 @@
        ------------------------------------------------------------------ */
     var navAnchors = document.querySelectorAll(".nav-link");
     var sections = Array.prototype.map.call(navAnchors, function (a) {
-        return document.querySelector(a.getAttribute("href"));
+        var href = a.getAttribute("href");
+        if (!href || href.charAt(0) !== "#") return null;
+        try {
+            return document.querySelector(href);
+        } catch (e) {
+            return null;
+        }
     }).filter(Boolean);
 
     var spyObserver = new IntersectionObserver(function (entries) {
@@ -371,10 +377,12 @@
        Contact form validation (fake submission)
        ------------------------------------------------------------------ */
     var form = document.getElementById("contact-form");
-    var submitBtn = document.getElementById("submit-btn");
-    var successMsg = document.getElementById("form-success");
-    var errorMsg = document.getElementById("form-error");
-    var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+    if (form) {
+        var submitBtn = document.getElementById("submit-btn");
+        var successMsg = document.getElementById("form-success");
+        var errorMsg = document.getElementById("form-error");
+        var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
     function setError(input, message) {
         var group = input.closest(".form-group");
@@ -522,6 +530,7 @@
             }
         });
     });
+    }
 
     /* ------------------------------------------------------------------
        Custom Project Type dropdown (combobox)

@@ -1571,6 +1571,40 @@ html.custom-cursor .cursor-trail {
     box-shadow: 0 4px 14px -6px var(--accent-glow);
 }
 
+/* projects section header (title on the left, All Projects action on the right) */
+.projects-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+}
+.projects-head .section-head {
+    margin-bottom: 0;
+    margin-right: auto;
+}
+.projects-all-btn {
+    margin-top: 10px;
+    align-self: flex-start;
+    flex-shrink: 0;
+}
+
+/* subtle entry animation when a project tab becomes active */
+.projects-grid.is-active {
+    animation: panel-in 0.4s var(--ease) both;
+}
+@keyframes panel-in {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
