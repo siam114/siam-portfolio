@@ -21,8 +21,8 @@
 
     var BASE = document.documentElement.getAttribute("data-base") || document.body.getAttribute("data-base") || "";
     var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    var PANEL_IN_MS = 170;
-    var HEIGHT_MS = 320;
+    var PANEL_IN_MS = 200;
+    var HEIGHT_MS = 300;
 
     /* ---------------------------------------------------------------- */
     /* Data helpers                                                       */

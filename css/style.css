@@ -63,6 +63,7 @@
 
     /* Motion */
     --ease: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
     --dur: 0.22s;
 
     /* Themed auxiliaries (dark defaults — light theme overrides them below) */
@@ -1592,7 +1593,7 @@ html.custom-cursor .cursor-trail {
 
 /* subtle entry animation when a project tab becomes active */
 .projects-grid.is-active {
-    animation: panel-in 0.4s var(--ease) both;
+    animation: panel-in 0.3s var(--ease-out) both;
 }
 @keyframes panel-in {
     from {
@@ -1609,13 +1610,13 @@ html.custom-cursor .cursor-trail {
 .projects-grid.is-leaving {
     opacity: 0;
     transform: translateY(6px);
-    transition: opacity 0.16s var(--ease), transform 0.16s var(--ease);
+    transition: opacity 0.2s var(--ease-out), transform 0.2s var(--ease-out);
 }
 
 /* height-morph wrapper used while switching project tabs */
 .projects-swap {
     position: relative;
-    transition: height 0.32s var(--ease);
+    transition: height 0.3s var(--ease-out);
     overflow: visible;
 }
 .projects-swap.is-swapping {

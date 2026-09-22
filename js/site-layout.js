@@ -5,7 +5,7 @@
 
    Page detection:
      - body[data-page="home"]    (default) -> brand/nav links use #hash in-page anchors
-     - body[data-page="projects"]          -> brand/nav links resolve to ../index.html#hash
+     - body[data-page="projects"]          -> brand/nav links resolve to index.html#hash (root-level page) via data-base
    -------------------------------------------------------------------------- */
 (function () {
     "use strict";
@@ -58,7 +58,7 @@
     function navLinks() {
         var lis = NAV.map(function (item) {
             var isProjectsPage = page === "projects" && item.key === "portfolio";
-            var href = isProjectsPage ? BASE + "projects/" : pin(item.key);
+            var href = isProjectsPage ? BASE + "projects.html" : pin(item.key);
             var currentPage = "";
             if (isProjectsPage) {
                 currentPage = ' class="nav-link-current" aria-current="page"';
