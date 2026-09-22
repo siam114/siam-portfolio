@@ -350,28 +350,9 @@
 
     /* ------------------------------------------------------------------
        Portfolio tabs
+       Handled by js/projects.js (shared project UI: renderer + tabs +
+       sliding indicator + animated panel switching).
        ------------------------------------------------------------------ */
-    var tabButtons = document.querySelectorAll(".tab-btn");
-    var panels = document.querySelectorAll(".projects-grid[data-panel]");
-
-    tabButtons.forEach(function (btn) {
-        btn.addEventListener("click", function () {
-            var target = btn.dataset.tab;
-
-            tabButtons.forEach(function (b) {
-                var isTarget = b === btn;
-                b.classList.toggle("active", isTarget);
-                b.setAttribute("aria-selected", String(isTarget));
-            });
-
-            panels.forEach(function (panel) {
-                var show = panel.dataset.panel === target;
-                panel.classList.toggle("is-active", show);
-                if (show) panel.hidden = false;
-                else panel.hidden = true;
-            });
-        });
-    });
 
     /* ------------------------------------------------------------------
        Contact form validation (fake submission)

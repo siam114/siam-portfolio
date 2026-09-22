@@ -7,6 +7,7 @@
      id          unique string id
      title       project name
      category    "shopify" | "custom"
+     categoryLabel optional card badge override (defaults: Shopify / Custom Website)
      description short card description
      image       path relative to the site root (assets/images/...)
      tags        tech stack shown on the card
@@ -59,6 +60,7 @@
             id: "homez",
             title: "Homez",
             category: "custom",
+            categoryLabel: "Custom Website / Landing Page",
             description: "Modern real estate landing page designed from Figma and built from scratch with HTML, CSS, and JavaScript - clean, responsive, with structured layouts, modern UI components, and smooth UX.",
             image: "assets/images/homez.svg",
             tags: ["HTML5", "CSS3", "JavaScript"],

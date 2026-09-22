@@ -1605,6 +1605,118 @@ html.custom-cursor .cursor-trail {
     }
 }
 
+/* outgoing panel animation (fade + slight drop, used by the tab switch) */
+.projects-grid.is-leaving {
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.16s var(--ease), transform 0.16s var(--ease);
+}
+
+/* height-morph wrapper used while switching project tabs */
+.projects-swap {
+    position: relative;
+    transition: height 0.32s var(--ease);
+    overflow: visible;
+}
+.projects-swap.is-swapping {
+    overflow: hidden;
+}
+
+/* sliding active-tab indicator (teal pill that glides behind the tabs) */
+.tabs {
+    position: relative;
+}
+.tab-indicator {
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 0;
+    width: 48px;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    box-shadow: 0 4px 14px -6px var(--accent-glow);
+    transition: left 0.3s var(--ease), width 0.3s var(--ease);
+    pointer-events: none;
+    z-index: 0;
+}
+.tab-btn {
+    position: relative;
+    z-index: 1;
+}
+.tab-btn.active {
+    background: transparent;
+    box-shadow: none;
+    color: var(--on-accent);
+}
+
+/* All Projects page hero (compact, reference-inspired header) */
+.projects-hero {
+    padding: calc(var(--nav-h) + 44px) 0 76px;
+    text-align: center;
+}
+.projects-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(640px 360px at 50% -60px, var(--hero-wash), transparent 70%),
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: auto, 56px 56px, 56px 56px;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 85%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 85%);
+    pointer-events: none;
+}
+.projects-hero .container {
+    position: relative;
+    z-index: 1;
+}
+.projects-hero-inner {
+    max-width: 840px;
+    margin: 0 auto;
+}
+.projects-hero .section-sub {
+    max-width: 660px;
+    margin: 18px auto 0;
+    font-size: 1.05rem;
+}
+.projects-hero-title {
+    font-size: clamp(2rem, 4.6vw, 3.4rem);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+}
+
+/* current-page nav link on the All Projects page */
+.nav-link-current,
+.nav-link-current:hover {
+    color: var(--accent);
+    background: var(--accent-soft);
+}
+
+@media (max-width: 767px) {
+    .projects-hero {
+        padding: calc(var(--nav-h) + 26px) 0 56px;
+    }
+    .projects-hero-title {
+        font-size: clamp(1.7rem, 7vw, 2.4rem);
+    }
+    /* tabs scroll horizontally instead of wrapping so the page never overflows */
+    .tabs {
+        max-width: 100%;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+    .tabs::-webkit-scrollbar {
+        display: none;
+    }
+    .tab-btn {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
