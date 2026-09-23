@@ -50,7 +50,7 @@
             id: "midnights-menagerie",
             title: "Midnights Menagerie",
             category: "shopify",
-            description: "Premium Shopify pet e-commerce storefront featuring custom homepage sections, product and collection organization, brand storytelling, responsive design, testimonials, FAQ, blog, and newsletter integration.",
+            description: "Premium Shopify pet e-commerce storefront featuring custom homepage sections, product and collection organization, brand storytelling, responsive design, customer reviews, FAQ, blog, and newsletter integration.",
             image: "assets/images/midnights-menagerie.svg",
             tags: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript"],
             liveUrl: "https://midnightsmenagerie.com/",

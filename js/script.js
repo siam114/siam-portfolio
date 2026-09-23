@@ -9,13 +9,6 @@
        (content stays visible for no-JS / reduced-motion users). */
     document.documentElement.classList.add("js");
 
-    /* ------------------------------------------------------------------
-       Content toggles
-       Flip SHOW_TESTIMONIALS to true to bring the Testimonials section
-       and its nav link back â€” markup/data stays intact either way.
-       ------------------------------------------------------------------ */
-    var SHOW_TESTIMONIALS = false;
-
     /* Contact form API endpoint (Vercel Function -> Resend).
        Local dev: run `vercel dev` at the repo root, the site + API are
        served on http://localhost:3000. In production the site stays on
@@ -34,15 +27,6 @@
     var SUCCESS_MESSAGE = "Message sent successfully! I'll get back to you soon.";
     var RATE_LIMIT_MESSAGE = "Too many messages. Please wait a moment and try again.";
     var PROVIDER_ERROR_MESSAGE = "Something went wrong while sending your message. Please try again.";
-
-    if (!SHOW_TESTIMONIALS) {
-        var testimonialsSection = document.getElementById("testimonials");
-        var testimonialsLink = document.querySelector('a.nav-link[href="#testimonials"]');
-        if (testimonialsSection) testimonialsSection.hidden = true;
-        if (testimonialsLink && testimonialsLink.parentElement) {
-            testimonialsLink.parentElement.hidden = true;
-        }
-    }
 
     /* ------------------------------------------------------------------
        Theme switcher (light / dark)
@@ -78,6 +62,65 @@
        Helpers
        ------------------------------------------------------------------ */
     var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    /* ------------------------------------------------------------------
+       Smooth page transitions (CSS veil animation in css/style.css)
+       - Enter: <html class="page-enter"> is set inline in each page's
+         <head> so an opaque theme-colored veil fades away over the content
+         from first paint (no white flash; theme stays consistent).
+       - Exit: internal same-site .html links are intercepted, the veil
+         fades in over ~260ms, then navigation happens the moment the
+         animation ends. No artificial delays, no loaders; reduced-motion
+         users and in-page hash links navigate instantly.
+       ------------------------------------------------------------------ */
+    var pageTransitionLock = false;
+
+    function clearPageEnter() {
+        document.documentElement.classList.remove("page-enter");
+    }
+
+    document.documentElement.addEventListener("animationend", function (event) {
+        if (event.animationName === "veil-in") clearPageEnter();
+    });
+
+    if (prefersReducedMotion) clearPageEnter();
+
+    document.addEventListener("click", function (event) {
+        if (pageTransitionLock) return;
+
+        var link = event.target.closest ? event.target.closest("a") : null;
+        if (!link) return;
+        if (event.defaultPrevented) return;
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        if (link.target && link.target !== "_self") return;
+
+        var href = link.getAttribute("href") || "";
+        if (!href || href.charAt(0) === "#" || !/\.html(#.*)?$/i.test(href)) return;
+        if (prefersReducedMotion) return;
+
+        var targetUrl = new URL(link.href, window.location.href);
+        if (targetUrl.origin !== window.location.origin) return;
+        if (targetUrl.pathname === window.location.pathname) return;
+
+        event.preventDefault();
+        pageTransitionLock = true;
+        document.documentElement.classList.add("page-leave");
+
+        var navigated = false;
+        function go() {
+            if (navigated) return;
+            navigated = true;
+            window.location.href = link.href;
+        }
+
+        document.documentElement.addEventListener("animationend", function (ev) {
+            if (ev.animationName === "veil-out") go();
+        });
+
+        // Safety net: navigation must never be blocked if animationend does
+        // not fire (e.g. a reduced-motion CSS override). Not a fake delay.
+        window.setTimeout(go, 600);
+    });
 
     /* ------------------------------------------------------------------
        Sticky header state

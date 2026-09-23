@@ -63,6 +63,12 @@
       })();
     </script>
 
+    <!-- Page transition bootstrap: mark this page as entering so the
+         veil fade-in animation runs from first paint (see css/style.css). -->
+    <script>
+      document.documentElement.classList.add("page-enter");
+    </script>
+
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css" />
   </head>

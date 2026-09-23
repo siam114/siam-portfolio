@@ -2040,78 +2040,6 @@ html.js .process-step.reveal:nth-child(5) {
 }
 
 /* --------------------------------------------------------------------------
-   12. TESTIMONIALS
-   -------------------------------------------------------------------------- */
-.testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
-}
-
-.testimonial-card {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding: 28px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    background: var(--surface);
-    box-shadow: var(--shadow-card);
-    transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease),
-                background-color 0.35s var(--ease), color 0.35s var(--ease);
-}
-.testimonial-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--accent-border);
-    box-shadow: var(--shadow-lift);
-}
-
-.stars {
-    display: flex;
-    gap: 3px;
-    color: var(--accent);
-}
-
-.testimonial-text {
-    color: var(--text);
-    font-size: 0.95rem;
-    line-height: 1.7;
-    flex: 1;
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-    padding-top: 16px;
-    border-top: 1px solid var(--border-soft);
-}
-.avatar {
-    width: 44px;
-    height: 44px;
-    display: grid;
-    place-items: center;
-    flex-shrink: 0;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--on-accent);
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent-light), var(--accent-hover));
-}
-.testimonial-name {
-    display: block;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 0.94rem;
-}
-.testimonial-role {
-    display: block;
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    margin-top: 2px;
-}
-
-/* --------------------------------------------------------------------------
    13. CONTACT
    -------------------------------------------------------------------------- */
 .contact-grid {
@@ -2666,13 +2594,6 @@ html:not(.js) .project-type__list {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .testimonial-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .testimonial-card:last-child {
-        grid-column: span 2;
-    }
-
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -2795,14 +2716,6 @@ html:not(.js) .project-type__list {
     .tab-btn {
         flex: 1;
         text-align: center;
-    }
-
-    /* --- testimonials --- */
-    .testimonial-grid {
-        grid-template-columns: 1fr;
-    }
-    .testimonial-card:last-child {
-        grid-column: auto;
     }
 
     /* --- contact --- */
@@ -3070,5 +2983,49 @@ html:not(.js) .project-type__list {
         opacity: 1 !important;
         transform: none !important;
         transition: none !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   20. PAGE TRANSITION (soft theme-fade between internal pages)
+   <html class="page-enter"> is set inline in each page's <head>; it fades an
+   opaque theme-colored veil away over the content from first paint. The
+   <html class="page-leave"> state (added by js/script.js when an internal
+   .html link is clicked) fades the veil back in, then the browser navigates
+   as soon as the animation ends. Uses var(--bg) so it always matches the
+   active dark/light theme — no white/blank flash, no loaders.
+   -------------------------------------------------------------------------- */
+html.page-enter body::after,
+html.page-leave body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9997; /* above content & navbar, below back-to-top (9998) and cursor (9999) */
+    background: var(--bg);
+    pointer-events: none;
+}
+html.page-enter body::after {
+    animation: veil-in 0.3s var(--ease-out) both;
+}
+html.page-leave body::after {
+    animation: veil-out 0.26s var(--ease-out) both;
+}
+@keyframes veil-in {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes veil-out {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
