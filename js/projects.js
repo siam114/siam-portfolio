@@ -110,6 +110,7 @@
         img.height = p.imgH || 600;
         img.loading = "lazy";
         img.decoding = "async";
+        img.onerror = function () { this.style.visibility = "hidden"; };
 
         var badge = document.createElement("span");
         badge.className = "project-cat";
