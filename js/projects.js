@@ -10,7 +10,8 @@
                the single #panel-all grid, same indicator + switch animation.
 
    Button rules
-     - shopify : single "Live" button
+     - shopify : single "Live" button (optionally a "Pass:" badge when the
+                 project opts in with showPassword — used by Khadija only)
      - custom  : "GitHub" then "Live", each rendered only when the URL exists
 
    Accessibility/semantics preserved exactly as before:
@@ -91,6 +92,16 @@
         return a;
     }
 
+    function passwordBadge(value) {
+        var s = document.createElement("span");
+        s.className = "btn btn-ghost btn-sm";
+        s.setAttribute("aria-label", "Store password: " + value);
+        s.style.pointerEvents = "none";
+        s.style.cursor = "default";
+        s.textContent = "Pass: " + value;
+        return s;
+    }
+
     function categoryLabel(p) {
         if (p.categoryLabel) return p.categoryLabel;
         return p.category === "shopify" ? "Shopify" : "Custom Website";
@@ -146,6 +157,7 @@
 
         if (p.category === "shopify") {
             if (p.liveUrl) actions.appendChild(actionButton("Live", p.liveUrl, "external"));
+            if (p.showPassword && p.password) actions.appendChild(passwordBadge(p.password));
         } else {
             if (p.githubUrl) actions.appendChild(actionButton("GitHub", p.githubUrl, "github"));
             if (p.liveUrl) actions.appendChild(actionButton("Live", p.liveUrl, "external"));
