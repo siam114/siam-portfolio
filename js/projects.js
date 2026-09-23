@@ -3,9 +3,10 @@
    --------------------------------------------------------------------------
    Renders project cards from js/projects-data.js (window.SIAM_PROJECTS).
 
-   Homepage  : fills #panel-shopify / #panel-custom and wires the static
-               .tabs (Shopify | Custom) with a sliding active indicator and
-               an animated cross-fade + height-morph panel switch.
+   Homepage  : fills #panel-shopify / #panel-custom (at most HOME_PROJECT_LIMIT
+               cards per category) and wires the static .tabs (Shopify | Custom)
+               with a sliding active indicator and an animated cross-fade +
+               height-morph panel switch.
    /projects : builds the .tabs (All | <categories>) from the data, filters
                the single #panel-all grid, same indicator + switch animation.
 
@@ -24,6 +25,9 @@
     var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var PANEL_IN_MS = 200;
     var HEIGHT_MS = 300;
+    /* Homepage shows at most this many cards per category. Display limit only,
+       never a data limit. The All Projects page is always unlimited. */
+    var HOME_PROJECT_LIMIT = 3;
 
     /* ---------------------------------------------------------------- */
     /* Data helpers                                                       */
@@ -43,8 +47,10 @@
         return dataList().filter(function (p) { return p.category === key; });
     }
 
-    function titleCase(s) {
-        return s.charAt(0).toUpperCase() + s.slice(1);
+    var CATEGORY_TITLES = { wordpress: "WordPress", wix: "Wix" };
+    function formatCategoryTitle(s) {
+        if (CATEGORY_TITLES[s]) return CATEGORY_TITLES[s];
+        return String(s).replace(/[-_\s]+/g, " ").replace(/\b\w/g, function (c) { return c.toUpperCase(); });
     }
 
     /* ---------------------------------------------------------------- */
@@ -104,7 +110,9 @@
 
     function categoryLabel(p) {
         if (p.categoryLabel) return p.categoryLabel;
-        return p.category === "shopify" ? "Shopify" : "Custom Website";
+        if (p.category === "shopify") return "Shopify";
+        if (p.category === "custom") return "Custom Website";
+        return formatCategoryTitle(p.category);
     }
 
     function buildCard(p) {
@@ -270,7 +278,7 @@
                 btn.setAttribute("data-tab", key);
                 btn.setAttribute("aria-selected", "false");
                 btn.setAttribute("aria-controls", "panel-all");
-                btn.textContent = key === "all" ? "All" : titleCase(key);
+                btn.textContent = key === "all" ? "All" : formatCategoryTitle(key);
                 tabsEl.appendChild(btn);
                 buttons.push(btn);
             });
@@ -391,8 +399,8 @@
 
         if (!window.SIAM_PROJECTS || !shopify) return;
         container = shopify.closest(".container") || shopify.parentNode;
-        renderProjects(shopify, listFor("shopify"));
-        renderProjects(custom, listFor("custom"));
+        renderProjects(shopify, listFor("shopify").slice(0, HOME_PROJECT_LIMIT));
+        renderProjects(custom, listFor("custom").slice(0, HOME_PROJECT_LIMIT));
         wireTabs(container, "home");
         var activeBtn = (container.querySelector(".tabs") || document).querySelector(".tab-btn.active");
         var tabs = container.querySelector(".tabs");
