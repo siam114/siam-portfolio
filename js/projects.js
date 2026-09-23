@@ -103,21 +103,23 @@
         var media = document.createElement("div");
         media.className = "project-media";
 
-        var img = document.createElement("img");
-        img.src = BASE + p.image;
-        img.alt = p.title + " - " + categoryLabel(p) + " project";
-        img.width = p.imgW || 800;
-        img.height = p.imgH || 600;
-        img.loading = "lazy";
-        img.decoding = "async";
-        img.onerror = function () { this.style.visibility = "hidden"; };
-
         var badge = document.createElement("span");
         badge.className = "project-cat";
         badge.textContent = categoryLabel(p);
 
-        media.appendChild(img);
         media.appendChild(badge);
+
+        if (p.image) {
+            var img = document.createElement("img");
+            img.src = BASE + p.image;
+            img.alt = p.title + " - " + categoryLabel(p) + " project";
+            img.width = p.imgW || 800;
+            img.height = p.imgH || 600;
+            img.loading = "lazy";
+            img.decoding = "async";
+            img.onerror = function () { this.style.visibility = "hidden"; };
+            media.appendChild(img);
+        }
 
         var body = document.createElement("div");
         body.className = "project-body";

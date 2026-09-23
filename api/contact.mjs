@@ -1,4 +1,4 @@
-const ALLOWED_ORIGINS = ["https://siam114.github.io"];
+const ALLOWED_ORIGINS = ["https://siam-portfolio.vercel.app"];
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -58,6 +58,9 @@ function rateLimited(ip) {
   const windowMs = 60000;
   const max = parseInt(process.env.RATE_LIMIT_MAX || "5", 10);
   const hits = (rateBuckets.get(ip) || []).filter(function (t) { return now - t < windowMs; });
+  if (hits.length === 0) {
+    rateBuckets.delete(ip);
+  }
   if (hits.length >= max) {
     rateBuckets.set(ip, hits);
     return true;
@@ -138,7 +141,7 @@ export default async function handler(req, res) {
 
   const emailTo = process.env.EMAIL_TO || "smsiam987@gmail.com";
   const emailFrom = process.env.EMAIL_FROM || "Siam.Dev Contact <onboarding@resend.dev>";
-  const siteUrl = process.env.SITE_URL || "https://siam114.github.io/siam-portfolio";
+  const siteUrl = process.env.SITE_URL || "https://siam-portfolio.vercel.app";
 
   let resendOk = false;
   let resendStatus = 502;

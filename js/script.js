@@ -10,19 +10,15 @@
     document.documentElement.classList.add("js");
 
     /* Contact form API endpoint (Vercel Function -> Resend).
-       Local dev: run `vercel dev` at the repo root, the site + API are
-       served on http://localhost:3000. In production the site stays on
-       GitHub Pages and the API lives on the Vercel project URL.
+       The site and API are served together by Vercel, so the endpoint is
+       same-origin: it works under `vercel dev` (http://localhost:3000) and
+       in production on the Vercel project URL.
        To override without editing this file:
          window.CONTACT_API_URL = ".../api/contact";
        All credentials live server-side in the Vercel function; never here. */
     var CONTACT_API_URL = (function () {
         if (window.CONTACT_API_URL) return window.CONTACT_API_URL;
-        var host = window.location.hostname;
-        if (host === "localhost" || host === "127.0.0.1") {
-            return "http://localhost:3000/api/contact";
-        }
-        return "https://siam-portfolio.vercel.app/api/contact";
+        return "/api/contact";
     })();
     var SUCCESS_MESSAGE = "Message sent successfully! I'll get back to you soon.";
     var RATE_LIMIT_MESSAGE = "Too many messages. Please wait a moment and try again.";
@@ -513,12 +509,6 @@
                 if (res.status === 400) failureMessage = "Please check your information and try again.";
                 else if (res.status === 429) failureMessage = RATE_LIMIT_MESSAGE;
                 else failureMessage = PROVIDER_ERROR_MESSAGE;
-                console.error("Contact form API error:", res.status, res.statusText);
-                try {
-                    res.clone().text().then(function (body) {
-                        console.error("Contact form API response:", body);
-                    }).catch(function () {});
-                } catch (e) { /* response already consumed */ }
                 formSubmitting = false;
                 btnLabel.textContent = btnLabelText;
                 submitBtn.disabled = false;
@@ -533,7 +523,6 @@
             btnLabel.textContent = btnLabelText;
             submitBtn.disabled = false;
             submitBtn.style.opacity = "";
-            console.log("Contact form sent successfully:", res.status, CONTACT_API_URL);
             form.reset();
             if (successMsg) {
                 successMsg.textContent = SUCCESS_MESSAGE;
@@ -543,7 +532,6 @@
                 if (successMsg) successMsg.hidden = true;
             }, 5000);
         }).catch(function (error) {
-            console.error("Contact form request failed:", error);
             formSubmitting = false;
             btnLabel.textContent = btnLabelText;
             submitBtn.disabled = false;

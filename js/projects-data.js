@@ -72,24 +72,18 @@
             title: "Software Chamber Portfolio",
             category: "custom",
             description: "Modern company portfolio website designed and developed as a job task - a clean, responsive interface, professional visual hierarchy, modern UI sections, and smooth interactions for a software company.",
-            image: "assets/images/software-chamber-portfolio.png",
             tags: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
             liveUrl: "https://software-chamber-portfolio-website.vercel.app/",
-            githubUrl: "https://github.com/siam114/software-chamber-portfolio-website",
-            imgW: 1200,
-            imgH: 900
+            githubUrl: "https://github.com/siam114/software-chamber-portfolio-website"
         },
         {
             id: "cineverse",
             title: "CineVerse",
             category: "custom",
             description: "CineVerse is a modern movie-themed homepage built as a practice project to improve my Figma-to-frontend implementation skills - translating a visual design into a responsive, polished, and user-friendly web interface.",
-            image: "assets/images/cineverse.png",
             tags: ["React", "Vite", "Tailwind CSS", "Axios"],
             liveUrl: "https://cine-verse-flax.vercel.app/",
-            githubUrl: "https://github.com/siam114/CineVerse-",
-            imgW: 1200,
-            imgH: 900
+            githubUrl: "https://github.com/siam114/CineVerse-"
         }
     ];
 })();
