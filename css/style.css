@@ -1687,11 +1687,38 @@ html.custom-cursor .cursor-trail {
     letter-spacing: -0.03em;
 }
 
-/* current-page nav link on the All Projects page */
-.nav-link-current,
-.nav-link-current:hover {
-    color: var(--accent);
-    background: var(--accent-soft);
+/* --- All Projects page: scoped refinements (homepage is untouched) --- */
+
+/* project collection: cards breathe in a slightly richer surface */
+#collection .project-card {
+    border-color: var(--border-soft);
+    background: var(--surface-glass);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+#collection .project-card:hover {
+    border-color: var(--accent-border);
+    background: var(--surface);
+    box-shadow: var(--shadow-lift), var(--glow);
+}
+#collection .project-media {
+    border-bottom: 1px solid var(--border-soft);
+}
+
+/* filter tabs: a touch more air + teal glow behind the active pill */
+body[data-page="projects"] .tabs {
+    padding: 6px;
+    gap: 5px;
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    box-shadow: 0 8px 22px -18px rgba(0, 0, 0, 0.4);
+}
+body[data-page="projects"] .tab-btn {
+    padding: 10px 22px;
+    font-size: 0.9rem;
+}
+body[data-page="projects"] .tab-indicator {
+    box-shadow: 0 4px 16px -6px var(--accent-glow);
 }
 
 @media (max-width: 767px) {

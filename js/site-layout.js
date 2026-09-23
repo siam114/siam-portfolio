@@ -61,7 +61,7 @@
             var href = isProjectsPage ? BASE + "projects.html" : pin(item.key);
             var currentPage = "";
             if (isProjectsPage) {
-                currentPage = ' class="nav-link-current" aria-current="page"';
+                currentPage = ' class="nav-link active" aria-current="page"';
             } else if (page === "home" && item.key === "home") {
                 currentPage = ' class="nav-link active"';
             } else {
