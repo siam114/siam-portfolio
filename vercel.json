@@ -1,7 +1,2 @@
 {
-  "functions": {
-    "api/contact.mjs": {
-      "runtime": "nodejs20.x"
-    }
-  }
 }
