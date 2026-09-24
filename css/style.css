@@ -1835,13 +1835,16 @@ body[data-page="projects"] .tab-indicator {
     color: var(--text-muted);
     font-size: 0.9rem;
     line-height: 1.65;
+    min-height: calc(1.65em * 5);
     margin-bottom: 16px;
 }
 
 .tags {
     display: flex;
     flex-wrap: wrap;
+    align-content: flex-start;
     gap: 7px;
+    min-height: calc(2 * (0.7rem * 1.5) + 7px + 16px + 4px);
     margin-bottom: 20px;
 }
 .tags li {
