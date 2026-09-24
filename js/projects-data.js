@@ -41,7 +41,7 @@
             title: "Beeldschoon",
             category: "shopify",
             description: "Premium Shopify beauty and skincare storefront with custom theme development and tailored homepage and product sections. Responsive design, smart product and collection organization, an interactive product-finder quiz, custom bundle functionality, and subscription integration via Seal Subscriptions — all built to make repeat purchase effortless.",
-            image: "assets/images/beeldschoon.svg",
+            image: "assets/images/beeldschoon.jpeg",
             tags: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript", "Seal Subscriptions"],
             liveUrl: "https://0j8fpv-pi.myshopify.com/",
             githubUrl: null
@@ -51,7 +51,7 @@
             title: "Midnights Menagerie",
             category: "shopify",
             description: "Premium Shopify pet e-commerce storefront featuring custom homepage sections built with Liquid, thoughtful product and collection organization, and brand storytelling. Fully responsive with an integrated customer-reviews system, FAQ section, blog, and newsletter capture — everything arranged around a calm, pet-owner-friendly buying experience with clear categories and trust-building content.",
-            image: "assets/images/midnights-menagerie.svg",
+            image: "assets/images/midnights.jpeg",
             tags: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript"],
             liveUrl: "https://midnightsmenagerie.com/",
             githubUrl: null
@@ -61,6 +61,7 @@
             title: "Iyush Naturals",
             category: "shopify",
             description: "I designed and customized this Shopify store for a natural soap and personal care brand using the Ella theme. I customized the storefront with a clean, responsive design and implemented unique custom sections to create a more engaging, brand-focused shopping experience across every page — from the homepage and collections to the product pages.",
+            image: "assets/images/iyush.jpeg",
             tags: ["Shopify", "Ella Theme", "Liquid", "Custom Sections", "Responsive Design"],
             liveUrl: "https://iyushnaturals.com/",
             githubUrl: null
@@ -70,6 +71,7 @@
             title: "Rede Coverte",
             category: "shopify",
             description: "This Shopify store was designed and customized for a rental business in France that provides room and home essentials for flexible rental periods of 1, 3, and 6 months. I customized the storefront based on the client's requirements, built a custom product page experience, and created a tailored inquiry/contact form using Hulk Form Builder.",
+            image: "assets/images/rede.jpeg",
             tags: ["Shopify", "Liquid", "Hulk Form Builder", "Custom Product Page", "Responsive Design"],
             liveUrl: "https://redecoverte.fr/",
             githubUrl: null
@@ -79,6 +81,7 @@
             title: "Mudhavi",
             category: "shopify",
             description: "Simple, elegant Shopify storefront for a handcrafted clay and pottery brand. Customized presentations for the homepage, products, and collections keep the design clean and minimal, clear navigation makes browsing easy, and a smooth, responsive shopping experience works comfortably on mobile — with clean product presentation so the handmade goods shine while checkout stays straightforward.",
+            image: "assets/images/mudhavi.jpeg",
             tags: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript"],
             liveUrl: "https://mudhavi.com/",
             githubUrl: null
@@ -88,6 +91,7 @@
             title: "Livia Diamonds",
             category: "shopify",
             description: "Shopify optimization project for an existing jewellery storefront — fixing storefront bugs and errors, updating outdated plugins, and cleaning up theme code for better performance and loading speed, while reorganizing collections and categories so customers can browse more easily. The result is a faster, tidier storefront that keeps the brand look intact.",
+            image: "assets/images/livia.jpeg",
             tags: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript"],
             liveUrl: "https://shopliviadiamonds.com/",
             githubUrl: null
@@ -97,6 +101,7 @@
             title: "Runners Dust",
             category: "shopify",
             description: "Single-product Shopify storefront designed for a focused product launch. It features a custom pre-order system with a dedicated pre-order form and a streamlined purchasing flow, a product-focused homepage and page layout, and responsive, mobile-friendly design that keeps the launch experience clean and direct.",
+            image: "assets/images/runners.jpeg",
             tags: ["Shopify", "Liquid", "Pre-Order System", "Responsive Design"],
             liveUrl: "https://www.runnersdust.com/",
             githubUrl: null
@@ -106,6 +111,7 @@
             title: "Khadija",
             category: "shopify",
             description: "Practice Shopify storefront for a Burka/Abaya fashion brand. Clean product presentation through organized collections, clear navigation, and a simple cart and checkout flow make it a useful exercise in building a lightweight, brand-true e-commerce experience for a niche fashion market.",
+            image: "assets/images/khadija.jpeg",
             tags: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript"],
             liveUrl: "https://khadija-fp0qev1g.myshopify.com/password",
             password: "1",
@@ -118,7 +124,7 @@
             category: "custom",
             categoryLabel: "Custom Website / Landing Page",
             description: "Modern real estate landing page designed from Figma and built from scratch with HTML, CSS, and JavaScript. Structured section layouts, a clean visual hierarchy, and modern UI components — navigation, hero, property listings, and FAQ — combine with custom JavaScript interactions and a fully responsive experience for a smooth, polished user journey.",
-            image: "assets/images/homez.svg",
+            image: "assets/images/homez.jpeg",
             tags: ["HTML5", "CSS3", "JavaScript"],
             liveUrl: "https://homez-landing-page-theta.vercel.app/",
             githubUrl: "https://github.com/siam114/Homez-landing-page"
@@ -128,6 +134,7 @@
             title: "Software Chamber Portfolio",
             category: "custom",
             description: "Modern company portfolio website designed and developed as a job task using Next.js, React, TypeScript, and Tailwind CSS. It delivers a clean, responsive interface with professional visual hierarchy, modern UI sections, and smooth interactions — built as a complete, polished marketing site for a software company.",
+            image: "assets/images/chamber.jpeg",
             tags: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
             liveUrl: "https://software-chamber-portfolio-website.vercel.app/",
             githubUrl: "https://github.com/siam114/software-chamber-portfolio-website"
@@ -137,6 +144,7 @@
             title: "CineVerse",
             category: "custom",
             description: "CineVerse is a modern movie-themed homepage built as a practice project to improve my Figma-to-frontend implementation skills. It translates a visual design into a responsive interface with a hero banner, trending and featured movie sections, movie cards with ratings, and a working search bar — built with React, Vite, Tailwind CSS, and Axios.",
+            image: "assets/images/cineverse.jpeg",
             tags: ["React", "Vite", "Tailwind CSS", "Axios"],
             liveUrl: "https://cine-verse-flax.vercel.app/",
             githubUrl: "https://github.com/siam114/CineVerse-"
