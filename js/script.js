@@ -772,48 +772,79 @@
     });
 
     /* ------------------------------------------------------------------
-       Custom animated cursor (dot + trailing ring)
+       Custom animated cursor (arrow ⇄ hand pointer + trailing glow)
        Enabled only on fine-pointer devices without reduced-motion;
        otherwise the native cursor is kept untouched.
        ------------------------------------------------------------------ */
     var FINE_POINTER = window.matchMedia("(pointer: fine)").matches;
     if (FINE_POINTER && !prefersReducedMotion) {
         var cursorDot = document.querySelector(".cursor-dot");
-        var cursorRing = document.querySelector(".cursor-ring");
         var cursorTrail = document.querySelector(".cursor-trail");
-        var CURSOR_TARGETS = "a, button, [role='button'], select, textarea, summary, input, .tab-btn, .chip, .tag, .nav-link, .btn";
+        var CURSOR_TARGETS = [
+            "a", "button", "[role='button']", "select", "summary",
+            "input[type='checkbox']", "input[type='radio']", "input[type='range']",
+            "input[type='color']", "input[type='file']",
+            ".tab-btn", ".chip", ".tag", ".nav-link", ".btn",
+            "[onclick]", "[onmousedown]", "[data-cursor]",
+            ".cursor-pointer", "[style*='cursor: pointer']", "[style*='cursor:pointer']"
+        ].join(", ");
+        var TEXT_TARGETS = "input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='color']):not([type='file']), textarea, [contenteditable]";
 
-        if (cursorDot && cursorRing) {
+        if (cursorDot) {
             document.documentElement.classList.add("custom-cursor");
+
+            function cursorMatches(element) {
+                if (!element || element.nodeType !== 1) return false;
+                if (element.closest(CURSOR_TARGETS)) return true;
+                var node = element;
+                while (node && node.nodeType === 1 && node !== document.documentElement) {
+                    if (window.getComputedStyle(node).cursor === "pointer") return true;
+                    node = node.parentNode;
+                }
+                return false;
+            }
+
+            function isTextTarget(element) {
+                return !!(element && element.closest && element.closest(TEXT_TARGETS));
+            }
+
+            function setCursorState(target) {
+                if (isTextTarget(target)) {
+                    cursorDot.classList.remove("is-interactive");
+                    cursorDot.classList.add("is-text");
+                    return;
+                }
+                cursorDot.classList.remove("is-text");
+                if (cursorMatches(target)) {
+                    cursorDot.classList.add("is-interactive");
+                } else {
+                    cursorDot.classList.remove("is-interactive");
+                }
+            }
 
             var targetX = -100;
             var targetY = -100;
             var dotX = -100;
             var dotY = -100;
-            var ringX = -100;
-            var ringY = -100;
             var trailX = -100;
             var trailY = -100;
             var trailOpacity = 0;
 
-            function placeCursor(x, y) {
+            function placeCursor() {
+                // Tip anchor of both glyphs is (3px, 3px) inside the 24px box
                 cursorDot.style.transform =
-                    "translate3d(" + dotX + "px, " + dotY + "px, 0) translate(-50%, -50%)";
-                cursorRing.style.transform =
-                    "translate3d(" + ringX + "px, " + ringY + "px, 0) translate(-50%, -50%)";
+                    "translate3d(" + dotX + "px, " + dotY + "px, 0) translate(-3px, -3px)";
             }
 
             function tickCursor() {
-                dotX += (targetX - dotX) * 0.32;
-                dotY += (targetY - dotY) * 0.32;
-                ringX += (targetX - ringX) * 0.16;
-                ringY += (targetY - ringY) * 0.16;
+                dotX += (targetX - dotX) * 0.4;
+                dotY += (targetY - dotY) * 0.4;
                 placeCursor();
                 if (cursorTrail) {
                     trailX += (targetX - trailX) * 0.16;
                     trailY += (targetY - trailY) * 0.16;
                     var trailDist = Math.hypot(targetX - trailX, targetY - trailY);
-                    var trailGoal = Math.min(1, trailDist / 110) * 0.65;
+                    var trailGoal = Math.min(1, trailDist / 110) * 0.5;
                     trailOpacity += (trailGoal - trailOpacity) * 0.12;
                     cursorTrail.style.opacity = trailOpacity;
                     cursorTrail.style.transform =
@@ -827,34 +858,31 @@
                 targetY = event.clientY;
             }, { passive: true });
 
-            document.addEventListener("pointerdown", function (event) {
-                cursorRing.classList.add("is-down");
+            document.addEventListener("pointerdown", function () {
+                cursorDot.classList.add("is-down");
             });
             window.addEventListener("pointerup", function () {
-                cursorRing.classList.remove("is-down");
+                cursorDot.classList.remove("is-down");
             });
 
             document.addEventListener("pointerover", function (event) {
-                if (event.target.closest(CURSOR_TARGETS)) {
-                    cursorRing.classList.add("is-hover");
-                    cursorDot.classList.add("is-hover");
-                }
+                setCursorState(event.target);
             }, true);
             document.addEventListener("pointerout", function (event) {
-                if (event.target.closest(CURSOR_TARGETS)) {
-                    cursorRing.classList.remove("is-hover");
-                    cursorDot.classList.remove("is-hover");
+                var related = event.relatedTarget;
+                if (related && related.nodeType === 1) {
+                    setCursorState(related);
+                } else {
+                    cursorDot.classList.remove("is-interactive", "is-text");
                 }
             }, true);
 
-            // Move both elements to the first hover point when the pointer enters
+            // Move the pointer + glow to the first hover point when the pointer enters
             document.addEventListener("pointerenter", function (event) {
                 targetX = event.clientX;
                 targetY = event.clientY;
                 dotX = targetX;
                 dotY = targetY;
-                ringX = targetX;
-                ringY = targetY;
                 if (cursorTrail) {
                     trailX = targetX;
                     trailY = targetY;
