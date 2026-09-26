@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- Neon cyan/teal standard mouse-pointer arrow (normal state), 0deg. Click hotspot = tip at (6, 5). -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 6 5 L 14.84 26.21 L 17.98 17.07 L 27.22 13.83 L 6 5 Z" stroke="rgba(0,229,183,0.14)" stroke-width="8" />
+    <path d="M 6 5 L 14.84 26.21 L 17.98 17.07 L 27.22 13.83 L 6 5 Z" stroke="rgba(0,229,183,0.28)" stroke-width="5" />
+    <path d="M 6 5 L 14.84 26.21 L 17.98 17.07 L 27.22 13.83 L 6 5 Z" stroke="#00E5B7" stroke-width="2.2" />
+  </g>
+</svg>

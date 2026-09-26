@@ -943,19 +943,36 @@ html.js .reveal.is-visible:hover {
 }
 
 /* --------------------------------------------------------------------------
-   6c. NATIVE CUSTOM POINTER (neon cyan/teal hand on interactive elements)
-   Pure CSS — the OS cursor is kept everywhere; only link/button-style
-   pointers swap to a glowing hand via cursor: url(). The hotspot (16 4) is
-   the fingertip of the 32x32 SVG/PNG. Touch/coarse/hover-less devices keep
-   their normal interaction (media query off -> fallback "pointer").
+   6c. NATIVE CUSTOM POINTER (neon cyan/teal arrow + pointing hand)
+   Pure CSS — no JS cursor layer, so it can never block clicks/scrolling/text.
+   Default state: standard arrow (tip hotspot 6 5). Interactive state: upright
+   pointing hand (fingertip hotspot 16 4). Both 0deg, teal/cyan so no rotation
+   is ever applied — the artwork itself is oriented correctly.
+   Editable text keeps the native I-beam. Touch/coarse/hover-less devices
+   keep their normal interaction (media query off -> fallback keywords).
    -------------------------------------------------------------------------- */
 @media (pointer: fine) and (hover: hover) {
+    html {
+        cursor: url("/public/cursor/neon-arrow.svg") 6 5,
+                url("/public/cursor/neon-arrow.png") 6 5,
+                auto;
+    }
+
+    input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="submit"]):not([type="button"]):not([type="reset"]),
+    textarea,
+    [contenteditable] {
+        cursor: text;
+    }
+
     a,
     button,
     [role="button"],
     [href],
     select,
     summary,
+    input[type="submit"],
+    input[type="button"],
+    input[type="reset"],
     .btn,
     .tab-btn,
     .chip,
@@ -2159,7 +2176,9 @@ a.contact-row-value:hover {
     background-repeat: no-repeat;
     background-position: right 14px center;
     background-size: 16px;
-    cursor: pointer;
+    cursor: url("/public/cursor/neon-hand.svg") 16 4,
+            url("/public/cursor/neon-hand.png") 16 4,
+            pointer;
 }
 .form-group textarea {
     resize: vertical;
@@ -2209,7 +2228,9 @@ html:not(.js) .project-type__list {
     background: var(--code-bg);
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
-    cursor: pointer;
+    cursor: url("/public/cursor/neon-hand.svg") 16 4,
+            url("/public/cursor/neon-hand.png") 16 4,
+            pointer;
     text-align: left;
     transition: border-color 0.28s cubic-bezier(0.22, 1, 0.36, 1),
                 box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
@@ -2273,7 +2294,9 @@ html:not(.js) .project-type__list {
     font-size: 0.93rem;
     line-height: 1.45;
     color: var(--text);
-    cursor: pointer;
+    cursor: url("/public/cursor/neon-hand.svg") 16 4,
+            url("/public/cursor/neon-hand.png") 16 4,
+            pointer;
     text-align: left;
     border-radius: calc(var(--radius-sm) - 2px);
     transition: background-color 0.16s cubic-bezier(0.22, 1, 0.36, 1),

@@ -423,7 +423,7 @@
                 break;
             case "message":
                 if (!value) error = "Message is required";
-                else if (value.length < 10) error = "Message is too short";
+                else if (value.length < 5) error = "Message is too short";
                 break;
         }
 
