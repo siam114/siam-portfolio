@@ -670,6 +670,63 @@
         window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
     });
 
+    /* ------------------------------------------------------------------
+       6d. SMOOTH NEON CURSOR OVERLAY (progressive enhancement over 6c)
+       CSS `cursor:` cannot animate, so when JS runs on a fine-pointer,
+       hover-capable device (and motion is not reduced) this injects ONE
+       pure-visual layer (pointer-events: none) that tracks the pointer
+       1:1 and cross-fades the teal arrow and hand PNGs (180ms opacity)
+       for a smooth arrow -> hand swap. The native cursor is hidden only
+       under html.neon-cursor-on; text fields keep the I-beam and the
+       layer fades out over them. If JS is off, reduced-motion, or the
+       pointer is coarse/touch, the static 6c cursors stay as they are
+       (instant, native) — nothing is forced.
+       ------------------------------------------------------------------ */
+    if (!prefersReducedMotion && window.matchMedia("(pointer: fine) and (hover: hover)").matches) {
+        (function () {
+            var INTERACTIVE = "a, button, [role=button], [href], select, summary, input[type=submit], input[type=button], input[type=reset], .btn, .tab-btn, .chip, .nav-link, input[type=checkbox], input[type=radio], input[type=range], input[type=color], [data-cursor], .clickable, .form-group select, .project-type__trigger, .project-type__option";
+            var EDITABLE = "input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):not([type=submit]):not([type=button]):not([type=reset]), textarea, [contenteditable]";
+
+            var cursor = document.createElement("div");
+            cursor.className = "neon-cursor";
+            cursor.setAttribute("aria-hidden", "true");
+
+            var arrow = document.createElement("span");
+            arrow.className = "neon-cursor__arrow";
+            var hand = document.createElement("span");
+            hand.className = "neon-cursor__hand";
+            cursor.appendChild(arrow);
+            cursor.appendChild(hand);
+
+            (document.body || document.documentElement).appendChild(cursor);
+            document.documentElement.classList.add("neon-cursor-on");
+
+            cursor.style.visibility = "hidden";
+
+            var onMove = function (e) {
+                cursor.style.transform = "translate(" + e.clientX + "px, " + e.clientY + "px)";
+                cursor.style.visibility = "visible";
+            };
+
+            var onOver = function (e) {
+                var target = e.target;
+                if (!target || target.nodeType !== 1) return;
+                var editable = target.closest ? target.closest(EDITABLE) : null;
+                var interactive = target.closest ? target.closest(INTERACTIVE) : null;
+                cursor.classList.toggle("is-hand", !!(interactive && !editable));
+                cursor.classList.toggle("is-text", !!editable);
+            };
+
+            var hide = function () { cursor.style.visibility = "hidden"; };
+            var show = function () { cursor.style.visibility = "visible"; };
+
+            document.addEventListener("pointermove", onMove, false);
+            document.addEventListener("mouseover", onOver, false);
+            document.addEventListener("pointerleave", hide, false);
+            document.addEventListener("pointerenter", show, false);
+        })();
+    }
+
     /* Fine-pointer check (used by the background particle canvas below). */
     var FINE_POINTER = window.matchMedia("(pointer: fine)").matches;
 

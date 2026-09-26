@@ -988,6 +988,77 @@ html.js .reveal.is-visible:hover {
     }
 }
 
+/* 6d. SMOOTH NEON CURSOR OVERLAY (progressive enhancement over 6c above)
+   Only active when js/script.js adds html.neon-cursor-on (fine-pointer +
+   hover, motion not reduced). A single pure-visual layer (pointer-events:
+   none, z-index 9999) holds the same teal arrow/hand PNGs and cross-fades
+   them (180ms opacity) so the arrow -> hand swap is smooth. The native
+   cursor is hidden only under html.neon-cursor-on; text fields keep the
+   I-beam and the layer fades out over them. No JS / reduced-motion /
+   coarse-touch -> the static 6c cursors remain untouched.
+   ---------------------------------------------------------------------- */
+.neon-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    z-index: 9999;
+    will-change: transform;
+}
+
+.neon-cursor__arrow,
+.neon-cursor__hand {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-size: 32px 32px;
+    transition: opacity 0.18s ease-out;
+    will-change: opacity;
+}
+
+.neon-cursor__arrow {
+    background-image: url("/public/cursor/neon-arrow.png");
+    transform: translate(-6px, -5px);
+}
+
+.neon-cursor__hand {
+    background-image: url("/public/cursor/neon-hand.png");
+    transform: translate(-13px, 0);
+    opacity: 0;
+}
+
+html.neon-cursor-on .neon-cursor.is-hand .neon-cursor__hand {
+    opacity: 1;
+}
+
+html.neon-cursor-on .neon-cursor.is-hand .neon-cursor__arrow {
+    opacity: 0;
+}
+
+html.neon-cursor-on,
+html.neon-cursor-on * {
+    cursor: none !important;
+}
+
+html.neon-cursor-on input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="submit"]):not([type="button"]):not([type="reset"]),
+html.neon-cursor-on textarea,
+html.neon-cursor-on [contenteditable] {
+    cursor: text !important;
+}
+
+html.neon-cursor-on .neon-cursor.is-text {
+    opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .neon-cursor {
+        display: none;
+    }
+}
+
 /* 6e. INTERACTIVE BACKGROUND PARTICLES (canvas layer behind all content)
    Pure visual layer — z-index -1 keeps it above the page background but
    below every section/card; pointer-events: none means it never blocks
