@@ -111,7 +111,7 @@
             brand(homeUrl(), page === "home" ? "Siam.Dev — home" : "Siam.Dev — back to top", 18) +
             navLinks() +
             '<div class="nav-right">' +
-            '<a href="' + pin("contact") + '" class="btn btn-primary btn-sm nav-cta">Let\'s Talk</a>' +
+            '<a href="https://wa.me/8801567989506" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm nav-cta">Let\'s Talk</a>' +
             '<div class="nav-actions">' +
             themeToggle() +
             navToggle() +
