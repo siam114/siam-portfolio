@@ -1,4 +1,4 @@
-const ALLOWED_ORIGINS = ["https://siam-portfolio.vercel.app"];
+const ALLOWED_ORIGINS = ["https://siam-portfolio-theta.vercel.app"];
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -141,7 +141,7 @@ export default async function handler(req, res) {
 
   const emailTo = process.env.EMAIL_TO || "smsiam987@gmail.com";
   const emailFrom = process.env.EMAIL_FROM || "Siam.Dev Contact <onboarding@resend.dev>";
-  const siteUrl = process.env.SITE_URL || "https://siam-portfolio.vercel.app";
+  const siteUrl = process.env.SITE_URL || "https://siam-portfolio-theta.vercel.app";
 
   let resendOk = false;
   let resendStatus = 502;
