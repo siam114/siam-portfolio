@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    Siam.Dev â€” Portfolio interactions
    Pure vanilla JS. Wrapped in an IIFE to avoid global leaks.
    ========================================================================== */
@@ -8,21 +8,6 @@
     /* Flag so CSS only enables reveal animations when JS is running
        (content stays visible for no-JS / reduced-motion users). */
     document.documentElement.classList.add("js");
-
-    /* Contact form API endpoint (Vercel Function -> Resend).
-       The site and API are served together by Vercel, so the endpoint is
-       same-origin: it works under `vercel dev` (http://localhost:3000) and
-       in production on the Vercel project URL.
-       To override without editing this file:
-         window.CONTACT_API_URL = ".../api/contact";
-       All credentials live server-side in the Vercel function; never here. */
-    var CONTACT_API_URL = (function () {
-        if (window.CONTACT_API_URL) return window.CONTACT_API_URL;
-        return "/api/contact";
-    })();
-    var SUCCESS_MESSAGE = "Message sent successfully! I'll get back to you soon.";
-    var RATE_LIMIT_MESSAGE = "Too many messages. Please wait a moment and try again.";
-    var PROVIDER_ERROR_MESSAGE = "Something went wrong while sending your message. Please try again.";
 
     /* ------------------------------------------------------------------
        Theme switcher (light / dark)
@@ -458,11 +443,16 @@
     });
 
     var formSubmitting = false;
+    var successTimer = null;
 
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
         if (formSubmitting) return;
+
+        // Clear any feedback from a previous submission before re-validating.
+        errorMsg.hidden = true;
+        successMsg.hidden = true;
 
         var fields = ["name", "email", "projectType", "message"];
         var valid = true;
@@ -481,13 +471,11 @@
             return;
         }
 
-        submitBtn.disabled = true;
-        submitBtn.style.opacity = "0.6";
-        if (errorMsg) errorMsg.hidden = true;
-        if (successMsg) successMsg.hidden = true;
-        formSubmitting = true;
         var btnLabel = submitBtn.querySelector(".btn-label");
         var btnLabelText = btnLabel.textContent;
+        formSubmitting = true;
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = "0.6";
         btnLabel.textContent = "Sending...";
 
         var payload = {};
@@ -498,48 +486,41 @@
         payload.subject = ptSelect.value
             ? ptSelect.options[ptSelect.selectedIndex].text.trim()
             : "General Inquiry";
+        var accessKey = form.querySelector("[name='access_key']");
+        payload.access_key = accessKey ? accessKey.value : "";
 
-        fetch(CONTACT_API_URL, {
+        fetch("https://api.web3forms.com/submit", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
             body: JSON.stringify(payload)
         }).then(function (res) {
-            if (!res.ok) {
-                var failureMessage;
-                if (res.status === 400) failureMessage = "Please check your information and try again.";
-                else if (res.status === 429) failureMessage = RATE_LIMIT_MESSAGE;
-                else failureMessage = PROVIDER_ERROR_MESSAGE;
-                formSubmitting = false;
-                btnLabel.textContent = btnLabelText;
-                submitBtn.disabled = false;
-                submitBtn.style.opacity = "";
-                if (errorMsg) {
-                    errorMsg.textContent = failureMessage;
-                    errorMsg.hidden = false;
-                }
-                return;
-            }
-            formSubmitting = false;
-            btnLabel.textContent = btnLabelText;
-            submitBtn.disabled = false;
-            submitBtn.style.opacity = "";
+            return res.json().then(function (json) {
+                if (res.status === 200 && json && json.success) return json;
+                var err = new Error(json && json.message ? json.message : "Submission failed");
+                err.responseJson = json || null;
+                throw err;
+            });
+        }).then(function () {
+            // Success -> only the success message is shown.
+            errorMsg.hidden = true;
+            successMsg.hidden = false;
             form.reset();
-            if (successMsg) {
-                successMsg.textContent = SUCCESS_MESSAGE;
-                successMsg.hidden = false;
-            }
-            setTimeout(function () {
-                if (successMsg) successMsg.hidden = true;
+            clearTimeout(successTimer);
+            successTimer = setTimeout(function () {
+                successMsg.hidden = true;
             }, 5000);
-        }).catch(function (error) {
+        }).catch(function () {
+            // Failure -> only the error message is shown.
+            successMsg.hidden = true;
+            errorMsg.hidden = false;
+        }).finally(function () {
             formSubmitting = false;
             btnLabel.textContent = btnLabelText;
             submitBtn.disabled = false;
             submitBtn.style.opacity = "";
-            if (errorMsg) {
-                errorMsg.textContent = PROVIDER_ERROR_MESSAGE;
-                errorMsg.hidden = false;
-            }
         });
     });
     }
@@ -1066,12 +1047,6 @@
     }
 })();
 
-
-
-
-
-// -------------------------contact er code -----------------------
-
 const form = document.getElementById('contact-form');
 const successMessage = document.getElementById('form-success');
 const errorMessage = document.getElementById('form-error');
@@ -1083,9 +1058,9 @@ form.addEventListener('submit', function(e) {
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
-    // Shuru te dutoi message hidden kore dewa hocche
-    successMessage.setAttribute('hidden', 'true');
-    errorMessage.setAttribute('hidden', 'true');
+    // সাবমিট করার শুরুতে দুটোই লুকিয়ে রাখা হবে
+    successMessage.style.display = 'none';
+    errorMessage.style.display = 'none';
 
     fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -1099,20 +1074,23 @@ form.addEventListener('submit', function(e) {
         let jsonResponse = await response.json();
         
         if (response.status == 200 && jsonResponse.success) {
-            // Success hole shudhu success message show korbe
-            successMessage.removeAttribute('hidden');
+            // সফল হলে শুধু Success মেসেজ দেখাবে (Flex দিয়ে তোমার ডিজাইন ঠিক থাকবে)
+            successMessage.style.display = 'flex';
+            errorMessage.style.display = 'none';
             form.reset();
             
             const projectTypeValue = document.getElementById('project-type-value');
             if(projectTypeValue) projectTypeValue.textContent = "Select a type";
         } else {
             console.log(jsonResponse);
-            // Error hole shudhu error message show korbe
-            errorMessage.removeAttribute('hidden');
+            // ভুল হলে শুধু Error মেসেজ দেখাবে
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'flex';
         }
     })
     .catch(error => {
         console.log(error);
-        errorMessage.removeAttribute('hidden');
+        successMessage.style.display = 'none';
+        errorMessage.style.display = 'flex';
     });
 });
