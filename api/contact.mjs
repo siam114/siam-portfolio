@@ -89,12 +89,15 @@ export default async function handler(req, res) {
 
   const path = String(req.url || "/").split("?")[0];
 
-  if (req.method === "GET" && path.indexOf("_health") >= 0) {
+  if (req.method === "GET") {
     return send(res, 200, {
+      ok: true,
       hasRESEND_API_KEY: Boolean(process.env.RESEND_API_KEY),
       EMAIL_TO: process.env.EMAIL_TO || null,
       EMAIL_FROM: process.env.EMAIL_FROM || null,
-      SITE_URL: process.env.SITE_URL || null
+      SITE_URL: process.env.SITE_URL || null,
+      RATE_LIMIT_MAX: process.env.RATE_LIMIT_MAX || "5",
+      allowedOrigins: ALLOWED_ORIGINS
     }, origin);
   }
 

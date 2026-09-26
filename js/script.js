@@ -1065,3 +1065,54 @@
         })();
     }
 })();
+
+
+
+
+
+// -------------------------contact er code -----------------------
+
+const form = document.getElementById('contact-form');
+const successMessage = document.getElementById('form-success');
+const errorMessage = document.getElementById('form-error');
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    // Shuru te dutoi message hidden kore dewa hocche
+    successMessage.setAttribute('hidden', 'true');
+    errorMessage.setAttribute('hidden', 'true');
+
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: json
+    })
+    .then(async (response) => {
+        let jsonResponse = await response.json();
+        
+        if (response.status == 200 && jsonResponse.success) {
+            // Success hole shudhu success message show korbe
+            successMessage.removeAttribute('hidden');
+            form.reset();
+            
+            const projectTypeValue = document.getElementById('project-type-value');
+            if(projectTypeValue) projectTypeValue.textContent = "Select a type";
+        } else {
+            console.log(jsonResponse);
+            // Error hole shudhu error message show korbe
+            errorMessage.removeAttribute('hidden');
+        }
+    })
+    .catch(error => {
+        console.log(error);
+        errorMessage.removeAttribute('hidden');
+    });
+});
