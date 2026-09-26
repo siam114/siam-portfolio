@@ -386,7 +386,6 @@
     if (form) {
         var submitBtn = document.getElementById("submit-btn");
         var successMsg = document.getElementById("form-success");
-        var errorMsg = document.getElementById("form-error");
         var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
     function setError(input, message) {
@@ -442,87 +441,6 @@
         });
     });
 
-    var formSubmitting = false;
-    var successTimer = null;
-
-    form.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        if (formSubmitting) return;
-
-        // Clear any feedback from a previous submission before re-validating.
-        errorMsg.hidden = true;
-        successMsg.hidden = true;
-
-        var fields = ["name", "email", "projectType", "message"];
-        var valid = true;
-        fields.forEach(function (name) {
-            var input = form.querySelector("[name='" + name + "']");
-            if (!validateField(input)) valid = false;
-        });
-
-        if (!valid) {
-            var firstError = form.querySelector(".has-error input, .has-error select, .has-error textarea");
-            if (firstError) {
-                var ptFocus = firstError.id === "project-type" ?
-                    document.getElementById("project-type-trigger") : null;
-                (ptFocus || firstError).focus();
-            }
-            return;
-        }
-
-        var btnLabel = submitBtn.querySelector(".btn-label");
-        var btnLabelText = btnLabel.textContent;
-        formSubmitting = true;
-        submitBtn.disabled = true;
-        submitBtn.style.opacity = "0.6";
-        btnLabel.textContent = "Sending...";
-
-        var payload = {};
-        fields.forEach(function (name) {
-            payload[name] = form.querySelector("[name='" + name + "']").value.trim();
-        });
-        var ptSelect = form.querySelector("#project-type");
-        payload.subject = ptSelect.value
-            ? ptSelect.options[ptSelect.selectedIndex].text.trim()
-            : "General Inquiry";
-        var accessKey = form.querySelector("[name='access_key']");
-        payload.access_key = accessKey ? accessKey.value : "";
-
-        fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-            body: JSON.stringify(payload)
-        }).then(function (res) {
-            return res.json().then(function (json) {
-                if (res.status === 200 && json && json.success) return json;
-                var err = new Error(json && json.message ? json.message : "Submission failed");
-                err.responseJson = json || null;
-                throw err;
-            });
-        }).then(function () {
-            // Success -> only the success message is shown.
-            errorMsg.hidden = true;
-            successMsg.hidden = false;
-            form.reset();
-            clearTimeout(successTimer);
-            successTimer = setTimeout(function () {
-                successMsg.hidden = true;
-            }, 5000);
-        }).catch(function () {
-            // Failure -> only the error message is shown.
-            successMsg.hidden = true;
-            errorMsg.hidden = false;
-        }).finally(function () {
-            formSubmitting = false;
-            btnLabel.textContent = btnLabelText;
-            submitBtn.disabled = false;
-            submitBtn.style.opacity = "";
-        });
-    });
     }
 
     /* ------------------------------------------------------------------
@@ -1049,48 +967,47 @@
 
 const form = document.getElementById('contact-form');
 const successMessage = document.getElementById('form-success');
-const errorMessage = document.getElementById('form-error');
 
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const formData = new FormData(form);
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
+// Only wire the handler on pages that contain the contact form.
+if (form && successMessage) {
+    let formSubmitting = false;
 
-    // সাবমিট করার শুরুতে দুটোই লুকিয়ে রাখা হবে
-    successMessage.style.display = 'none';
-    errorMessage.style.display = 'none';
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
 
-    fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: json
-    })
-    .then(async (response) => {
-        let jsonResponse = await response.json();
-        
-        if (response.status == 200 && jsonResponse.success) {
-            // সফল হলে শুধু Success মেসেজ দেখাবে (Flex দিয়ে তোমার ডিজাইন ঠিক থাকবে)
-            successMessage.style.display = 'flex';
-            errorMessage.style.display = 'none';
-            form.reset();
-            
-            const projectTypeValue = document.getElementById('project-type-value');
-            if(projectTypeValue) projectTypeValue.textContent = "Select a type";
-        } else {
-            console.log(jsonResponse);
-            // ভুল হলে শুধু Error মেসেজ দেখাবে
-            successMessage.style.display = 'none';
-            errorMessage.style.display = 'flex';
-        }
-    })
-    .catch(error => {
-        console.log(error);
-        successMessage.style.display = 'none';
-        errorMessage.style.display = 'flex';
+        if (formSubmitting) return;
+        formSubmitting = true;
+
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        // Submit start: hide the success message until delivery is confirmed
+        successMessage.setAttribute('hidden', '');
+
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+            let jsonResponse = await response.json();
+
+            if (response.status == 200 && jsonResponse.success) {
+                // Success -> show only the success message
+                successMessage.removeAttribute('hidden');
+                form.reset();
+
+                const projectTypeValue = document.getElementById('project-type-value');
+                if(projectTypeValue) projectTypeValue.textContent = "Select a type";
+            }
+        })
+        .catch(() => {})
+        .finally(() => {
+            formSubmitting = false;
+        });
     });
-});
+}
