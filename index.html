@@ -24,7 +24,10 @@
       property="og:description"
       content="Fast, responsive, conversion-focused e-commerce experiences. Shopify &amp; Liquid themes, React.js, Node.js, Express.js and MongoDB."
     />
-    <meta property="og:url" content="https://siam-portfolio-theta.vercel.app/" />
+    <meta
+      property="og:url"
+      content="https://siam-portfolio-theta.vercel.app/"
+    />
     <meta
       property="og:image"
       content="https://siam-portfolio-theta.vercel.app/assets/images/Siam.png"
@@ -1232,123 +1235,172 @@
             </div>
 
             <!-- Right: form -->
-           <form class="contact-form reveal" id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
-  
-  <!-- Web3Forms Access Key -->
-  <input type="hidden" name="access_key" value="f1ae157d-5c3f-43e4-bac8-d954a72f94d9">
+            <form
+              class="contact-form reveal"
+              id="contact-form"
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              novalidate
+            >
+              <!-- Web3Forms Access Key -->
+              <input
+                type="hidden"
+                name="access_key"
+                value="f1ae157d-5c3f-43e4-bac8-d954a72f94d9"
+              />
 
-  <div class="form-row">
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        placeholder="Your name"
-        autocomplete="name"
-        required
-      />
-      <small class="form-error" hidden></small>
-    </div>
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="you@example.com"
-        autocomplete="email"
-        required
-      />
-      <small class="form-error" hidden></small>
-    </div>
-  </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Your name"
+                    autocomplete="name"
+                    required
+                  />
+                  <small class="form-error" hidden></small>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    required
+                  />
+                  <small class="form-error" hidden></small>
+                </div>
+              </div>
 
-  <div class="form-group">
-    <label for="project-type" id="project-type-label">Project Type</label>
-    <div class="project-type" id="project-type-field">
-      <select
-        id="project-type"
-        name="projectType"
-        class="project-type__native"
-        tabindex="-1"
-        aria-hidden="true"
-      >
-        <option value="">Select a type</option>
-        <option value="shopify">Shopify Development</option>
-        <option value="shopify-customization">Shopify Store Customization</option>
-        <option value="shopify-integration">Custom Shopify Solutions</option>
-        <option value="frontend">Frontend Development</option>
-        <option value="mern">MERN Stack Development</option>
-        <option value="figma">Figma to Website</option>
-        <option value="responsive">Responsive Website & UI</option>
-        <option value="other">Other</option>
-      </select>
-      <button
-        type="button"
-        class="project-type__trigger"
-        id="project-type-trigger"
-        role="combobox"
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-autocomplete="none"
-        aria-controls="project-type-list"
-        aria-labelledby="project-type-label"
-      >
-        <span class="project-type__value" id="project-type-value">Select a type</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="m6 9 6 6 6-6" />
-        </svg>
-      </button>
-      <ul role="listbox" id="project-type-list" class="project-type__list" aria-labelledby="project-type-label" hidden></ul>
-    </div>
-    <small class="form-error" hidden></small>
-  </div>
+              <div class="form-group">
+                <label for="project-type" id="project-type-label"
+                  >Project Type</label
+                >
+                <div class="project-type" id="project-type-field">
+                  <select
+                    id="project-type"
+                    name="projectType"
+                    class="project-type__native"
+                    tabindex="-1"
+                    aria-hidden="true"
+                  >
+                    <option value="">Select a type</option>
+                    <option value="shopify">Shopify Development</option>
+                    <option value="shopify-customization">
+                      Shopify Store Customization
+                    </option>
+                    <option value="shopify-integration">
+                      Custom Shopify Solutions
+                    </option>
+                    <option value="frontend">Frontend Development</option>
+                    <option value="mern">MERN Stack Development</option>
+                    <option value="figma">Figma to Website</option>
+                    <option value="responsive">Responsive Website & UI</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <button
+                    type="button"
+                    class="project-type__trigger"
+                    id="project-type-trigger"
+                    role="combobox"
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-autocomplete="none"
+                    aria-controls="project-type-list"
+                    aria-labelledby="project-type-label"
+                  >
+                    <span class="project-type__value" id="project-type-value"
+                      >Select a type</span
+                    >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
+                  </button>
+                  <ul
+                    role="listbox"
+                    id="project-type-list"
+                    class="project-type__list"
+                    aria-labelledby="project-type-label"
+                    hidden
+                  ></ul>
+                </div>
+                <small class="form-error" hidden></small>
+              </div>
 
-  <div class="form-group">
-    <label for="message">Message</label>
-    <textarea
-      id="message"
-      name="message"
-      rows="5"
-      placeholder="Tell me about your project..."
-      required
-    ></textarea>
-    <small class="form-error" hidden></small>
-  </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Tell me about your project..."
+                  required
+                ></textarea>
+                <small class="form-error" hidden></small>
+              </div>
 
-  <input
-    type="text"
-    name="website"
-    class="hp-field"
-    style="display: none;"
-    value=""
-    autocomplete="off"
-    tabindex="-1"
-    aria-hidden="true"
-  />
-  
-  <button
-    type="submit"
-    class="btn btn-primary btn-lg btn-block"
-    id="submit-btn"
-  >
-    <span class="btn-label">Send Message</span>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="17" height="17">
-      <path d="m22 2-7 20-4-9-9-4Z" />
-      <path d="M22 2 11 13" />
-    </svg>
-  </button>
+              <input
+                type="text"
+                name="website"
+                class="hp-field"
+                style="display: none"
+                value=""
+                autocomplete="off"
+                tabindex="-1"
+                aria-hidden="true"
+              />
 
-  <!-- Success Message -->
-  <p class="form-success" id="form-success" role="status" hidden>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
-      <circle cx="12" cy="12" r="10" />
-      <path d="m9 12 2 2 4-4" />
-    </svg>
-    Message sent successfully! I'll get back to you soon.
-  </p>
-</form>
+              <button
+                type="submit"
+                class="btn btn-primary btn-lg btn-block"
+                id="submit-btn"
+              >
+                <span class="btn-label">Send Message</span>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  width="17"
+                  height="17"
+                >
+                  <path d="m22 2-7 20-4-9-9-4Z" />
+                  <path d="M22 2 11 13" />
+                </svg>
+              </button>
+
+              <!-- Success Message -->
+              <p class="form-success" id="form-success" role="status" hidden>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  width="18"
+                  height="18"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+                Message sent successfully! I'll get back to you soon.
+              </p>
+            </form>
           </div>
         </div>
       </section>
