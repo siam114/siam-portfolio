@@ -169,6 +169,16 @@
             tags: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript", "Wholesale B2B", "Shopify POS"],
             liveUrl: "https://www.cabtexllc.com/",
             githubUrl: null
+        },
+        {
+            id: "milestones-elite-performance",
+            title: "Milestones Elite Performance",
+            category: "custom",
+            description: "Professional youth mental performance website helping young athletes build confidence, focus, discipline, and resilience. Dedicated experiences for parents, coaches, and athletic directors showcase coaching programs, mental training resources, and the signature 10-Second Reset technique — delivered through a modern, engaging, fully responsive design that supports the brand's mission and peak performance.",
+            image: "assets/images/milestones.jpeg",
+            tags: ["UI/UX Design", "Web Design", "HTML", "CSS", "JavaScript", "Responsive Design"],
+            liveUrl: "https://milestoneseliteperformance.com/",
+            githubUrl: null
         }
     ];
 })();
