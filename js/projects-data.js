@@ -149,6 +149,26 @@
             tags: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript"],
             liveUrl: "https://ancestralandmore.com/",
             githubUrl: null
+        },
+        {
+            id: "skull-and-bogeys",
+            title: "Skull & Bogeys Golf Co.",
+            category: "shopify",
+            description: "Premium Shopify golf apparel and accessories store featuring performance golf polos, stylish clothing, headwear, and golfing essentials. A modern, sport-inspired storefront pairs curated collections with premium product presentation and clean, responsive layouts — creating a purpose-driven brand experience that feels polished and easy to shop across desktop and mobile.",
+            image: "assets/images/skull-and-bogeys.jpeg",
+            tags: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript", "E-commerce", "Apparel"],
+            liveUrl: "https://www.skullandbogeys.com/",
+            githubUrl: null
+        },
+        {
+            id: "cabtex-llc",
+            title: "CABTEX LLC",
+            category: "shopify",
+            description: "Professional Shopify wholesale clothing store featuring premium men's and women's apparel, denim, and accessories. A custom storefront design pairs clean collection organization with a B2B wholesale setup and Shopify POS integration — streamlining both online and in-store retail operations through a polished, responsive experience built for buyers and retail partners alike.",
+            image: "assets/images/cabtex.jpeg",
+            tags: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript", "Wholesale B2B", "Shopify POS"],
+            liveUrl: "https://www.cabtexllc.com/",
+            githubUrl: null
         }
     ];
 })();
