@@ -47,16 +47,6 @@
             githubUrl: null
         },
         {
-            id: "midnights-menagerie",
-            title: "Midnights Menagerie",
-            category: "shopify",
-            description: "Premium Shopify pet e-commerce storefront featuring custom homepage sections built with Liquid, thoughtful product and collection organization, and brand storytelling. Fully responsive with an integrated customer-reviews system, FAQ section, blog, and newsletter capture — everything arranged around a calm, pet-owner-friendly buying experience with clear categories and trust-building content.",
-            image: "assets/images/midnights.jpeg",
-            tags: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript"],
-            liveUrl: "https://midnightsmenagerie.com/",
-            githubUrl: null
-        },
-        {
             id: "iyush-naturals",
             title: "Iyush Naturals",
             category: "shopify",
