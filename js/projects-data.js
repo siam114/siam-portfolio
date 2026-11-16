@@ -189,6 +189,16 @@
             tags: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript", "CRO", "Subscription Integration", "CRM Integration", "Performance Optimization"],
             liveUrl: "https://www.opticamd.com/",
             githubUrl: null
+        },
+        {
+            id: "bonded-boutique",
+            title: "Bonded Boutique",
+            category: "shopify",
+            description: "Premium Shopify fashion eCommerce store featuring a curated selection of international clothing brands, women's fashion, and lifestyle products. A modern, elegant storefront with organized collections, catalog management for 15–20 brands and roughly 300 SKUs, Exact Online integration through xCore for inventory synchronization, and WhatsApp marketing for customer engagement and retention.",
+            image: "assets/images/bonded-boutique.jpeg",
+            tags: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript", "Exact Online", "xCore Integration", "Product Management", "E-commerce"],
+            liveUrl: "https://www.bonded-boutique.nl/",
+            githubUrl: null
         }
     ];
 })();
