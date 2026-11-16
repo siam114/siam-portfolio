@@ -132,8 +132,8 @@
             var img = document.createElement("img");
             img.src = BASE + p.image;
             img.alt = p.title + " - " + categoryLabel(p) + " project";
-            img.width = p.imgW || 800;
-            img.height = p.imgH || 600;
+            img.width = p.imgW || 1600;
+            img.height = p.imgH || 900;
             img.loading = "lazy";
             img.decoding = "async";
             img.onerror = function () { this.style.visibility = "hidden"; };

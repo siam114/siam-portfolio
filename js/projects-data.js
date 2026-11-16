@@ -34,7 +34,7 @@
             tags: ["Shopify", "Liquid", "JavaScript", "CSS", "Responsive"],
             liveUrl: "https://getambira.com/",
             githubUrl: null,
-            imgW: 1200,
+            imgW: 1600,
             imgH: 900
         },
         {
