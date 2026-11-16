@@ -154,11 +154,20 @@
         var tagsUl = document.createElement("ul");
         tagsUl.className = "tags";
         tagsUl.setAttribute("aria-label", "Technologies");
-        (p.tags || []).forEach(function (t) {
+        var allTags = p.tags || [];
+        var MAX_CARD_TAGS = 4;
+        allTags.slice(0, MAX_CARD_TAGS).forEach(function (t) {
             var li = document.createElement("li");
             li.textContent = t;
             tagsUl.appendChild(li);
         });
+        if (allTags.length > MAX_CARD_TAGS) {
+            var extra = document.createElement("li");
+            extra.className = "tag-more";
+            extra.textContent = "+" + (allTags.length - MAX_CARD_TAGS);
+            extra.title = allTags.slice(MAX_CARD_TAGS).join(", ");
+            tagsUl.appendChild(extra);
+        }
 
         var actions = document.createElement("div");
         actions.className = "project-actions";
