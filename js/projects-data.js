@@ -179,6 +179,16 @@
             tags: ["UI/UX Design", "Web Design", "HTML", "CSS", "JavaScript", "Responsive Design"],
             liveUrl: "https://milestoneseliteperformance.com/",
             githubUrl: null
+        },
+        {
+            id: "opticamd",
+            title: "OpticaMD – Dr. Rudrani Banik",
+            category: "shopify",
+            description: "Shopify rebrand and development project for Dr. Rudrani Banik, transforming Ageless by Dr. Rani into OpticaMD. Built a storefront with seven products and four bundles, product, collection, About, Contact, FAQ, and educational pages, an Eye-Q quiz with CRM integration and subscriptions, plus SEO, performance optimization, analytics, and post-launch support for a seamless, conversion-focused experience.",
+            image: "assets/images/opticamd.jpeg",
+            tags: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript", "CRO", "Subscription Integration", "CRM Integration", "Performance Optimization"],
+            liveUrl: "https://www.opticamd.com/",
+            githubUrl: null
         }
     ];
 })();
