@@ -2,6 +2,7 @@
    Siam.Dev - Projects data (single source of truth)
    ==========================================================================
    Add or remove a project by editing this array ONLY.
+   New projects are always appended at the END of the array (that is the display order).
 
    Fields:
      id          unique string id
@@ -138,6 +139,16 @@
             tags: ["React", "Vite", "Tailwind CSS", "Axios"],
             liveUrl: "https://cine-verse-flax.vercel.app/",
             githubUrl: "https://github.com/siam114/CineVerse-"
+        },
+        {
+            id: "ancestral-and-more",
+            title: "Ancestral & More",
+            category: "shopify",
+            description: "Premium Shopify eCommerce store for handcrafted clay cookware and traditional pottery, built around a warm, heritage-inspired storefront. Custom Liquid sections present artisan-made products through curated collections, thoughtful product storytelling, and clean, responsive layouts — delivering a smooth, seamless shopping experience that feels as considered as the cookware itself.",
+            image: "assets/images/ancestral.jpeg",
+            tags: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript"],
+            liveUrl: "https://ancestralandmore.com/",
+            githubUrl: null
         }
     ];
 })();
