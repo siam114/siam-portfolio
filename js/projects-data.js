@@ -173,10 +173,10 @@
         {
             id: "milestones-elite-performance",
             title: "Milestones Elite Performance",
-            category: "custom",
+            category: "shopify",
             description: "Youth mental performance website helping young athletes build confidence, focus, discipline, and resilience. Dedicated parent, coach, and athletic director experiences showcase coaching programs, training resources, and the 10-Second Reset technique.",
             image: "assets/images/milestones.jpeg",
-            tags: ["UI/UX Design", "Web Design", "HTML", "CSS", "JavaScript", "Responsive Design"],
+            tags: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript", "UI/UX Design", "Responsive Design"],
             liveUrl: "https://milestoneseliteperformance.com/",
             githubUrl: null
         },
